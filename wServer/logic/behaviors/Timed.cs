@@ -13,7 +13,7 @@ namespace wServer.logic.behaviors
 
         private readonly Behavior behavior = null;
         private readonly int period;
-        private readonly State state;
+        //private readonly State state;
 
         public Timed(int period, Behavior behavior)
         {

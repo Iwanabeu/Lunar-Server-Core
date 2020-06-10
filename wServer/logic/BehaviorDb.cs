@@ -113,7 +113,7 @@ namespace wServer.logic
                     {
                         InitDb.Definitions.Add((ushort)dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
                     }
-                    catch (System.ArgumentException e)
+                    catch (System.ArgumentException )
                     {
                         throw new Exception(objType);
                     }

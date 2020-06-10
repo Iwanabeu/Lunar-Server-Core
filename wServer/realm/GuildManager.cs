@@ -54,7 +54,7 @@ namespace wServer.realm
                                 p.Dispose();
                         }
                     }
-                    catch(System.NullReferenceException e)
+                    catch(System.NullReferenceException)
                     {
 
                     }

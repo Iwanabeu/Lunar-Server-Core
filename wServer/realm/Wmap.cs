@@ -54,7 +54,12 @@ namespace wServer.realm
         Outside_Arena,
         Item_Spawn_Point,
         Arena_Central_Spawn,
-        Arena_Edge_Spawn
+        Arena_Edge_Spawn,
+        Market_Weapons,
+        Market_Abilities,
+        Market_Armor,
+        Market_Rings,
+        Market_Consumables
     }
 
     public enum WmapTerrain : byte
