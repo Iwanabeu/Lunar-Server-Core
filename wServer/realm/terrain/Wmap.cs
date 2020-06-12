@@ -7,7 +7,7 @@ using db.data;
 using Ionic.Zlib;
 using wServer.realm.entities;
 using wServer.realm.entities.merchant;
-
+using wServer.realm.entities.marketer;
 #endregion
 
 namespace wServer.realm.terrain
@@ -54,7 +54,12 @@ namespace wServer.realm.terrain
         Outside_Arena,
         Item_Spawn_Point,
         Arena_Central_Spawn,
-        Arena_Edge_Spawn
+        Arena_Edge_Spawn,
+        Market_Weapons,
+        Market_Abilities,
+        Market_Armor,
+        Market_Rings,
+        Market_Consumables
     }
 
     public enum WmapTerrain : byte
@@ -366,10 +371,14 @@ namespace wServer.realm.terrain
                                 (entity as Merchants).Custom = true;
                                 (entity as Merchants).MType = Utils.FromString(kv[1]);
                                 break;
-                                //case "mcount":
-                                //    entity.Stats[StatsType.MerchantRemainingCount] = Utils.FromString(kv[1]); break;    NOT NEEDED FOR NOW
-                                //case "mtime":
-                                //    entity.Stats[StatsType.MerchantRemainingMinute] = Utils.FromString(kv[1]); break;
+                            //case "mcount":
+                            //    entity.Stats[StatsType.MerchantRemainingCount] = Utils.FromString(kv[1]); break;    NOT NEEDED FOR NOW
+                            //case "mtime":
+                            //    entity.Stats[StatsType.MerchantRemainingMinute] = Utils.FromString(kv[1]); break;
+                            case "selltype":
+                                (entity as Marketer).Custom = true;
+                                (entity as Marketer).SellId = Utils.FromString(kv[1]);
+                                break;
                             case "mcost":
                                 (entity as SellableObject).Price = Utils.FromString(kv[1]);
                                 break;

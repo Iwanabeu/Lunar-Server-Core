@@ -1,0 +1,386 @@
+<Objects>
+<Object type="0x6680" id="Hadouken">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x80</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6681" id="Souls3">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x81</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6682" id="Souls2">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x82</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6683" id="Dark Projectile2">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x83</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6684" id="Souls1">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x84</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6685" id="Axe">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x85</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6686" id="Captain America Projectile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x86</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6687" id="Fire Projectile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x87</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6688" id="Star">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x88</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6689" id="Hammer">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x89</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668a" id="Winter Projectile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8a</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668b" id="Phoenix Projectile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8b</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668c" id="Unholy Arrow">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8c</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668d" id="Unholy Dagger Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8d</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668e" id="Unholy Staff Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8e</Index>
+      </Texture>
+    </Object>
+    <Object type="0x668f" id="Bloodbath Dagger Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x8f</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6690" id="Ornias Bow Shot">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x90</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6691" id="Unholy Shield Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x91</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6692" id="Unholy Short Sword Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x92</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6693" id="BoshyProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x93</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6694" id="Fire Boomerang">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x94</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6695" id="Pizza Projectile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x95</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6696" id="Janusproj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x96</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6697" id="ShockerProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x97</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6698" id="EternalProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x98</Index>
+      </Texture>
+    </Object>
+    <Object type="0x6699" id="ProjFrunza">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x99</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669a" id="White Ball">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9a</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669b" id="AvatarProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9b</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669c" id="SottlerProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9c</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669d" id="ProjWandPristine">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9d</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669e" id="ShrimpProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9e</Index>
+      </Texture>
+    </Object>
+    <Object type="0x669f" id="MonkProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0x9f</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a0" id="LuckyProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa0</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a1" id="FSoFproj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa1</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a2" id="FTproj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa2</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a3" id="SoLLproj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa3</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a4" id="EntmanProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa4</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a5" id="EntmanProj2">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa5</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a6" id="FireStormProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa6</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a7" id="BlasterProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa7</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a8" id="ZeroSaberProj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa8</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66a9" id="Ancient Staff Shot">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xa9</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66aa" id="Hell Shot">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xaa</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66ab" id="Unholy Wand Proj">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xab</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66ac" id="Blue Bolt Shot">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xac</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66ad" id="HeavenlyHammer">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xad</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66ae" id="Blue Missile">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xae</Index>
+      </Texture>
+    </Object>
+    <Object type="0x66af" id="Purple Bolt">
+      <Class>Projectile</Class>
+      <AngleCorrection>1</AngleCorrection>
+      <Texture>
+        <File>AddedItems</File>
+        <Index>0xaf</Index>
+      </Texture>
+    </Object>
+</Objects>

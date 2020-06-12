@@ -1,0 +1,10 @@
+<Objects>
+<Object type="0xb000" id="Marketer">
+    <Class>Marketer</Class>
+    <Texture>
+      <File>lofiObj2</File>
+      <Index>0x77</Index>
+    </Texture>
+    <DisplayId>Market</DisplayId>
+  </Object>
+</Objects>

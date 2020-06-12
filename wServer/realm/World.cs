@@ -36,11 +36,12 @@ namespace wServer.realm
         public const int PETYARD_ID = -12;
         public const int DAILY_QUEST_ID = -13;
         public const int GUILD_ID = -14;
+        public const int MARKETPLACE = -15;
         protected static readonly ILog Log = LogManager.GetLogger(typeof(World));
         public string ExtraVar = "Default";
         private int entityInc;
         private RealmManager manager;
-        private bool canBeClosed;
+        protected bool canBeClosed;
 
         protected World()
         {
@@ -461,7 +462,7 @@ namespace wServer.realm
 
         public bool IsDungeon()
         {
-            return !(this is Nexus) && !(this is GameWorld) && !(this is ClothBazaar) && !(this is Test) && !(this is GuildHall) && !(this is Tutorial) && !(this is DailyQuestRoom) && !IsLimbo;
+            return !(this is Nexus) && !(this is GameWorld) && !(this is Marketplace) && !(this is ClothBazaar) && !(this is Test) && !(this is GuildHall) && !(this is Tutorial) && !(this is DailyQuestRoom) && !IsLimbo;
         }
 
         protected void LoadMap(string embeddedResource, MapType type)

@@ -56,7 +56,7 @@ namespace db
                     {
                         s = rdr.ReadLine();
                         if (s != null && !s.StartsWith("#"))
-                            if(!emails.Contains(s))
+                            if (!emails.Contains(s))
                                 emails.Add(s);
                     } while (s != null);
                 }
@@ -239,8 +239,8 @@ AND characters.charId=death.chrId;";
 
             var fixedTime = new DateTime(converted.Year, converted.Month, converted.Day, 17, 0, 0, 0, DateTimeKind.Unspecified);
 
-            if (quest == null || ((converted.Hour >= 17 && converted.Day-1 == quest.Time.Day) || quest.Time.AddDays(1) <= converted))
-                    quest = GenerateDailyQuest(accId, data, fixedTime);
+            if (quest == null || ((converted.Hour >= 17 && converted.Day - 1 == quest.Time.Day) || quest.Time.AddDays(1) <= converted))
+                quest = GenerateDailyQuest(accId, data, fixedTime);
             return quest;
         }
 
@@ -327,11 +327,11 @@ AND characters.charId=death.chrId;";
                 _.Value.Tier == 6 || _.Value.Tier == 7 ||
                 _.Value.Tier == 8 || _.Value.Tier == 9 ||
                 _.Value.Tier == 10).Select(_ => _.Value).ToList();
-            candidates.AddRange(data.Items.Where(_ => 
+            candidates.AddRange(data.Items.Where(_ =>
                 _.Value.SlotType == 4 || _.Value.SlotType == 5 ||
                 _.Value.SlotType == 11 || _.Value.SlotType == 12 ||
                 _.Value.SlotType == 13 || _.Value.SlotType == 15 ||
-                _.Value.SlotType == 16 ||  _.Value.SlotType == 18 ||
+                _.Value.SlotType == 16 || _.Value.SlotType == 18 ||
                 _.Value.SlotType == 19 || _.Value.SlotType == 20 ||
                 _.Value.SlotType == 21 || _.Value.SlotType == 22 ||
                 _.Value.SlotType == 23 || _.Value.SlotType == 25)
@@ -344,7 +344,7 @@ AND characters.charId=death.chrId;";
                 while (items.Contains(item)) item = candidates[(r = rand.Next(candidates.Count))].ObjectType;
                 items.Add(item);
             }
-            while(items.Count < DailyQuestConstants.QuestsPerDay);
+            while (items.Count < DailyQuestConstants.QuestsPerDay);
 
             var cmd = CreateQuery();
             cmd.CommandText = "INSERT INTO dailyQuests(accId, goals, tier, time) VALUES(@accId, @goals, @tier, @time) ON DUPLICATE KEY UPDATE accId=@accId, goals=@goals, tier=@tier, time=@time;";
@@ -356,7 +356,7 @@ AND characters.charId=death.chrId;";
             return GetDailyQuest(accId, data);
         }
 
-        public static string GenerateRandomString(int size, Random rand=null)
+        public static string GenerateRandomString(int size, Random rand = null)
         {
             var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var builder = new StringBuilder();
@@ -394,7 +394,7 @@ AND characters.charId=death.chrId;";
             return GetAccount(accId, data);
         }
 
-        public Account GetAccount(string accId, XmlData data, string uuid=null, string password=null)
+        public Account GetAccount(string accId, XmlData data, string uuid = null, string password = null)
         {
             if (String.IsNullOrWhiteSpace(accId)) return CreateGuestAccount(accId ?? String.Empty);
             MySqlCommand cmd = CreateQuery();
@@ -462,7 +462,66 @@ SELECT credits FROM stats WHERE accId=@accId;";
             cmd.Parameters.AddWithValue("@amount", amount);
             return (int)cmd.ExecuteScalar();
         }
+        public int UpdateCredit(String acc, int amount)
+        {
+            MySqlCommand cmd = CreateQuery();
+            if (amount > 0)
+            {
+                cmd.CommandText = "UPDATE stats SET totalCredits = totalCredits + @amount WHERE accId=@accId;";
+                cmd.Parameters.AddWithValue("@accId", acc);
+                cmd.Parameters.AddWithValue("@amount", amount);
+                cmd.ExecuteNonQuery();
+                cmd = CreateQuery();
+            }
+            cmd.CommandText = @"UPDATE stats SET credits = credits + (@amount) WHERE accId=@accId;
+SELECT credits FROM stats WHERE accId=@accId;";
+            cmd.Parameters.AddWithValue("@accId", acc);
+            cmd.Parameters.AddWithValue("@amount", amount);
+            return (int)cmd.ExecuteScalar();
+        }
+        public void removeOffer(int id)
+        {
+            MySqlCommand cmd = CreateQuery();
+            cmd.CommandText = "DELETE FROM offers WHERE offerId = @offerId;";
+            cmd.Parameters.AddWithValue("@offerId", id.ToString());
+            cmd.ExecuteNonQuery();
+        }
+        public void marketTransaction(int sellerId, int buyerId, int price)
+        {
+            MySqlCommand cmd = Connection.CreateCommand();
+            MySqlTransaction transact = Connection.BeginTransaction();
+            cmd.Connection = Connection;
+            cmd.Transaction = transact;
+            try
+            {
 
+                cmd.CommandText = "UPDATE stats SET totalCredits = totalCredits + @amount WHERE accId=@accId;";
+                cmd.Parameters.AddWithValue("@accId", sellerId);
+                cmd.Parameters.AddWithValue("@amount", price);
+                cmd.ExecuteNonQuery();
+                
+                cmd.CommandText = @"UPDATE stats SET credits = credits - (@amount) WHERE accId=@accId;";
+                cmd.Parameters.AddWithValue("@accId", buyerId);
+                cmd.Parameters.AddWithValue("@amount", price);
+                cmd.ExecuteNonQuery();
+                transact.Commit();
+            }
+            catch (Exception e)
+            {
+                try
+                {
+                    transact.Rollback();
+                }
+                catch (Exception ex2)
+                {
+                    // This catch block will handle any errors that may have occurred
+                    // on the server that would cause the rollback to fail, such as
+                    // a closed connection.
+                    Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
+                    Console.WriteLine("  Message: {0}", ex2.Message);
+                }
+            }
+        }
         public int UpdateFame(Account acc, int amount)
         {
             MySqlCommand cmd = CreateQuery();
@@ -970,7 +1029,7 @@ bestFame = GREATEST(bestFame, @bestFame);";
             using (MySqlDataReader rdr = cmd.ExecuteReader())
             {
                 if (!rdr.HasRows)
-                    return new [] { -1, -1, -1, -1, -1, -1, -1, -1 };
+                    return new[] { -1, -1, -1, -1, -1, -1, -1, -1 };
                 while (rdr.Read())
                     ret = Utils.FromCommaSepString32(rdr.GetString("items"));
             }
@@ -1321,7 +1380,7 @@ VALUES(@accId, @petId, @objType, @skinName, @skin, @rarity, @maxLevel, @abilitie
                 while (rdr.Read())
                 {
                     DateTime lastSeen = rdr.GetDateTime("lastSeen");
-                    if(lastSeen == DateTime.MinValue)
+                    if (lastSeen == DateTime.MinValue)
                         return false;
 
                     int timeInSec = 5 - (int)(DateTime.UtcNow - lastSeen).TotalSeconds;
@@ -1377,7 +1436,7 @@ VALUES(@accId, @petId, @objType, @skinName, @skin, @rarity, @maxLevel, @abilitie
             for (var i = 0; i < blocks; i++)
             {
                 builder.Append(GenerateRandomString(blockLength, rand));
-                if(i < blocks-1)
+                if (i < blocks - 1)
                     builder.Append("-");
             }
             return builder.ToString();

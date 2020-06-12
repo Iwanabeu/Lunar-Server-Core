@@ -13,6 +13,7 @@ using wServer.realm.entities.player;
 using wServer.realm.setpieces;
 using wServer.realm.worlds;
 using System.Collections.Concurrent;
+using wServer.realm.entities.merchant;
 
 #endregion
 
@@ -1290,7 +1291,7 @@ namespace wServer.realm.commands
                 if (args.Length == 1)
                 {
                     int newLevel = int.Parse(args[0]);
-                    if (newLevel > 50 || newLevel<1)
+                    if (newLevel > 50 || newLevel < 1)
                     {
                         player.SendInfo("Level must be greater than 0 and less than 51.");
                         return false;
@@ -2708,6 +2709,184 @@ namespace wServer.realm.commands
             }
             player.SendInfo("You have no link to accept!");
             return false;
+        }
+    }
+    class VisitMarket : Command
+    {
+        public VisitMarket()
+            : base("market")
+        { }
+        public string Command { get { return "market"; } }
+        public int RequiredRank { get { return 3; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+
+            Packet pkt = new ReconnectPacket
+            {
+                GameId = World.MARKETPLACE,
+                Host = "",
+                IsFromArena = false,
+                Key = player.Manager.Worlds[World.MARKETPLACE].PortalKey,
+                KeyTime = -1,
+                Name = "Marketplace",
+                Port = -1
+            };
+            player.Client.SendPacket(pkt);
+            return true;
+        }
+    }
+    class MarketItem : Command
+    {
+        public MarketItem()
+            : base("sell")
+        { }
+        public string Command { get { return "sell"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (!player.Owner.Name.Equals("Marketplace"))
+            {
+                player.SendInfo("You can only sell things in the marketplace, do /marketplace to get there.");
+                return false;
+            }
+            if (args.Length == 1 || args.Length > 2)
+            {
+                player.SendInfo("/sell <slot number> <price>. Slotnumber 1-16, price 1-" + int.MaxValue);
+                return false;
+            }
+            int slot = -1;
+            int price = -1;
+            bool isNumericPrice = int.TryParse(args[1], out price);
+            bool isNumericSlot = int.TryParse(args[0], out slot);
+            if (!isNumericSlot || !isNumericPrice || slot < 1 || slot > 16)
+            {
+                player.SendInfo("/sell <slot number> <price>. Slotnumber 1-16, price 1-" + int.MaxValue);
+                return false;
+            }
+            if ((slot > 8 && !player.HasBackpack) || player.Inventory[slot+3] == null)
+            {
+                player.SendInfo("That item doesn't exist.");
+                return false;
+            }
+            if (player.Inventory[slot+3].Soulbound)
+            {
+                player.SendInfo("You cannot sell soulbound items.");
+                return false;
+            }
+            if (price < 0)
+            {
+                player.SendInfo("Price must be positive.");
+                return false;
+            }
+            slot += 3;
+            Item toSell = player.Inventory[slot];
+            int itemId = toSell.ObjectType;
+            String accId = player.AccountId;
+            int itemtype = toSell.SlotType;
+            SellType type;
+            switch (itemtype)
+            {
+                case 24:
+                case 2:
+                case 3:
+                case 1:
+                case 17:
+                case 8:
+                    type = SellType.Weapon;
+                    break;
+                case 13:
+                case 15:
+                case 11:
+                case 4:
+                case 16:
+                case 5:
+                case 12:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 25:
+                    type = SellType.Ability;
+                    break;
+                case 6:
+                case 7:
+                case 14:
+                    type = SellType.Armor;
+                    break;
+                case 9:
+                    type = SellType.Ring;
+                    break;
+                default:
+                    type = SellType.Consumable;
+                    break;
+
+            }
+            int offerid = -1;
+            player.Manager.Database.DoActionAsync(db =>
+            {
+                MySqlCommand cmd = db.CreateQuery();
+                cmd.CommandText = "INSERT INTO offers (accId,Item,VALUE,TYPE) VALUES (@accId,@itemId,@price,@type)";
+                cmd.Parameters.AddWithValue("@accId", accId);
+                cmd.Parameters.AddWithValue("@itemId", itemId.ToString());
+                cmd.Parameters.AddWithValue("@price", price.ToString());
+                cmd.Parameters.AddWithValue("@type", ((int)type));
+                cmd.ExecuteNonQuery();
+                cmd = db.CreateQuery();
+                cmd.CommandText = "SELECT LAST_INSERT_ID();";
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+                if (rdr.HasRows)
+                    offerid = rdr.GetInt32("LAST_INSERT_ID()");
+                rdr.Close();
+
+            });
+            Offer myOffer = new Offer(price, offerid, itemId, int.Parse(accId), ((int)type));
+            switch (type)
+            {
+                case SellType.Weapon:
+
+                    if (player.Manager.Marketplace_Weapons.ContainsKey(itemId))
+                    {
+                        if (player.Manager.Marketplace_Weapons[itemId].Price < price) break;
+                    }
+                    player.Manager.Marketplace_Weapons[itemId] = myOffer;
+
+                    break;
+                case SellType.Ability:
+                    if (player.Manager.Marketplace_Abilities.ContainsKey(itemId))
+                    {
+                        if (player.Manager.Marketplace_Abilities[itemId].Price < price) break;
+                    }
+                    player.Manager.Marketplace_Abilities[itemId] = myOffer;
+                    break;
+                case SellType.Armor:
+                    if (player.Manager.Marketplace_Armor.ContainsKey(itemId))
+                    {
+                        if (player.Manager.Marketplace_Armor[itemId].Price < price) break;
+                    }
+                    player.Manager.Marketplace_Armor[itemId] = myOffer;
+                    break;
+                case SellType.Ring:
+                    if (player.Manager.Marketplace_Rings.ContainsKey(itemId))
+                    {
+                        if (player.Manager.Marketplace_Rings[itemId].Price < price) break;
+                    }
+                    player.Manager.Marketplace_Rings[itemId] = myOffer;
+                    break;
+                case SellType.Consumable:
+                    if (player.Manager.Marketplace_Consumables.ContainsKey(itemId))
+                    {
+                        if (player.Manager.Marketplace_Consumables[itemId].Price < price) break;
+                    }
+                    player.Manager.Marketplace_Consumables[itemId] = myOffer;
+                    break;
+            }
+            player.Inventory[slot] = null;
+            player.SaveToCharacter();
+            player.UpdateCount++;
+            player.SendInfo("Success!");
+            return true;
         }
     }
 }

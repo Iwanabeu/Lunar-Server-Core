@@ -120,7 +120,10 @@ namespace wServer.realm
         //   param1.condition_[ConditionEffect._-KL]=_loc8_;
         //   break;
         public readonly static StatsType Tokens = 97;
-
+        public readonly static StatsType Subclass = 98;
+        public readonly static StatsType Feat=99;
+        public readonly static StatsType Market_Type = 100;
+        public readonly static StatsType Market_Price = 101;
         private byte _type;
 
         private StatsType(byte type)

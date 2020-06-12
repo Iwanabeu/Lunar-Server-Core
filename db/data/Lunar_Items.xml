@@ -1,0 +1,3004 @@
+<Objects>
+<Object type="0x66b0" id="Ansatsuken's Edge">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x00</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Description>A noob friendly weapon for those who suck at fighting games.</Description>
+    <RateOfFire>.75</RateOfFire>
+    <Sound>weapon/ryu_hadouken</Sound>
+    <Projectile>
+      <ObjectId>Hadouken</ObjectId>
+      <Speed>120</Speed>
+      <LifetimeMS>350</LifetimeMS>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>240</MaxDamage>
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <OldSound>weapon/ryu_hadouken</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Ansatsuken's Edge</DisplayId>
+  </Object>
+  <Object type="0x66b1" id="Reapers Scythe">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x01</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>The legendary weapon of the black horseman, Death, and is filled with the power to tear down the walls of reality. This weapon was not meant for the hands of mortals.</Description>
+    <RateOfFire>0.6</RateOfFire>
+    <OldSound>daggerSwing</OldSound>
+    <Projectile>
+      <ObjectId>Souls3</ObjectId>
+      <Speed>110</Speed>
+      <LifetimeMS>900</LifetimeMS>
+      <MinDamage>210</MinDamage>
+      <MaxDamage>260</MaxDamage>
+      <Amplitude>0.4</Amplitude>
+      <Frequency>0.2</Frequency>
+      <ParticleTrail>0x242424</ParticleTrail>
+      <Boomerang />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Reapers Scythe</DisplayId>
+    <PlayerExclusive>Cyeclops</PlayerExclusive>
+  </Object>
+  <Object type="0x66b2" id="Reapers Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x02</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>This pitch-dark armor made from skins of the lost and tormented. It contains a power that seems to scare even the gods of our lands.</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Reapers Armor</DisplayId>
+    <PlayerExclusive>Cyeclops</PlayerExclusive>
+  </Object>
+  <Object type="0x66b3" id="Reapers Cloak">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x03</Index>
+    </Texture>
+    <SlotType>13</SlotType>
+    <Description>It is unsure if this is the origin? But it exudes such a darkness that it is irrelevant to those who would wear it. Twisted faces of lost souls can be seen swirling in its material, and can strike from darkness itself.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>20</MpCost>
+    <Activate effect="Invisible" duration="6">ConditionEffectSelf</Activate>
+    <Activate maxDistance="20">Teleport</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Reapers Cloak</DisplayId>
+    <PlayerExclusive>Cyeclops</PlayerExclusive>
+  </Object>
+  <Object type="0x66b4" id="Reapers Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x04</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A gruesome ring adorned with the bones of fallen warriors. It grants the wielder an ungodly power, but at a terrible price, one that destroys the very soul.</Description>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Reapers Ring</DisplayId>
+    <PlayerExclusive>Cyeclops</PlayerExclusive>
+  </Object>
+  <Object type="0x66b5" id="Guardian Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x05</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Sword of Light, once wielded by the Archangel Michael, was forged for war with the Devil and his demons. Now you must carry on his work.</Description>
+    <RateOfFire>1</RateOfFire>
+    <OldSound>weapon/mithril_sword</OldSound>
+    <Projectile>
+      <ObjectId>Souls2</ObjectId>
+      <Speed>130</Speed>
+      <LifetimeMS>360</LifetimeMS>
+      <MinDamage>160</MinDamage>
+      <MaxDamage>200</MaxDamage>
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>10</ArcGap>
+    <FameBonus>6</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Guardian Sword</DisplayId>
+    <PlayerExclusive>Sottler</PlayerExclusive>
+  </Object>
+  <Object type="0x66b6" id="Guardian Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x06</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>Armor worn by the army of angels, crafted to increases the abilities of any who wears it. Lightweight and maneuverable, while providing the maximum defense possible.</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Guardian Armor</DisplayId>
+    <PlayerExclusive>Sottler</PlayerExclusive>
+  </Object>
+  <Object type="0x66b7" id="Guardian Helm">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x07</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>Helm of the Guardian. Created by the Gods for a great war with the creatures of the abyss.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>20</MpCost>
+    <Activate effect="Berserk" duration="5" range="10">ConditionEffectAura</Activate>
+    <Activate effect="Armored" duration="5">ConditionEffectSelf</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Guardian Helm</DisplayId>
+    <PlayerExclusive>Sottler</PlayerExclusive>
+  </Object>
+  <Object type="0x66b8" id="Guardian Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x08</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A ring forged from holy light, created to defend against the minions of the dark and strike them down.</Description>
+    <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Guardian Ring</DisplayId>
+  </Object>
+  <Object type="0x66b9" id="Dark Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x09</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>A sword steeped in a darkness so pure, that not even the most despicable of creatures would touch it, raising the question of who would dare to forge such an awful weapon.</Description>
+    <RateOfFire>1</RateOfFire>
+    <OldSound>weapon/mithril_sword</OldSound>
+    <Projectile>
+      <ObjectId>Dark Projectile2</ObjectId>
+      <Speed>110</Speed>
+      <LifetimeMS>380</LifetimeMS>
+      <MinDamage>240</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Dark Sword</DisplayId>
+  </Object>
+  <Object type="0x66ba" id="Dark Armor2">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0a</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>A black plate forged in the deepest reaches of the abyss, created solely to sew destruction and chaos. It wields such a fearsome power that only the most twisted of beings dare to don this armor.</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Dark Armor</DisplayId>
+  </Object>
+  <Object type="0x66bb" id="Dark Helm2">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0b</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>An ancient helm made from a dark and evil magic...Power comes at a price.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="21" amount="-10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-10">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate totalDamage="300" maxTargets="20" condEffect="Slowed" condEfffect="Curse" condDuration="6"
+              color="0x00FFFF">
+      Lightning
+    </Activate>
+    <Activate effect="Healing" duration="2" range="12">ConditionEffectAura</Activate>
+    <Activate effect="Blind" duration="6" range="12">ConditionEffectAura</Activate>
+    <Activate effect="Armored" duration="6" range="12">ConditionEffectAura</Activate>
+    <Cooldown>6</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Dark Helm of Wrath</DisplayId>
+  </Object>
+  <Object type="0x66bc" id="Dark Shield">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0c</Index>
+    </Texture>
+    <SlotType>5</SlotType>
+    <Description>A shield that seems to avoid the direct gaze of any who looks upon it, almost as if it wishes to hide its true, and terrible form. It is so powerful, that it will cause even the most hardened warrior to stagger and fall under its mighty defense.</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>Souls1</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>400</MaxDamage>
+      <LifetimeMS>230</LifetimeMS>
+      <Size>140</Size>
+      <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+      <ConditionEffect duration="4">Slowed</ConditionEffect>
+      <MultiHit />
+      <PassesCover />
+      <ParticleTrail />
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+    <ConditionEffect duration="4">Slowed</ConditionEffect>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate>Shoot</Activate>
+    <NumProjectiles>5</NumProjectiles>
+    <feedPower>0</feedPower>
+    <DisplayId>Dark Shield</DisplayId>
+  </Object>
+  <Object type="0x66bd" id="Dark Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0d</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>This ring has been used to control the beasts of shadows since time immemorial. Although it appears to be a simple ring, it exudes enormous power, and seems to carry a will of its own, a will that would see the destruction of all things.</Description>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="45">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="45">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Dark Ring</DisplayId>
+  </Object>
+  <Object type="0x66be" id="Battle Axe">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0e</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>One of the few axe weapons, and built solely for the destruction of one's foes. It gives no quarter, and will cut down any who dare to oppose it.</Description>
+    <RateOfFire>0.5</RateOfFire>
+    <OldSound>daggerSwing</OldSound>
+    <Projectile>
+      <ObjectId>Axe</ObjectId>
+      <Speed>40</Speed>
+      <LifetimeMS>600</LifetimeMS>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>320</MaxDamage>
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Battle Axe</DisplayId>
+  </Object>
+  <Object type="0x66bf" id="Captain America Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x0f</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Captain Frickin' America Baby!</Description>
+    <RateOfFire>0.8</RateOfFire>
+    <OldSound>weapon/mithril_sword</OldSound>
+    <Projectile>
+      <ObjectId>Captain America Projectile</ObjectId>
+      <Speed>100</Speed>
+      <LifetimeMS>800</LifetimeMS>
+      <MinDamage>120</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <Boomerang />
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Captain America Sword</DisplayId>
+  </Object>
+  <Object type="0x66c0" id="Captain America Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x10</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>Captain America Armor</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Captain America Armor</DisplayId>
+  </Object>
+  <Object type="0x66c1" id="Captain America Seal">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x11</Index>
+    </Texture>
+    <SlotType>12</SlotType>
+    <Description>The primary defensive and offensive piece of equipment used by Captain America</Description>
+    <Sound>spell/light_heal</Sound>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>100</MpCost>
+    <Activate effect="Armored" duration="3" range="6" useWisMod="true">ConditionEffectAura</Activate>
+    <Activate effect="Damaging" duration="5" range="6" useWisMod="true">ConditionEffectAura</Activate>
+    <Cooldown>6</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Captain America Seal</DisplayId>
+  </Object>
+  <Object type="0x66c2" id="Captain America Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x12</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Dude! it's Captain America Ring!</Description>
+    <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Captain America Ring</DisplayId>
+  </Object>
+  <Object type="0x66c3" id="Invisi Dagger">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x13</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>At least, we think it's a dagger. Its hard to see.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_dagger</Sound>
+    <Projectile>
+      <ObjectId>Invisible</ObjectId>
+      <Speed>120</Speed>
+      <MinDamage>180</MinDamage>
+      <MaxDamage>245</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+      <Amplitude>0.5</Amplitude>
+      <Frequency>0.2</Frequency>
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Dagger of invisible pain</DisplayId>
+  </Object>
+  <Object type="0x66c4" id="Invisi Prism">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x14</Index>
+    </Texture>
+    <SlotType>22</SlotType>
+    <Description>A beautiful gem cut from an invisible stone. Be careful not to lose it</Description>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>3</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate duration="6">Decoy</Activate>
+    <Activate maxDistance="20">Teleport</Activate>
+    <Activate effect="Invisible" duration="6">ConditionEffectSelf</Activate>
+    <Cooldown>10</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Lost Light Prism</DisplayId>
+  </Object>
+  <Object type="0x66c5" id="Invisi Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x15</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Where'd you go?</Description>
+    <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Vestment of the Hidden</DisplayId>
+  </Object>
+  <Object type="0x66c6" id="Invisi Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x16</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>One ring to bring them all, and in the darkness hide them.</Description>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="90">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Ring of Gyges</DisplayId>
+  </Object>
+  <Object type="0x66c7" id="Fire Staff">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x17</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description>The object of torture...is torture.</Description>
+    <RateOfFire>1.5</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>Fire Projectile</ObjectId>
+      <Speed>40</Speed>
+      <MinDamage>15</MinDamage>
+      <MaxDamage>35</MaxDamage>
+      <LifetimeMS>1500</LifetimeMS>
+      <Amplitude>0.6</Amplitude>
+      <Frequency>0.8</Frequency>
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <OldSound>magicShoot</OldSound>
+    <DisplayId>Endless Torment Staff</DisplayId>
+  </Object>
+  <Object type="0x66c8" id="Fire Robe">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x18</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description>The wearer of this robe shall suffer endless torment</Description>
+    <ActivateOnEquip stat="20" amount="-10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Hellfire Robe</DisplayId>
+  </Object>
+  <Object type="0x66c9" id="Fire Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x19</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Down, down, down</Description>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Ring of Fire</DisplayId>
+  </Object>
+  <Object type="0x66ca" id="Assassin Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1a</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Imbues the wearer with a very particular set of skills</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Banished Vest of Slaying</DisplayId>
+  </Object>
+  <Object type="0x66cb" id="Assassin Star">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1b</Index>
+    </Texture>
+    <SlotType>25</SlotType>
+    <Description>A weapon of untold killing power. Many gods lie in its wake</Description>
+    <Sound>spell/fire_spray</Sound>
+    <ExtraTooltipData>
+      <EffectInfo name="{equip.While_Key_Held}" description="" />
+      <EffectInfo name="" description="{equip.Speedy_on_self}" />
+      <EffectInfo name="" description="{equip.Drain_10_MP/sec}" />
+      <EffectInfo name="{equip.When_Key_Released}" description="" />
+    </ExtraTooltipData>
+    <Projectile>
+      <ObjectId>Star</ObjectId>
+      <Speed>150</Speed>
+      <MinDamage>850</MinDamage>
+      <MaxDamage>950</MaxDamage>
+      <LifetimeMS>1000</LifetimeMS>
+      <Size>120</Size>
+      <PassesCover />
+    </Projectile>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>0</MpCost>
+    <MpEndCost>60</MpEndCost>
+    <MultiPhase />
+    <Activate>ShurikenAbility</Activate>
+    <feedPower>0</feedPower>
+    <DisplayId>Murderous Shuriken</DisplayId>
+  </Object>
+  <Object type="0x66cc" id="Assassin Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1c</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>An insignia worn by those adept in the art of killing</Description>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Seal of the Creed</DisplayId>
+  </Object>
+  <Object type="0x66cd" id="Skull Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1d</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A ring made from the bones of fallen warriors.</Description>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Skull Ring</DisplayId>
+  </Object>
+  <Object type="0x66ce" id="War Hammer">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1e</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Depicted in Norse mythology as one of the most fearsome weapons, capable of leveling mountains.</Description>
+    <RateOfFire>0.4</RateOfFire>
+    <OldSound>daggerSwing</OldSound>
+    <Projectile>
+      <ObjectId>Hammer</ObjectId>
+      <Speed>100</Speed>
+      <LifetimeMS>880</LifetimeMS>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <Boomerang />
+      <MultiHit />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>War Hammer</DisplayId>
+  </Object>
+  <Object type="0x66cf" id="Winter Bow">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x1f</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description></Description>
+    <RateOfFire>1.25</RateOfFire>
+    <Sound>weapon/double_bow</Sound>
+    <Projectile>
+      <ObjectId>Winter Projectile</ObjectId>
+      <Speed>185</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>100</MaxDamage>
+      <LifetimeMS>450</LifetimeMS>
+      <Amplitude>0.3</Amplitude>
+      <Frequency>1</Frequency>
+      <MultiHit />
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>17</ArcGap>
+    <OldSound>arrowShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Winter Bow</DisplayId>
+  </Object>
+  <Object type="0x66d0" id="Winter Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x20</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description></Description>
+    <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Winter Armor</DisplayId>
+  </Object>
+  <Object type="0x66d1" id="Winter Trap">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x21</Index>
+    </Texture>
+    <SlotType>20</SlotType>
+    <Description></Description>
+    <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate radius="5" totalDamage="350" condEffect="Paralyzed" condDuration="3.5">Trap</Activate>
+    <Activate radius="5" totalDamage="50">VampireBlast</Activate>
+    <feedPower>0</feedPower>
+    <DisplayId>Winter Trap</DisplayId>
+  </Object>
+  <Object type="0x66d2" id="Winter Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x22</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description></Description>
+    <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Winter Ring</DisplayId>
+  </Object>
+  <Object type="0x66d3" id="Phoenix Wand">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x23</Index>
+    </Texture>
+    <SlotType>8</SlotType>
+    <Description>A wand empowered by the flames of the Phoenix</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_wand</Sound>
+    <Projectile>
+      <ObjectId>Phoenix Projectile</ObjectId>
+      <Speed>140</Speed>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>150</MaxDamage>
+      <LifetimeMS>650</LifetimeMS>
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <OldSound>magicShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Wand of the Phoenix</DisplayId>
+  </Object>
+  <Object type="0x66d4" id="Unholy Bow">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x24</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>Enchanted with evil, bound in sorcery, and curse are those who use it.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/double_bow</Sound>
+    <Projectile>
+      <ObjectId>Unholy Arrow</ObjectId>
+      <Speed>125</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>90</MaxDamage>
+      <LifetimeMS>470</LifetimeMS>
+      <MultiHit />
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <OldSound>arrowShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Curse of the Unholy Bow</DisplayId>
+  </Object>
+  <Object type="0x66d5" id="Phoenix Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x25</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Enchanted ring of the Phoenix</Description>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Phoenix Ring</DisplayId>
+  </Object>
+  <Object type="0x66d6" id="Unholy Dagger">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x26</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>A true Unholy Dagger, used for many sacrifices to the Dark Lords of the Realm.</Description>
+    <RateOfFire>1.2</RateOfFire>
+    <Sound>weapon/dirk</Sound>
+    <Projectile>
+      <ObjectId>Unholy Dagger Proj</ObjectId>
+      <Speed>130</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>180</MaxDamage>
+      <LifetimeMS>440</LifetimeMS>
+      <Amplitude>0.15</Amplitude>
+      <Frequency>0.15</Frequency>
+    </Projectile>
+    <BagType>6</BagType>
+    <OldSound>daggerSwing</OldSound>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Dagger</DisplayId>
+  </Object>
+  <Object type="0x66d7" id="Unholy Staff">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x27</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description>A staff which feels forever cold to the touch, it has a dark presence that can not be denied.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>Unholy Staff Proj</ObjectId>
+      <Speed>130</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>120</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Amplitude>0.5</Amplitude>
+      <Frequency>2</Frequency>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>0</ArcGap>
+    <OldSound>magicShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Staff of the Unholy Church</DisplayId>
+  </Object>
+  <Object type="0x66d8" id="Unholy Poison">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x28</Index>
+    </Texture>
+    <SlotType>18</SlotType>
+    <Description>A dark brotherhood, a dark past, and an even darker secret, poisons, potions, spells, and this is only what you see...</Description>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>110</MpCost>
+    <Activate radius="5" totalDamage="950" duration="8">PoisonGrenade</Activate>
+    <ConditionEffect duration="4">Slowed</ConditionEffect>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Poison</DisplayId>
+  </Object>
+  <Object type="0x66d9" id="Bloodbath Dagger">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x29</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>A dagger left behind from a great massacre in Bedlam Asylum.</Description>
+    <RateOfFire>1.2</RateOfFire>
+    <Sound>weapon/dirk</Sound>
+    <Projectile>
+      <ObjectId>Bloodbath Dagger Proj</ObjectId>
+      <Speed>130</Speed>
+      <MinDamage>60</MinDamage>
+      <MaxDamage>120</MaxDamage>
+      <LifetimeMS>440</LifetimeMS>
+      <Amplitude>0.1</Amplitude>
+      <Frequency>0.1</Frequency>
+    </Projectile>
+    <BagType>6</BagType>
+    <OldSound>daggerSwing</OldSound>
+    <FameBonus>4</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>8</ArcGap>
+    <feedPower>0</feedPower>
+    <DisplayId>Bloodbath Dagger</DisplayId>
+  </Object>
+  <Object type="0x66da" id="Bow of Ornias">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2a</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>Slowly but surely his bow will drain their life away just as he did</Description>
+    <RateOfFire>5</RateOfFire>
+    <Sound>weapon/heavy_crossbow</Sound>
+    <Projectile>
+      <ObjectId>Ornias Bow Shot</ObjectId>
+      <Speed>370</Speed>
+      <MinDamage>25</MinDamage>
+      <MaxDamage>30</MaxDamage>
+      <LifetimeMS>200</LifetimeMS>
+      <Amplitude>0.3</Amplitude>
+      <Frequency>3</Frequency>
+      <Size>100</Size>
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <NumProjectiles>1</NumProjectiles>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Bow of Ornias</DisplayId>
+  </Object>
+  <Object type="0x66db" id="Unholy Shield">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2b</Index>
+    </Texture>
+    <SlotType>5</SlotType>
+    <Description>When the unholy army rose, shields gave them dark, almighty strength and power</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>Unholy Shield Proj</ObjectId>
+      <Speed>100</Speed>
+      <MinDamage>280</MinDamage>
+      <MaxDamage>360</MaxDamage>
+      <LifetimeMS>250</LifetimeMS>
+      <Size>120</Size>
+      <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+      <ConditionEffect duration="4">Slowed</ConditionEffect>
+      <MultiHit />
+      <ArmorPiercing />
+      <ParticleTrail />
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>100</MpCost>
+    <Activate>Shoot</Activate>
+    <NumProjectiles>15</NumProjectiles>
+    <ArcGap>23</ArcGap>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Shield</DisplayId>
+  </Object>
+  <Object type="0x66dc" id="Unholy Prism">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2c</Index>
+    </Texture>
+    <SlotType>22</SlotType>
+    <Description>Tricky situations called for tricky maneuvers when the Unholy battle begun, untrained enemy were quickly put to death.</Description>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>95</MpCost>
+    <Activate duration="5">Decoy</Activate>
+    <Activate duration="5" angleOffset="180">Decoy</Activate>
+    <Activate effect="Invisible" duration="5">ConditionEffectSelf</Activate>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Prism</DisplayId>
+  </Object>
+  <Object type="0x66dd" id="Unholy Tome">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2d</Index>
+    </Texture>
+    <SlotType>4</SlotType>
+    <Description>An Unholy Brotherhood, Satanic rituals, sacrifice...</Description>
+    <Sound>spell/major_heal</Sound>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>125</MpCost>
+    <Activate amount="300" range="7" useWisMod="true">HealNova</Activate>
+    <Activate range="4" effect="Speedy" checkExistingEffect="Hexed">ClearConditionEffectAura</Activate>
+    <Activate range="4">RemoveNegativeConditions</Activate>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Tome</DisplayId>
+  </Object>
+  <Object type="0x66de" id="Unholy Quiver">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2e</Index>
+    </Texture>
+    <SlotType>15</SlotType>
+    <Description>Hordes of Unholy archers came in the thousands, destroying all from a distance with poisoned arrows</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>Unholy Arrow</ObjectId>
+      <Speed>150</Speed>
+      <MinDamage>375</MinDamage>
+      <MaxDamage>425</MaxDamage>
+      <LifetimeMS>1000</LifetimeMS>
+      <Size>150</Size>
+      <ConditionEffect duration="7">Paralyzed</ConditionEffect>
+      <ConditionEffect duration="7">Curse</ConditionEffect>
+      <ParticleTrail />
+    </Projectile>
+    <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate>Shoot</Activate>
+    <Cooldown>6</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Quiver</DisplayId>
+  </Object>
+  <Object type="0x66df" id="Unholy Seal">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x2f</Index>
+    </Texture>
+    <SlotType>12</SlotType>
+    <Description>A seal that summons power from the undead</Description>
+    <Sound>spell/light_heal</Sound>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate stat="21" amount="60" duration="3" range="4" noStack="true" useWisMod="true">StatBoostAura</Activate>
+    <Activate effect="Healing" duration="2.5" range="4" useWisMod="true">ConditionEffectAura</Activate>
+    <Activate effect="Damaging" duration="3" range="4" useWisMod="true">ConditionEffectAura</Activate>
+    <Activate effect="Invulnerable" duration="1.3" range="4" useWisMod="true">ConditionEffectSelf</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Seal</DisplayId>
+  </Object>
+  <Object type="0x66e0" id="Unholy Helm">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x30</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>Undead soldiers, summoned to fight the great battle, would wear impenetrable helms..</Description>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate effect="Berserk" duration="6" range="4">ConditionEffectAura</Activate>
+    <Activate effect="Speedy" duration="6" range="4">ConditionEffectAura</Activate>
+    <Activate effect="Invulnerable" duration="1.5" range="4">ConditionEffectAura</Activate>
+    <Cooldown>7</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Helm</DisplayId>
+  </Object>
+  <Object type="0x66e1" id="Unholy Short Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x31</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Short swords used by undead soldiers, were high in numbers, and were often thrown, impaling enemies all across the battlefield</Description>
+    <RateOfFire>0.8</RateOfFire>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>Unholy Short Sword Proj</ObjectId>
+      <Speed>80</Speed>
+      <MinDamage>280</MinDamage>
+      <MaxDamage>350</MaxDamage>
+      <LifetimeMS>630</LifetimeMS>
+      <Size>100</Size>
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Short Sword</DisplayId>
+  </Object>
+  <Object type="0x66e2" id="Unholy Cloak">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x32</Index>
+    </Texture>
+    <SlotType>13</SlotType>
+    <Description>Skilled and deadly rogue thiefs, would be sent to infiltrate enemy headquarters and recover information on planned attacks, these unholy cloaks served well in these times.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate effect="Invisible" duration="6">ConditionEffectSelf</Activate>
+    <Activate effect="Speedy" duration="2">ConditionEffectSelf</Activate>
+    <Activate maxDistance="10">Teleport</Activate>
+    <Cooldown>6.5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Unholy Cloak</DisplayId>
+  </Object>
+  <Object type="0x66e3" id="Boshy Gun">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x33</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>It was Boshy Time</Description>
+    <RateOfFire>0.5</RateOfFire>
+    <OldSound>weapon/boshy_gun</OldSound>
+    <Projectile>
+      <ObjectId>BoshyProj</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>500</MinDamage>
+      <MaxDamage>700</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Size>40</Size>
+      <MultiHit />
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>5</NumProjectiles>
+    <ArcGap>5</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Boshy Gun</DisplayId>
+  </Object>
+  <Object type="0x66e4" id="Flaming Boomerang">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x34</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>You sometimes wish it wouldn't come back. </Description>
+    <RateOfFire>.5</RateOfFire>
+    <Sound>weapon/double_bow</Sound>
+    <Projectile>
+      <ObjectId>Fire Boomerang</ObjectId>
+      <Speed>200</Speed>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <LifetimeMS>800</LifetimeMS>
+      <MultiHit />
+      <Boomerang />
+      <Amplitude>2</Amplitude>
+      <Frequency>1</Frequency>
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <OldSound>arrowShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Flaming Boomerang</DisplayId>
+  </Object>
+  <Object type="0x66e5" id="Pizza Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x35</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Pizza Sword!!!.... Ummm.. hmm.</Description>
+    <RateOfFire>0.8</RateOfFire>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>Pizza Projectile</ObjectId>
+      <Speed>80</Speed>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>250</MaxDamage>
+      <LifetimeMS>630</LifetimeMS>
+      <Size>100</Size>
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Pizza Sword</DisplayId>
+  </Object>
+  <Object type="0x66e6" id="Pizza Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x36</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A ring made from the yummiest Pizza in town.</Description>
+    <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Pizza Ring</DisplayId>
+  </Object>
+  <Object type="0x66e7" id="Pizza Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x37</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>Pizza Armor, made of Pizza :D err.</Description>
+    <ActivateOnEquip stat="21" amount="16">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Pizza Armor</DisplayId>
+  </Object>
+  <Object type="0x66e8" id="Pizza Helm">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x38</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>Pizza Helm.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="21" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate effect="Berserk" duration="5" range="5">ConditionEffectAura</Activate>
+    <Activate effect="Armored" duration="3" range="5">ConditionEffectAura</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Pizza Helm</DisplayId>
+  </Object>
+
+  <Object type="0x66e9" id="Bow of Janus rage">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x39</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>Janus the Doorwaden gave gifts to who could defeat him. This bow has got lucky ones.</Description>
+    <RateOfFire>0.35</RateOfFire>
+    <Sound>weapon/poor_quality_bow</Sound>
+    <Projectile>
+      <ObjectId>Janusproj</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>150</MaxDamage>
+      <LifetimeMS>410</LifetimeMS>
+      <Size>100</Size>
+    </Projectile>
+    <NumProjectiles>4</NumProjectiles>
+    <ArcGap>4</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>5</feedPower>
+    <DisplayId>Bow of Janus rage</DisplayId>
+  </Object>
+
+  <Object type="0x66ea" id="Warden Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3a</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Stange eye staring at me from the inside...</Description>
+    <ActivateOnEquip stat="3" amount="25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Warden Armor</DisplayId>
+  </Object>
+
+  <Object type="0x66eb" id="Eye of Janus">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3b</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Why is this sparkling eye still alive ? Thanks to petrovlolo to made this set</Description>
+    <ActivateOnEquip stat="3" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="-6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Eye of Janus</DisplayId>
+  </Object>
+  <Object type="0x66ec" id="Key of Rage">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3c</Index>
+    </Texture>
+    <SlotType>20</SlotType>
+    <Description>When Janus threw their keys -one different from the other, and lay motionless and quietly called me...</Description>
+    <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="-2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>135</MpCost>
+    <Activate radius="5" totalDamage="100" condEffect="Curse" condDuration="4">Trap</Activate>
+    <Activate effect="Berserk" duration="2">ConditionEffectSelf</Activate>
+    <Activate effect="Bleeding" duration="3">ConditionEffectSelf</Activate>
+    <feedPower>0</feedPower>
+    <DisplayId>Key of Rage</DisplayId>
+  </Object>
+  <Object type="0x66ed" id="Steel Shocker">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3d</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description>A powerful energy is enclosed within.</Description>
+    <RateOfFire>0.7</RateOfFire>
+    <Sound>weapon/fire_wand</Sound>
+    <Projectile>
+      <ObjectId>ShockerProj</ObjectId>
+      <Speed>137</Speed>
+      <MinDamage>60</MinDamage>
+      <MaxDamage>95</MaxDamage>
+      <LifetimeMS>475</LifetimeMS>
+      <Amplitude>0.3</Amplitude>
+      <Frequency>2</Frequency>
+      <Size>100</Size>
+      <MultiHit />
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>1</ArcGap>
+    <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>5</feedPower>
+    <DisplayId>Steel Shocker</DisplayId>
+  </Object>
+  <Object type="0x66ee" id="Short Circuit">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3e</Index>
+    </Texture>
+    <SlotType>19</SlotType>
+    <Description>This skull proved to be a great conversationalist.</Description>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <MpCost>100</MpCost>
+    <Activate radius="3" totalDamage="0">VampireBlast</Activate>
+    <Activate effect="Paralyzed" duration="3" range="3" color="0x05c2b5" target="enemy" center="mouse" visualEffect="0">GenericActivate</Activate>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Short Circuit</DisplayId>
+  </Object>
+  <Object type="0x66ef" id="Iron Protection">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x3f</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description>A heavy armor, yet light as a feather.</Description>
+    <ActivateOnEquip stat="0" amount="25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="45">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Iron Protection</DisplayId>
+  </Object>
+  <Object type="0x66f0" id="The Reactor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x40</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>This thing looks unstable. Better be careful, it might explode. Thx to BLOODQWEN, to draw this set.</Description>
+    <ActivateOnEquip stat="0" amount="75">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="75">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>The Reactor</DisplayId>
+  </Object>
+  <Object type="0x66f1" id="Eternal rest">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x41</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Everything you need to humiliate the monsters.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/blunt_sword</Sound>
+    <Projectile>
+      <ObjectId>EternalProj</ObjectId>
+      <Speed>100</Speed>
+      <MinDamage>160</MinDamage>
+      <MaxDamage>250</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+      <Amplitude>0.44</Amplitude>
+      <Frequency>0.31</Frequency>
+      <Size>110</Size>
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>1</NumProjectiles>
+    <ArcGap>10</ArcGap>
+    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>5</feedPower>
+    <DisplayId>Eternal rest</DisplayId>
+  </Object>
+  <Object type="0x66f2" id="Lightweight Leather Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x42</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>Only one person had this, then they got eaten by a dragon.</Description>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Lightweight Leather Armor</DisplayId>
+  </Object>
+  <Object type="0x66f3" id="Helm of the leader barbarians">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x43</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>This helmet sits perfectly on your head, and can only be used as a leader.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-3">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate effect="Berserk" duration="5.5" range="4.5">ConditionEffectAura</Activate>
+    <Activate effect="Slowed" duration="2" range="6" color="0x05c2b5" target="enemy" center="player" visualEffect="0">GenericActivate</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Helm of the leader barbarians</DisplayId>
+  </Object>
+  <Object type="0x66f4" id="Heart Dragon">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x44</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>I think its still beating, better not eat it now. Thx to BLOODQWEN, to draw this set.</Description>
+    <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Heart Dragon</DisplayId>
+  </Object>
+
+  <Object type="0x66f5" id="Forgotten Dagger">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x45</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description></Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_dagger</Sound>
+    <Projectile>
+      <ObjectId>ProjFrunza</ObjectId>
+      <Speed>140</Speed>
+      <MinDamage>95</MinDamage>
+      <MaxDamage>175</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>450</feedPower>
+    <DisplayId>Forgotten Dagger</DisplayId>
+  </Object>
+  <Object type="0x66f6" id="Dark Prism">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x46</Index>
+    </Texture>
+    <SlotType>22</SlotType>
+    <Description></Description>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>85</MpCost>
+    <Activate duration="5.5">Decoy</Activate>
+    <Activate maxDistance="20">Teleport</Activate>
+    <feedPower>380</feedPower>
+    <DisplayId>Dark Prism</DisplayId>
+  </Object>
+  <Object type="0x66f7" id="Astral Hide">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x47</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description></Description>
+    <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>435</feedPower>
+    <DisplayId>Astral Hide</DisplayId>
+  </Object>
+  <Object type="0x66f8" id="Cornucopia">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x48</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Thx to Frunza and Sottler to made this Skin/Set</Description>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Cornucopia</DisplayId>
+  </Object>
+
+  <Object type="0x66f9" id="Sadist Blade of the King">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x49</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>No corporeal creature can kill my sorrow.</Description>
+    <RateOfFire>0.5</RateOfFire>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>White Ball</ObjectId>
+      <Speed>80</Speed>
+      <MinDamage>145</MinDamage>
+      <MaxDamage>155</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Size>80</Size>
+      <MultiHit />
+    </Projectile>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>25</ArcGap>
+    <ActivateOnEquip stat="27" amount="3">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Sadist Blade of the King</DisplayId>
+  </Object>
+  <Object type="0x66fa" id="Armor of Masochism">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4a</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>I feel my flesh again! For the first time in a thousand years I LIVE!</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Armor of Masochism</DisplayId>
+  </Object>
+  <Object type="0x66fb" id="The Kings Crown">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4b</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>Just you? I guess you don't have any friends to play with but don't worry we can still be miserable together.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="3">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>85</MpCost>
+    <Activate effect="Healing" duration="4" range="6">ConditionEffectAura</Activate>
+    <Activate effect="Armored" duration="2" range="3">ConditionEffectSelf</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>The Kings Crown</DisplayId>
+  </Object>
+  <Object type="0x66fc" id="Ring of Ashen Matrimony">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4c</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>The King's wife died here. For her memory. Thx to Jinx, to draw this set.</Description>
+    <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="110">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Ring of Ashen Matrimony</DisplayId>
+  </Object>
+  <Object type="0x66fd" id="Staff of the Great Climbing">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4d</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description>This staff is dusty... It may contain an ancient power...</Description>
+    <RateOfFire>1.00</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>AvatarProj</ObjectId>
+      <Speed>180</Speed>
+      <MinDamage>50</MinDamage>
+      <MaxDamage>80</MaxDamage>
+      <LifetimeMS>475</LifetimeMS>
+      <Amplitude>0.7</Amplitude>
+      <Frequency>1</Frequency>
+      <Size>100</Size>
+      <ArmorPiercing />
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>0</ArcGap>
+    <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Staff of the Great Climbing</DisplayId>
+  </Object>
+  <Object type="0x66fe" id="AvatarRobe">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4e</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description>In this dress when it fought a brave monk. But the forces of darkness poglatili his soul.</Description>
+    <ActivateOnEquip stat="3" amount="70">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Robe of the Battle Monk</DisplayId>
+  </Object>
+  <Object type="0x66ff" id="AvatarRing">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x4f</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Old ring. It was passed from hand to hand many generations. Thx to BLOODQWEN, to draw this set.</Description>
+    <ActivateOnEquip stat="0" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>The Bloody Legacy</DisplayId>
+  </Object>
+  <Object type="0x6700" id="SottlerWeap">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x50</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>A dagger that seems just a tad bit... off</Description>
+    <RateOfFire>0.6</RateOfFire>
+    <Sound>weapon/blunt_dagger</Sound>
+    <Projectile>
+      <ObjectId>SottlerProj</ObjectId>
+      <Speed>95</Speed>
+      <MinDamage>240</MinDamage>
+      <MaxDamage>270</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Size>90</Size>
+      <MultiHit />
+      <PassesCover />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Bent Dagger</DisplayId>
+  </Object>
+  <Object type="0x6701" id="SottlerCloak">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x51</Index>
+    </Texture>
+    <SlotType>13</SlotType>
+    <Description>That cloak looks awful familiar... How'd it get here? Am I imagining things?</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>100</MpCost>
+    <Activate effect="Healing" duration="2.5">ConditionEffectSelf</Activate>
+    <Activate effect="Invisible" duration="5.5">ConditionEffectSelf</Activate>
+    <Cooldown>6</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Cloak of the Asylum</DisplayId>
+  </Object>
+  <Object type="0x6702" id="SottlerArmor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x52</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Sure, you're fine now but...</Description>
+    <ActivateOnEquip stat="21" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="-6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>435</feedPower>
+    <DisplayId>Infected Armor</DisplayId>
+  </Object>
+  <Object type="0x6703" id="SottlerRing">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x53</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Every time you look directly at it, you hear the sound of chains. Thx to Sottler to draw this set.</Description>
+    <ActivateOnEquip stat="20" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Constricting Collar</DisplayId>
+  </Object>
+  <Object type="0x6704" id="Gauntlet Mayhem">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x54</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Venimus ut vinceret...</Description>
+    <ActivateOnEquip stat="0" amount="130">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Gauntlet of Mayhem</DisplayId>
+  </Object>
+  <Object type="0x6705" id="Gauntlet Chaos">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x55</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Nos ad delendam...</Description>
+    <ActivateOnEquip stat="3" amount="130">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Gauntlet of Chaos</DisplayId>
+  </Object>
+  <Object type="0x6706" id="Sanic Helm">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x56</Index>
+    </Texture>
+    <SlotType>16</SlotType>
+    <Description>GOTTA GO FAST!!!</Description>
+    <Sound>spell/fire_nova</Sound>
+    <ActivateOnEquip stat="21" amount="-30">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="-200">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="40">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>0</FameBonus>
+    <MpCost>20</MpCost>
+    <Activate effect="Speedy" duration="10" range="6">ConditionEffectSelf</Activate>
+    <Cooldown>5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Sanic Head</DisplayId>
+  </Object>
+  <Object type="0x6707" id="Wand of Pristine Environments">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x57</Index>
+    </Texture>
+    <SlotType>8</SlotType>
+    <Description>This wand has been conserved in a great ancient temple, preventing whoever who destroys the Earth, punishing those who dare.</Description>
+    <RateOfFire>1.2</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>ProjWandPristine</ObjectId>
+      <Speed>150</Speed>
+      <MinDamage>60</MinDamage>
+      <MaxDamage>75</MaxDamage>
+      <LifetimeMS>600</LifetimeMS>
+      <Size>100</Size>
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>10</ArcGap>
+    <ActivateOnEquip stat="0" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Wand of Pristine Environments</DisplayId>
+  </Object>
+  <Object type="0x6708" id="ShrimpQuiver">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x58</Index>
+    </Texture>
+    <SlotType>15</SlotType>
+    <Description> Crafted from the shells of the Hermit God and its minions, oddly enough it makes a good quiver. Thx to OppaLoopa</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>ShrimpProj</ObjectId>
+      <Speed>200</Speed>
+      <MinDamage>75</MinDamage>
+      <MaxDamage>125</MaxDamage>
+      <LifetimeMS>700</LifetimeMS>
+      <Size>100</Size>
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <MpCost>20</MpCost>
+    <Activate>Shoot</Activate>
+    <Cooldown>0.5</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>The Shrimp Shooter</DisplayId>
+  </Object>
+  <Object type="0x6709" id="Staff of Noble Magic">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x59</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description> This weapon was crafted in the forges of the heavenly castle.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>MonkProj</ObjectId>
+      <Speed>180</Speed>
+      <MinDamage>55</MinDamage>
+      <MaxDamage>100</MaxDamage>
+      <LifetimeMS>475</LifetimeMS>
+      <Amplitude>0.5</Amplitude>
+      <Frequency>2</Frequency>
+      <Size>100</Size>
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>0</ArcGap>
+    <ActivateOnEquip stat="21" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Staff of Noble Magic</DisplayId>
+  </Object>
+  <Object type="0x670a" id="Orb of Heavenly Sight">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5a</Index>
+    </Texture>
+    <SlotType>21</SlotType>
+    <Description>The eye of Heaven beholds all sins, tremble to the might of the heavenly crystal!</Description>
+    <ActivateOnEquip stat="3" amount="25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <MpCost>125</MpCost>
+    <Activate duration="5">StasisBlast</Activate>
+    <Activate effect="Curse" duration="5" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
+              useWisMod="true">
+      GenericActivate
+    </Activate>
+    <Activate effect="Damaging" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
+    <Cooldown>4</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Orb of Heavenly Sight</DisplayId>
+  </Object>
+  <Object type="0x670b" id="Heaven Monk's Apparel">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5b</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description> The crystal riveted to the belt adorns the robe.</Description>
+    <ActivateOnEquip stat="3" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="7">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Heaven Monk's Apparel</DisplayId>
+  </Object>
+  <Object type="0x670c" id="Necklace of Crystalline Celestial Forces">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5c</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description> The power of the crystal will light the way for all to live under eternal harmony. Thx to BLOODQWEN</Description>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Necklace of Crystalline Celestial Forces</DisplayId>
+  </Object>
+
+  <Object type="0x670d" id="Lucky Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5d</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>O' Sha sha sha 'laylee.</Description>
+    <RateOfFire>1.08</RateOfFire>
+    <ActivateOnEquip stat="102" amount="2">IncrementStat</ActivateOnEquip>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>LuckyProj</ObjectId>
+      <Speed>100</Speed>
+      <LifetimeMS>500</LifetimeMS>
+      <MinDamage>160</MinDamage>
+      <MaxDamage>190</MaxDamage>
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Shalaylee</DisplayId>
+  </Object>
+  <Object type="0x670e" id="Lucky Armor">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5e</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description> I caught him, but he slipped out of his clothes, unfortunately revealing his bare bottom.</Description>
+    <ActivateOnEquip stat="21" amount="21">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="102" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Unlucky Leprechaun's Coat</DisplayId>
+  </Object>
+  <Object type="0x670f" id="Lucky Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x5f</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>He dashed off in the nude, absentmindedly leaving his hat behind. Thx to Cloudedshadow97</Description>
+    <ActivateOnEquip stat="21" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="102" amount="2">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Unlucky Leprechaun's Hat</DisplayId>
+  </Object>
+  <Object type="0x6710" id="Lucky Seal">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x60</Index>
+    </Texture>
+    <SlotType>12</SlotType>
+    <Description>They're after me lucky charms!</Description>
+    <Sound>spell/light_heal</Sound>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>95</MpCost>
+    <Activate effect="Damaging" duration="5" range="4" useWisMod="true">ConditionEffectAura</Activate>
+    <Activate effect="Speedy" duration="4">ConditionEffectSelf</Activate>
+    <ActivateOnEquip stat="102" amount="4">IncrementStat</ActivateOnEquip>
+    <Cooldown>6</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>The Four-Leaf Seal</DisplayId>
+  </Object>
+  <Object type="0x6711" id="Ring of Boiling Lava">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x61</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>This stone ring looks safe to handle, but something tells me to be careful about it...</Description>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="80">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="-25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Ring of Boiling Lava</DisplayId>
+  </Object>
+  <Object type="0x6712" id="Seal of Splashing Lava">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x62</Index>
+    </Texture>
+    <SlotType>12</SlotType>
+    <Description>What lava is splashing, we don't know. How it knows it's splashing, we also don't know.</Description>
+    <Sound>spell/light_heal</Sound>
+    <Usable />
+    <BagType>6</BagType>
+    <MpCost>100</MpCost>
+    <Activate effect="Healing" duration="5" range="6" color="0x000000" target="player" center="player" visualEffect="5"
+              useWisMod="true">
+      GenericActivate
+    </Activate>
+    <Activate effect="Damaging" duration="3" range="6" color="0xffffff" target="player" center="player"
+              visualEffect="0" useWisMod="true">
+      GenericActivate
+    </Activate>
+    <Activate effect="Armored" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
+    <Activate stat="0" amount="75" duration="3" range="6" noStack="true" useWisMod="true">StatBoostAura</Activate>
+    <feedPower>750</feedPower>
+    <DisplayId>Seal of Splashing Lava</DisplayId>
+  </Object>
+  <Object type="0x6713" id="Steel Armor of Magma">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x63</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>Warm on the inside, strong on the outside. With such protection, who would fear even Satan?</Description>
+    <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>750</feedPower>
+    <DisplayId>Steel Armor of Magma</DisplayId>
+  </Object>
+  <Object type="0x6714" id="Flaming Sword of Fury">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x64</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>A fire-breathing sword filled with destructive energy. Even the dragons envy its might.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>FSoFproj</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>210</MinDamage>
+      <MaxDamage>255</MaxDamage>
+      <LifetimeMS>250</LifetimeMS>
+      <Amplitude>.25</Amplitude>
+      <Frequency>.2</Frequency>
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>750</feedPower>
+    <DisplayId>Flaming Sword of Fury</DisplayId>
+  </Object>
+  <Object type="0x6715" id="Skull of the Cubes">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x65</Index>
+    </Texture>
+    <SlotType>19</SlotType>
+    <Description>This skull used to be used in the worshiping of the Cube god, but, since we are killing all of them they won't need it, right? Thanks to SyndicateXx for Idea/Sprite.</Description>
+    <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <MpCost>85</MpCost>
+    <Activate radius="5" totalDamage="100">VampireBlast</Activate>
+    <Activate effect="Slowed" duration="4" range="5" color="0xff0099" target="enemy" center="mouse" visualEffect="0">GenericActivate</Activate>
+    <FameBonus>4</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Skull of the Cubes</DisplayId>
+  </Object>
+  <Object type="0x6716" id="Dagger of the Flaming Stinger">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x66</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>Extremely sharp and incredibly hot. With such a little thing, you have to be careful.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_dagger</Sound>
+    <Projectile>
+      <ObjectId>FTproj</ObjectId>
+      <Speed>140</Speed>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>140</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+      <Size>100</Size>
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>450</feedPower>
+    <DisplayId>Dagger of the Flaming Stinger</DisplayId>
+  </Object>
+  <Object type="0x6717" id="Prism of Bright Star">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x67</Index>
+    </Texture>
+    <SlotType>22</SlotType>
+    <Description>It's so bright and shimmering. I'd better keep a watchful eye on it, just in case some one wants to steal it.</Description>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate duration="4.5">Decoy</Activate>
+    <Activate effect="Invulnerable" duration="1.5">ConditionEffectSelf</Activate>
+    <Cooldown>3</Cooldown>
+    <feedPower>400</feedPower>
+    <DisplayId>Prism of Bright Star</DisplayId>
+  </Object>
+  <Object type="0x6718" id="Armor from the Bowels of Hell">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x68</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Armor from hell, it kinda of instills fear in you, but at the same time it makes you desire a Barbeque!</Description>
+    <ActivateOnEquip stat="21" amount="18">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="25">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="-25">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>700</feedPower>
+    <DisplayId>Armor from the Bowels of Hell</DisplayId>
+  </Object>
+  <Object type="0x6719" id="The Ring of Flaming Power">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x69</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A luxurious ring made with a magnificent stone. The owner looks even more luxurious.</Description>
+    <ActivateOnEquip stat="21" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="50">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>600</feedPower>
+    <DisplayId>The Ring of Flaming Power</DisplayId>
+  </Object>
+  <Object type="0x671a" id="Torn Garment of Esben">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6a</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description>Well, you can't seem to find the tear anywhere. But, I bet it is somewhere.</Description>
+    <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="5">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Torn Garment of Esben</DisplayId>
+  </Object>
+  <Object type="0x671b" id="The Frozen Ring of Esben">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6b</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>When you put it on, it freezes you. You feel like you will never be warm again. </Description>
+    <ActivateOnEquip stat="20" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="100">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>The Frozen Ring of Esben</DisplayId>
+  </Object>
+  <Object type="0x671c" id="Hairy Karambit">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6c</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>This knife has a built in sharp edge , so it doesn't need to shoot one out</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/fire_dagger</Sound>
+    <Projectile>
+      <ObjectId>SoLLproj</ObjectId>
+      <Speed>80</Speed>
+      <MinDamage>65</MinDamage>
+      <MaxDamage>65</MaxDamage>
+      <LifetimeMS>800</LifetimeMS>
+      <Size>100</Size>
+      <MultiHit />
+      <ArmorPiercing />
+      <PassesCover />
+    </Projectile>
+    <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="-10">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Hairy Karambit</DisplayId>
+  </Object>
+  <Object type="0x671d" id="Toad Bile Cannister">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6d</Index>
+    </Texture>
+    <SlotType>18</SlotType>
+    <Description>If the old men of the swamp are to be believed, this small jar of toad bile promotes good health.</Description>
+    <ActivateOnEquip stat="27" amount="5">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>120</MpCost>
+    <Activate radius="5" totalDamage="500" duration="5">PoisonGrenade</Activate>
+    <feedPower>450</feedPower>
+    <DisplayId>Toad Bile Cannister</DisplayId>
+  </Object>
+  <Object type="0x671e" id="Skinned Toad Hide">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6e</Index>
+    </Texture>
+    <SlotType>6</SlotType>
+    <Description>Wearing this armor has the added benefit of giving warts to enemies that touch you.</Description>
+    <ActivateOnEquip stat="21" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="100">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="10">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>500</feedPower>
+    <DisplayId>Skinned Toad Armor</DisplayId>
+  </Object>
+  <Object type="0x671f" id="Frog's Eye Ring">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x6f</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>Obtaining this ring reminded you of your youth, back when you still did biology in school.</Description>
+    <ActivateOnEquip stat="0" amount="75">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="75">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="8">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="-5">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>450</feedPower>
+    <DisplayId>Frog's Eye Ring</DisplayId>
+  </Object>
+  <Object type="0x6720" id="Ent Ancients Log">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x70</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>This heavy log has been made out of an Ent Ancients corpse. Hunted down by the Stone-born berserkers of Leernoth, used for absolute obliteration of their enemies in combat.</Description>
+    <RateOfFire>0.4</RateOfFire>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="-3">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-2">IncrementStat</ActivateOnEquip>
+    <Sound>weapon/mithril_sword</Sound>
+    <Projectile>
+      <ObjectId>EntmanProj</ObjectId>
+      <Speed>80</Speed>
+      <LifetimeMS>437</LifetimeMS>
+      <MinDamage>570</MinDamage>
+      <MaxDamage>660</MaxDamage>
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>4</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Ent Ancients Log</DisplayId>
+  </Object>
+  <Object type="0x6721" id="Corpse of an Ent Ancient">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x71</Index>
+    </Texture>
+    <SlotType>7</SlotType>
+    <Description>The hollowed out trunk of an Elder Ent Ancient, destroyed by a Archmage of the Southern Golgari Guild in the mountains of Trasdon. It was used to fuel their necrotic quest for dominance across the swamps of the Greenland.</Description>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="23">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="-4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-4">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Corpse of an Ent Ancient</DisplayId>
+  </Object>
+  <Object type="0x6722" id="Ripe Apple">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x72</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>The heart of an old Ent Ancient, which provided the forests of Zendikar with life and magic, blossoming all the plants anew.</Description>
+    <ActivateOnEquip stat="0" amount="35">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="10">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="5">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Ripe Apple</DisplayId>
+  </Object>
+  <Object type="0x6723" id="Clump of Bark">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x73</Index>
+    </Texture>
+    <SlotType>5</SlotType>
+    <Description>A small shield used by the Woodland Rangers of the Aether. It provided them with the speed and agility necessary to win the titanic war against the Berserkers of Leernoth for peace towards the Faeries in Mount Hallow.</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>EntmanProj2</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>240</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <LifetimeMS>238</LifetimeMS>
+      <Size>100</Size>
+      <ConditionEffect duration="3">Dazed</ConditionEffect>
+      <ConditionEffect duration="4">Slowed</ConditionEffect>
+      <PassesCover />
+      <MultiHit />
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="12">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>90</MpCost>
+    <Activate>Shoot</Activate>
+    <NumProjectiles>4</NumProjectiles>
+    <feedPower>0</feedPower>
+    <DisplayId>Clump of Bark</DisplayId>
+  </Object>
+  <Object type="0x6724" id="FireStorm">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x74</Index>
+    </Texture>
+    <SlotType>2</SlotType>
+    <Description>Theres a fire, not really a storm but it sounds cooler.</Description>
+    <RateOfFire>1.08</RateOfFire>
+    <Sound>weapon/blunt_dagger</Sound>
+    <Projectile>
+      <ObjectId>FireStormProj</ObjectId>
+      <Speed>145</Speed>
+      <MinDamage>90</MinDamage>
+      <MaxDamage>145</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+      <Amplitude>0.3</Amplitude>
+      <Frequency>0.5</Frequency>
+      <Size>100</Size>
+    </Projectile>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>10</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>FireStorm</DisplayId>
+  </Object>
+  <Object type="0x6725" id="Mega Blaster">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x75</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>A mechanical type of bow? A gun!?</Description>
+    <RateOfFire>1.25</RateOfFire>
+    <OldSound>weapon/blaster</OldSound>
+    <Projectile>
+      <ObjectId>BlasterProj</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>120</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Frequency>10</Frequency>
+      <Size>85</Size>
+      <MultiHit />
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>7</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Mega Blaster</DisplayId>
+  </Object>
+  <Object type="0x6726" id="Kid Cape">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x76</Index>
+    </Texture>
+    <SlotType>13</SlotType>
+    <Description>The Kid had an adventurous soul, but trying to fly with the cape was a doomed adventure to begin with.</Description>
+    <Sound>spell/fire_nova</Sound>
+    <Usable />
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>100</MpCost>
+    <Activate effect="Sick" duration="3" range="5">ConditionEffectAura</Activate>
+    <Activate effect="Invisible" duration="3" range="5">ConditionEffectAura</Activate>
+    <Activate effect="Invisible" duration="7">ConditionEffectSelf</Activate>
+    <Cooldown>10</Cooldown>
+    <feedPower>0</feedPower>
+    <DisplayId>Kid Cape</DisplayId>
+  </Object>
+  <Object type="0x6727" id="ZSaber">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x77</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>A legendary blade wielded by Megaman's arch rival Zero , it crackles with energy as you swing it.</Description>
+    <RateOfFire>1</RateOfFire>
+    <OldSound>weapon/z_saber</OldSound>
+    <Projectile>
+      <ObjectId>ZeroSaberProj</ObjectId>
+      <Speed>200</Speed>
+      <MinDamage>250</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <LifetimeMS>235</LifetimeMS>
+      <Size>100</Size>
+      <PassesCover/>
+      <ParticleTrail lifetimeMS="50">0x33ffcc</ParticleTrail>
+    </Projectile>
+    <NumProjectiles>1</NumProjectiles>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>5</feedPower>
+    <DisplayId>Z-Saber</DisplayId>
+  </Object>
+  <Object type="0x6728" id="Staff of Insanity">
+    <Class>Equipment</Class>
+    <Item />
+    <Sound>weapon/wand_of_death</Sound>
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x78</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <RateOfFire>0.9</RateOfFire>
+    <Description>A magical staff of ancient origin.</Description>
+    <Projectile>
+      <ObjectId>Ancient Staff Shot</ObjectId>
+      <Speed>150</Speed>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>200</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Amplitude>0.3</Amplitude>
+      <Frequency>1.8</Frequency>
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <OldSound>magicShoot</OldSound>
+    <ActivateOnEquip stat="20" amount="3">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+  </Object>
+  <Object type="0x6729" id="Gladius of Hell's Forge">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x79</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>A legendary weapon, used by the archdemon Malphas in his long forgotten raids against the realm.</Description>
+    <RateOfFire>0.9</RateOfFire>
+    <OldSound>weapon/gladius</OldSound>
+    <Projectile>
+      <ObjectId>Hell Shot</ObjectId>
+      <Speed>100</Speed>
+      <MinDamage>150</MinDamage>
+      <MaxDamage>160</MaxDamage>
+      <LifetimeMS>350</LifetimeMS>
+      <Amplitude>1</Amplitude>
+      <Frequency>1</Frequency>
+      <Size>100</Size>
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>58</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>5</FameBonus>
+    <feedPower>450</feedPower>
+    <DisplayId>Gladius of Hell's Forge</DisplayId>
+  </Object>
+  <Object type="0x672a" id="Unholy Wand">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7a</Index>
+    </Texture>
+    <SlotType>8</SlotType>
+    <Description>Decrepit wands used by undead mages, used to summon eldritch terrors from the far corners of hell to lay waste to all that stood in their way Thanks to Pringle/Turtlebat.</Description>
+    <RateOfFire>0.5</RateOfFire>
+    <Sound>weapon/fire_wand</Sound>
+    <Projectile>
+      <ObjectId>Unholy Wand Proj</ObjectId>
+      <Speed>40</Speed>
+      <MinDamage>65</MinDamage>
+      <MaxDamage>125</MaxDamage>
+      <LifetimeMS>2000</LifetimeMS>
+      <Amplitude>2.4</Amplitude>
+      <Frequency>3.4</Frequency>
+      <Size>100</Size>
+      <MultiHit />
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>3</NumProjectiles>
+    <ArcGap>20</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <DisplayId>Unholy Wand</DisplayId>
+  </Object>
+  <Object type="0x672b" id="Wavebreaker">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7b</Index>
+    </Texture>
+    <SlotType>24</SlotType>
+    <Description>A legendary katana made of blue steel said to be found in the deepest trenches of the ocean. Its attacks can create tremendous waves of water out of thin air that devastates even the most hardy of enemies.</Description>
+    <RateOfFire>1.33</RateOfFire>
+    <Sound>weapon/blunt_sword</Sound>
+    <Projectile>
+      <ObjectId>Blue Bolt Shot</ObjectId>
+      <Size>150</Size>
+      <Speed>1</Speed>
+      <MinDamage>30</MinDamage>
+      <MaxDamage>65</MaxDamage>
+      <LifetimeMS>400</LifetimeMS>
+      <Amplitude>4.5</Amplitude>
+      <Frequency>0.38</Frequency>
+      <Range>0.04</Range>
+      <MultiHit />
+      <PassesCover />
+    </Projectile>
+    <NumProjectiles>4</NumProjectiles>
+    <ArcGap>166</ArcGap>
+    <BagType>6</BagType>
+    <OldSound>bladeSwing</OldSound>
+    <FameBonus>6</FameBonus>
+    <DisplayId>Wavebreaker</DisplayId>
+  </Object>
+  <Object type="0x672c" id="Heavenly Hammer">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7c</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>A hammer forged by the gods; one swing is able to banish any evil it encounters.</Description>
+    <RateOfFire>0.4</RateOfFire>
+    <OldSound>daggerSwing</OldSound>
+    <Projectile>
+      <ObjectId>HeavenlyHammer</ObjectId>
+      <Speed>100</Speed>
+      <LifetimeMS>880</LifetimeMS>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <Boomerang />
+      <MultiHit />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>1</NumProjectiles>
+    <FameBonus>6</FameBonus>
+    <OldSound>daggerSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Heavenly Hammer</DisplayId>
+  </Object>
+  <Object type="0x672d" id="Tremor Staff" setType="0x2BA" setName="Sky Guardian Set">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7d</Index>
+    </Texture>
+    <SlotType>17</SlotType>
+    <Description>Said to have been the treasure of an ancient cloud civilization, its icy tip seals in the souls of the fallen.</Description>
+    <RateOfFire>1</RateOfFire>
+    <Sound>weapon/wand_of_death</Sound>
+    <Projectile>
+      <ObjectId>Blue Missile</ObjectId>
+      <Speed>180</Speed>
+      <MinDamage>65</MinDamage>
+      <MaxDamage>105</MaxDamage>
+      <LifetimeMS>475</LifetimeMS>
+      <Amplitude>0.5</Amplitude>
+      <Frequency>2</Frequency>
+    </Projectile>
+    <BagType>4</BagType>
+    <FameBonus>5</FameBonus>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>0</ArcGap>
+    <OldSound>magicShoot</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Tremor Staff</DisplayId>
+  </Object>
+  <Object type="0x672e" id="Hymn of the Sky" setType="0x2BA" setName="Sky Guardian Set">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7e</Index>
+    </Texture>
+    <SlotType>11</SlotType>
+    <Description>A rousing spiritual, Arr. MrSott.</Description>
+    <Sound>spell/magic_nova</Sound>
+    <Projectile>
+      <ObjectId>Purple Bolt</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>165</MaxDamage>
+      <LifetimeMS>1000</LifetimeMS>
+    </Projectile>
+    <ActivateOnEquip stat="26" amount="2">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="2">IncrementStat</ActivateOnEquip>
+    <Usable />
+    <BagType>4</BagType>
+    <FameBonus>4</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate>BulletNova</Activate>
+    <feedPower>380</feedPower>
+    <DisplayId>Hymn of the Sky</DisplayId>
+  </Object>
+  <Object type="0x672f" id="Robe of Storms" setType="0x2BA" setName="Sky Guardian Set">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x7f</Index>
+    </Texture>
+    <SlotType>14</SlotType>
+    <Description>The cloth feels wet to the touch, not at all like a pillow.</Description>
+    <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="15">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="7">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="65">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Robe of Storms</DisplayId>
+  </Object>
+  <Object type="0x6730" id="The Frozen Compass" setType="0x2BA" setName="Sky Guardian Set">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>AddedItems</File>
+      <Index>0x80</Index>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>A glance at this mysterious artifact sends shivers down your spine, but it's oddly warm.</Description>
+    <ActivateOnEquip stat="0" amount="130">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="-6">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="6">IncrementStat</ActivateOnEquip>
+    <BagType>6</BagType>
+    <FameBonus>4</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>The Frozen Compass</DisplayId>
+  </Object>
+<Object type="0x6731" id="Band of Ouroboros">
+    <DisplayId>Band of Ouroboros</DisplayId>
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>Ouroboros</File>
+    </Texture>
+    <SlotType>9</SlotType>
+    <Description>{equip.An_amulet_that_provides_helpful_benefits_at_the_cost_of_rai}</Description>
+    <Resurrects/>
+    <ActivateOnEquip stat="20" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="21" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="22" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="26" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="27" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="28" amount="1">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="20">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="3" amount="20">IncrementStat</ActivateOnEquip>
+    <BagType>4</BagType>
+    <feedPower>500</feedPower>
+  </Object>
+</Objects>

@@ -9,7 +9,7 @@ using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.logic.transitions;
 using wServer.realm.entities.merchant;
-
+using wServer.realm.entities.marketer;
 #endregion
 
 namespace wServer.realm
@@ -85,7 +85,7 @@ namespace wServer.realm
 
         public int UpdateCount { get; set; }
 
-        public ushort ObjectType { get; private set; }
+        public ushort ObjectType { get; set; }
         public int Id { get; internal set; }
 
         public bool Usable { get; set; }
@@ -227,6 +227,7 @@ namespace wServer.realm
                 Position = new Position { X = X, Y = Y },
                 Stats = stats.ToArray()
             };
+            
         }
 
         public virtual ObjectDef ToDefinition()
@@ -374,6 +375,8 @@ namespace wServer.realm
                 case "VaultChest":
                 case "Merchant":
                     return new Merchants(manager, id);
+                case "Marketer":
+                    return new Marketer(manager, id);
                 case "GuildMerchant":
                     return new GuildMerchant(manager, id);
                 case "ArenaGuard":

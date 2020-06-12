@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using db;
 using db.data;
 using log4net;
+using MySql.Data.MySqlClient;
 using wServer.logic;
 using wServer.networking;
 using wServer.realm.commands;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.realm.worlds;
+using wServer.realm.entities.merchant;
 
 #endregion
 
@@ -99,7 +101,13 @@ namespace wServer.realm
         public ConcurrentDictionary<int, World> Worlds { get; private set; }
         public ConcurrentDictionary<string, GuildHall> GuildHalls { get; private set; }
         public ConcurrentDictionary<string, World> LastWorld { get; private set; }
-
+        public ConcurrentDictionary<int,Offer> Marketplace_Weapons { get; set; }
+        public ConcurrentDictionary<int, Offer> Marketplace_Abilities { get; set; }
+        public ConcurrentDictionary<int, Offer> Marketplace_Armor { get; set; }
+        public ConcurrentDictionary<int, Offer> Marketplace_Rings { get; set; }
+        public ConcurrentDictionary<int, Offer> Marketplace_Consumables { get; set; }
+        public List<int> InUse { get; set; }
+        public List<int> searched { get; set; }
         private ConcurrentDictionary<string, Vault> vaults;
 
         public Random Random { get; }
@@ -171,7 +179,60 @@ namespace wServer.realm
         {
             Monitor.WorldRemoved(world);
         }
+        public void InitializeMarket()
+        {
+            Marketplace_Weapons = new ConcurrentDictionary<int, Offer>();
+            Marketplace_Abilities = new ConcurrentDictionary<int, Offer>();
+            Marketplace_Armor = new ConcurrentDictionary<int, Offer>();
+            Marketplace_Rings = new ConcurrentDictionary<int, Offer>();
+            Marketplace_Consumables = new ConcurrentDictionary<int, Offer>();
+            searched = new List<int>();
+            InUse = new List<int>();
+            log.Info("Loading Offers from database");
+            Database.DoActionAsync(db =>
+            {
+                MySqlCommand cmd = db.CreateQuery();
+                cmd.CommandText = "SELECT offerId,Value,Item,Type,accId FROM offers WHERE Value=(SELECT MIN(Value) FROM offers AS o WHERE o.Item=offers.Item)";
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        int offerId = rdr.GetInt32("offerId");
+                        int itemId = rdr.GetInt32("Item");
+                        int price = rdr.GetInt32("Value");
+                        int type = rdr.GetInt32("Type");
+                        int acc = rdr.GetInt32("accId");
+                        Offer offer = new Offer(price: price, id: offerId, item: itemId, seller: acc,type:type);
+                        if (offer.Type == SellType.Weapon)
+                        {
+                            Marketplace_Weapons[itemId] = offer;
+                        }
+                        else if (offer.Type == SellType.Ability)
+                        {
+                            Marketplace_Abilities[itemId] = offer;
+                        }
+                        else if (offer.Type == SellType.Armor)
+                        {
+                            Marketplace_Armor[itemId] = offer;
+                        }
+                        else if (offer.Type == SellType.Ring)
+                        {
+                            Marketplace_Rings[itemId] = offer;
+                        }
+                        else
+                        {
+                            Marketplace_Consumables[itemId] = offer;
+                        }
+                        
+                        
 
+                    }
+                }
+                rdr.Close();
+            });
+        }
         public async void Disconnect(Client client)
         {
             if (client == null) return;
@@ -225,19 +286,21 @@ namespace wServer.realm
             Behaviors = new BehaviorDb(this);
             GeneratorCache.Init();
             MerchantLists.InitMerchatLists(GameData);
-
+            
             AddWorld(World.NEXUS_ID, Worlds[0] = new Nexus());
             AddWorld(World.MARKET, new ClothBazaar());
             AddWorld(World.TEST_ID, new Test());
             AddWorld(World.TUT_ID, new Tutorial(true));
             AddWorld(World.DAILY_QUEST_ID, new DailyQuestRoom());
+            
+
             Monitor = new RealmPortalMonitor(this);
 
             Task.Factory.StartNew(() => GameWorld.AutoName(1, true)).ContinueWith(_ => AddWorld(_.Result), TaskScheduler.Default);
 
             Chat = new ChatManager(this);
             Commands = new CommandManager(this);
-
+            
             log.Info("Realm Manager initialized.");
         }
 
@@ -284,6 +347,8 @@ namespace wServer.realm
             Network = new NetworkTicker(this);
             Logic = new LogicTicker(this);
             Database = new DatabaseTicker();
+            InitializeMarket();
+            AddWorld(World.MARKETPLACE, new Marketplace());
             network = new Thread(Network.TickLoop)
             {
                 Name = "Network",
