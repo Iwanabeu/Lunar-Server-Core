@@ -2,6 +2,7 @@
 
 using wServer.realm;
 using wServer.realm.entities;
+using System.Linq;
 
 #endregion
 
@@ -14,6 +15,7 @@ namespace wServer.logic.behaviors
         private readonly int initialSpawn;
         private readonly int maxChildren;
         private Cooldown coolDown;
+        private int cooldownOffset = -1;
 
         public Spawn(string children, int maxChildren = 5, double initialSpawn = 0.5, Cooldown coolDown = new Cooldown() )
         {
@@ -22,13 +24,22 @@ namespace wServer.logic.behaviors
             this.initialSpawn = (int) (maxChildren*initialSpawn);
             this.coolDown = coolDown.Normalize(0);
         }
+        public Spawn(string children, Cooldown coolDown,int maxChild, double initialSpawn,int CoolDownOffset=0)
+        {
+            this.children = BehaviorDb.InitGameData.IdToObjectType[children];
+            this.maxChildren = maxChild;
+            this.initialSpawn = (int)(maxChildren * initialSpawn);
+            this.coolDown = coolDown.Normalize(0);
+            this.cooldownOffset = CoolDownOffset;
+        }
 
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
         {
             state = new SpawnState
             {
                 CurrentNumber = initialSpawn,
-                RemainingTime = coolDown.Next(Random)
+                RemainingTime = cooldownOffset==-1?coolDown.Next(Random):coolDown.Next(Random)+cooldownOffset,
+                
             };
             for (int i = 0; i < initialSpawn; i++)
             {
@@ -46,9 +57,13 @@ namespace wServer.logic.behaviors
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
             SpawnState spawn = (SpawnState) state;
-
+            if (host is Enemy)
+            {
+                spawn.CurrentNumber = host.Owner.Enemies.Values.Where(e => e.Name.Equals(children)).Count();
+            }
             if (spawn.RemainingTime <= 0 && spawn.CurrentNumber < maxChildren)
             {
+                log.Error(spawn.RemainingTime);
                 Entity entity = Entity.Resolve(host.Manager, children);
                 entity.Move(host.X, host.Y);
                 if (host is Enemy)
@@ -59,6 +74,7 @@ namespace wServer.logic.behaviors
             }
             else
                 spawn.RemainingTime -= time.thisTickTimes;
+            log.Error(spawn.RemainingTime);
         }
 
         private class SpawnState

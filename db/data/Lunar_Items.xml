@@ -1,5 +1,5 @@
-<Objects>
-<Object type="0x66b0" id="Ansatsuken's Edge">
+<Lunar_Items>
+  <Object type="0x9000" id="Ansatsuken's Edge">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -23,7 +23,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ansatsuken's Edge</DisplayId>
   </Object>
-  <Object type="0x66b1" id="Reapers Scythe">
+  <Object type="0x9001" id="Reapers Scythe">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -54,7 +54,7 @@
     <DisplayId>Reapers Scythe</DisplayId>
     <PlayerExclusive>Cyeclops</PlayerExclusive>
   </Object>
-  <Object type="0x66b2" id="Reapers Armor">
+  <Object type="0x9002" id="Reapers Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -75,7 +75,7 @@
     <DisplayId>Reapers Armor</DisplayId>
     <PlayerExclusive>Cyeclops</PlayerExclusive>
   </Object>
-  <Object type="0x66b3" id="Reapers Cloak">
+  <Object type="0x9003" id="Reapers Cloak">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -98,7 +98,7 @@
     <DisplayId>Reapers Cloak</DisplayId>
     <PlayerExclusive>Cyeclops</PlayerExclusive>
   </Object>
-  <Object type="0x66b4" id="Reapers Ring">
+  <Object type="0x9004" id="Reapers Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -118,7 +118,7 @@
     <DisplayId>Reapers Ring</DisplayId>
     <PlayerExclusive>Cyeclops</PlayerExclusive>
   </Object>
-  <Object type="0x66b5" id="Guardian Sword">
+  <Object type="0x9005" id="Guardian Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -147,7 +147,7 @@
     <DisplayId>Guardian Sword</DisplayId>
     <PlayerExclusive>Sottler</PlayerExclusive>
   </Object>
-  <Object type="0x66b6" id="Guardian Armor">
+  <Object type="0x9006" id="Guardian Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -168,7 +168,7 @@
     <DisplayId>Guardian Armor</DisplayId>
     <PlayerExclusive>Sottler</PlayerExclusive>
   </Object>
-  <Object type="0x66b7" id="Guardian Helm">
+  <Object type="0x9007" id="Guardian Helm">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -191,7 +191,7 @@
     <DisplayId>Guardian Helm</DisplayId>
     <PlayerExclusive>Sottler</PlayerExclusive>
   </Object>
-  <Object type="0x66b8" id="Guardian Ring">
+  <Object type="0x9008" id="Guardian Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -210,7 +210,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Guardian Ring</DisplayId>
   </Object>
-  <Object type="0x66b9" id="Dark Sword">
+  <Object type="0x9009" id="Dark Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -237,7 +237,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dark Sword</DisplayId>
   </Object>
-  <Object type="0x66ba" id="Dark Armor2">
+  <Object type="0x900a" id="Dark Armor2">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -257,7 +257,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dark Armor</DisplayId>
   </Object>
-  <Object type="0x66bb" id="Dark Helm2">
+  <Object type="0x900b" id="Dark Helm2">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -273,10 +273,7 @@
     <BagType>6</BagType>
     <FameBonus>6</FameBonus>
     <MpCost>80</MpCost>
-    <Activate totalDamage="300" maxTargets="20" condEffect="Slowed" condEfffect="Curse" condDuration="6"
-              color="0x00FFFF">
-      Lightning
-    </Activate>
+    <Activate totalDamage="300" maxTargets="20" condEffect="Slowed" condEfffect="Curse" condDuration="6"              color="0x00FFFF">      Lightning    </Activate>
     <Activate effect="Healing" duration="2" range="12">ConditionEffectAura</Activate>
     <Activate effect="Blind" duration="6" range="12">ConditionEffectAura</Activate>
     <Activate effect="Armored" duration="6" range="12">ConditionEffectAura</Activate>
@@ -284,7 +281,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dark Helm of Wrath</DisplayId>
   </Object>
-  <Object type="0x66bc" id="Dark Shield">
+  <Object type="0x900c" id="Dark Shield">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -320,7 +317,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dark Shield</DisplayId>
   </Object>
-  <Object type="0x66bd" id="Dark Ring">
+  <Object type="0x900d" id="Dark Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -338,7 +335,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dark Ring</DisplayId>
   </Object>
-  <Object type="0x66be" id="Battle Axe">
+  <Object type="0x900e" id="Battle Axe">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -365,7 +362,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Battle Axe</DisplayId>
   </Object>
-  <Object type="0x66bf" id="Captain America Sword">
+  <Object type="0x900f" id="Captain America Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -393,7 +390,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Captain America Sword</DisplayId>
   </Object>
-  <Object type="0x66c0" id="Captain America Armor">
+  <Object type="0x9010" id="Captain America Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -409,7 +406,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Captain America Armor</DisplayId>
   </Object>
-  <Object type="0x66c1" id="Captain America Seal">
+  <Object type="0x9011" id="Captain America Seal">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -431,7 +428,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Captain America Seal</DisplayId>
   </Object>
-  <Object type="0x66c2" id="Captain America Ring">
+  <Object type="0x9012" id="Captain America Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -449,7 +446,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Captain America Ring</DisplayId>
   </Object>
-  <Object type="0x66c3" id="Invisi Dagger">
+  <Object type="0x9013" id="Invisi Dagger">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -476,7 +473,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Dagger of invisible pain</DisplayId>
   </Object>
-  <Object type="0x66c4" id="Invisi Prism">
+  <Object type="0x9014" id="Invisi Prism">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -496,7 +493,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Lost Light Prism</DisplayId>
   </Object>
-  <Object type="0x66c5" id="Invisi Armor">
+  <Object type="0x9015" id="Invisi Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -515,7 +512,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Vestment of the Hidden</DisplayId>
   </Object>
-  <Object type="0x66c6" id="Invisi Ring">
+  <Object type="0x9016" id="Invisi Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -533,7 +530,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ring of Gyges</DisplayId>
   </Object>
-  <Object type="0x66c7" id="Fire Staff">
+  <Object type="0x9017" id="Fire Staff">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -560,7 +557,7 @@
     <OldSound>magicShoot</OldSound>
     <DisplayId>Endless Torment Staff</DisplayId>
   </Object>
-  <Object type="0x66c8" id="Fire Robe">
+  <Object type="0x9018" id="Fire Robe">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -577,7 +574,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Hellfire Robe</DisplayId>
   </Object>
-  <Object type="0x66c9" id="Fire Ring">
+  <Object type="0x9019" id="Fire Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -594,7 +591,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ring of Fire</DisplayId>
   </Object>
-  <Object type="0x66ca" id="Assassin Armor">
+  <Object type="0x901a" id="Assassin Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -613,7 +610,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Banished Vest of Slaying</DisplayId>
   </Object>
-  <Object type="0x66cb" id="Assassin Star">
+  <Object type="0x901b" id="Assassin Star">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -648,7 +645,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Murderous Shuriken</DisplayId>
   </Object>
-  <Object type="0x66cc" id="Assassin Ring">
+  <Object type="0x901c" id="Assassin Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -666,7 +663,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Seal of the Creed</DisplayId>
   </Object>
-  <Object type="0x66cd" id="Skull Ring">
+  <Object type="0x901d" id="Skull Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -685,7 +682,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Skull Ring</DisplayId>
   </Object>
-  <Object type="0x66ce" id="War Hammer">
+  <Object type="0x901e" id="War Hammer">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -712,7 +709,7 @@
     <feedPower>0</feedPower>
     <DisplayId>War Hammer</DisplayId>
   </Object>
-  <Object type="0x66cf" id="Winter Bow">
+  <Object type="0x901f" id="Winter Bow">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -741,7 +738,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Winter Bow</DisplayId>
   </Object>
-  <Object type="0x66d0" id="Winter Armor">
+  <Object type="0x9020" id="Winter Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -759,7 +756,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Winter Armor</DisplayId>
   </Object>
-  <Object type="0x66d1" id="Winter Trap">
+  <Object type="0x9021" id="Winter Trap">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -779,7 +776,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Winter Trap</DisplayId>
   </Object>
-  <Object type="0x66d2" id="Winter Ring">
+  <Object type="0x9022" id="Winter Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -797,7 +794,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Winter Ring</DisplayId>
   </Object>
-  <Object type="0x66d3" id="Phoenix Wand">
+  <Object type="0x9023" id="Phoenix Wand">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -821,7 +818,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Wand of the Phoenix</DisplayId>
   </Object>
-  <Object type="0x66d4" id="Unholy Bow">
+  <Object type="0x9024" id="Unholy Bow">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -847,7 +844,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Curse of the Unholy Bow</DisplayId>
   </Object>
-  <Object type="0x66d5" id="Phoenix Ring">
+  <Object type="0x9025" id="Phoenix Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -865,7 +862,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Phoenix Ring</DisplayId>
   </Object>
-  <Object type="0x66d6" id="Unholy Dagger">
+  <Object type="0x9026" id="Unholy Dagger">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -891,7 +888,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Dagger</DisplayId>
   </Object>
-  <Object type="0x66d7" id="Unholy Staff">
+  <Object type="0x9027" id="Unholy Staff">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -919,7 +916,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Staff of the Unholy Church</DisplayId>
   </Object>
-  <Object type="0x66d8" id="Unholy Poison">
+  <Object type="0x9028" id="Unholy Poison">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -939,7 +936,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Poison</DisplayId>
   </Object>
-  <Object type="0x66d9" id="Bloodbath Dagger">
+  <Object type="0x9029" id="Bloodbath Dagger">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -967,7 +964,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Bloodbath Dagger</DisplayId>
   </Object>
-  <Object type="0x66da" id="Bow of Ornias">
+  <Object type="0x902a" id="Bow of Ornias">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -996,7 +993,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Bow of Ornias</DisplayId>
   </Object>
-  <Object type="0x66db" id="Unholy Shield">
+  <Object type="0x902b" id="Unholy Shield">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1031,7 +1028,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Shield</DisplayId>
   </Object>
-  <Object type="0x66dc" id="Unholy Prism">
+  <Object type="0x902c" id="Unholy Prism">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1053,7 +1050,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Prism</DisplayId>
   </Object>
-  <Object type="0x66dd" id="Unholy Tome">
+  <Object type="0x902d" id="Unholy Tome">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1075,7 +1072,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Tome</DisplayId>
   </Object>
-  <Object type="0x66de" id="Unholy Quiver">
+  <Object type="0x902e" id="Unholy Quiver">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1107,7 +1104,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Quiver</DisplayId>
   </Object>
-  <Object type="0x66df" id="Unholy Seal">
+  <Object type="0x902f" id="Unholy Seal">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1131,7 +1128,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Seal</DisplayId>
   </Object>
-  <Object type="0x66e0" id="Unholy Helm">
+  <Object type="0x9030" id="Unholy Helm">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1154,7 +1151,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Helm</DisplayId>
   </Object>
-  <Object type="0x66e1" id="Unholy Short Sword">
+  <Object type="0x9031" id="Unholy Short Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1179,7 +1176,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Short Sword</DisplayId>
   </Object>
-  <Object type="0x66e2" id="Unholy Cloak">
+  <Object type="0x9032" id="Unholy Cloak">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1202,7 +1199,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unholy Cloak</DisplayId>
   </Object>
-  <Object type="0x66e3" id="Boshy Gun">
+  <Object type="0x9033" id="Boshy Gun">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1230,7 +1227,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Boshy Gun</DisplayId>
   </Object>
-  <Object type="0x66e4" id="Flaming Boomerang">
+  <Object type="0x9034" id="Flaming Boomerang">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1258,7 +1255,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Flaming Boomerang</DisplayId>
   </Object>
-  <Object type="0x66e5" id="Pizza Sword">
+  <Object type="0x9035" id="Pizza Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1283,7 +1280,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Pizza Sword</DisplayId>
   </Object>
-  <Object type="0x66e6" id="Pizza Ring">
+  <Object type="0x9036" id="Pizza Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1301,7 +1298,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Pizza Ring</DisplayId>
   </Object>
-  <Object type="0x66e7" id="Pizza Armor">
+  <Object type="0x9037" id="Pizza Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1320,7 +1317,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Pizza Armor</DisplayId>
   </Object>
-  <Object type="0x66e8" id="Pizza Helm">
+  <Object type="0x9038" id="Pizza Helm">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1342,8 +1339,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Pizza Helm</DisplayId>
   </Object>
-
-  <Object type="0x66e9" id="Bow of Janus rage">
+  <Object type="0x9039" id="Bow of Janus rage">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1369,8 +1365,7 @@
     <feedPower>5</feedPower>
     <DisplayId>Bow of Janus rage</DisplayId>
   </Object>
-
-  <Object type="0x66ea" id="Warden Armor">
+  <Object type="0x903a" id="Warden Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1389,8 +1384,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Warden Armor</DisplayId>
   </Object>
-
-  <Object type="0x66eb" id="Eye of Janus">
+  <Object type="0x903b" id="Eye of Janus">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1410,7 +1404,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Eye of Janus</DisplayId>
   </Object>
-  <Object type="0x66ec" id="Key of Rage">
+  <Object type="0x903c" id="Key of Rage">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1433,7 +1427,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Key of Rage</DisplayId>
   </Object>
-  <Object type="0x66ed" id="Steel Shocker">
+  <Object type="0x903d" id="Steel Shocker">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1467,7 +1461,7 @@
     <feedPower>5</feedPower>
     <DisplayId>Steel Shocker</DisplayId>
   </Object>
-  <Object type="0x66ee" id="Short Circuit">
+  <Object type="0x903e" id="Short Circuit">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1487,7 +1481,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Short Circuit</DisplayId>
   </Object>
-  <Object type="0x66ef" id="Iron Protection">
+  <Object type="0x903f" id="Iron Protection">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1506,7 +1500,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Iron Protection</DisplayId>
   </Object>
-  <Object type="0x66f0" id="The Reactor">
+  <Object type="0x9040" id="The Reactor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1525,7 +1519,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Reactor</DisplayId>
   </Object>
-  <Object type="0x66f1" id="Eternal rest">
+  <Object type="0x9041" id="Eternal rest">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1556,7 +1550,7 @@
     <feedPower>5</feedPower>
     <DisplayId>Eternal rest</DisplayId>
   </Object>
-  <Object type="0x66f2" id="Lightweight Leather Armor">
+  <Object type="0x9042" id="Lightweight Leather Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1575,7 +1569,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Lightweight Leather Armor</DisplayId>
   </Object>
-  <Object type="0x66f3" id="Helm of the leader barbarians">
+  <Object type="0x9043" id="Helm of the leader barbarians">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1598,7 +1592,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Helm of the leader barbarians</DisplayId>
   </Object>
-  <Object type="0x66f4" id="Heart Dragon">
+  <Object type="0x9044" id="Heart Dragon">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1615,8 +1609,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Heart Dragon</DisplayId>
   </Object>
-
-  <Object type="0x66f5" id="Forgotten Dagger">
+  <Object type="0x9045" id="Forgotten Dagger">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1640,7 +1633,7 @@
     <feedPower>450</feedPower>
     <DisplayId>Forgotten Dagger</DisplayId>
   </Object>
-  <Object type="0x66f6" id="Dark Prism">
+  <Object type="0x9046" id="Dark Prism">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1660,7 +1653,7 @@
     <feedPower>380</feedPower>
     <DisplayId>Dark Prism</DisplayId>
   </Object>
-  <Object type="0x66f7" id="Astral Hide">
+  <Object type="0x9047" id="Astral Hide">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1676,7 +1669,7 @@
     <feedPower>435</feedPower>
     <DisplayId>Astral Hide</DisplayId>
   </Object>
-  <Object type="0x66f8" id="Cornucopia">
+  <Object type="0x9048" id="Cornucopia">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1694,8 +1687,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Cornucopia</DisplayId>
   </Object>
-
-  <Object type="0x66f9" id="Sadist Blade of the King">
+  <Object type="0x9049" id="Sadist Blade of the King">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1723,7 +1715,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Sadist Blade of the King</DisplayId>
   </Object>
-  <Object type="0x66fa" id="Armor of Masochism">
+  <Object type="0x904a" id="Armor of Masochism">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1741,7 +1733,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Armor of Masochism</DisplayId>
   </Object>
-  <Object type="0x66fb" id="The Kings Crown">
+  <Object type="0x904b" id="The Kings Crown">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1765,7 +1757,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Kings Crown</DisplayId>
   </Object>
-  <Object type="0x66fc" id="Ring of Ashen Matrimony">
+  <Object type="0x904c" id="Ring of Ashen Matrimony">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1782,7 +1774,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ring of Ashen Matrimony</DisplayId>
   </Object>
-  <Object type="0x66fd" id="Staff of the Great Climbing">
+  <Object type="0x904d" id="Staff of the Great Climbing">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1814,7 +1806,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Staff of the Great Climbing</DisplayId>
   </Object>
-  <Object type="0x66fe" id="AvatarRobe">
+  <Object type="0x904e" id="AvatarRobe">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1832,7 +1824,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Robe of the Battle Monk</DisplayId>
   </Object>
-  <Object type="0x66ff" id="AvatarRing">
+  <Object type="0x904f" id="AvatarRing">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1850,7 +1842,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Bloody Legacy</DisplayId>
   </Object>
-  <Object type="0x6700" id="SottlerWeap">
+  <Object type="0x9050" id="SottlerWeap">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1877,7 +1869,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Bent Dagger</DisplayId>
   </Object>
-  <Object type="0x6701" id="SottlerCloak">
+  <Object type="0x9051" id="SottlerCloak">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1901,7 +1893,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Cloak of the Asylum</DisplayId>
   </Object>
-  <Object type="0x6702" id="SottlerArmor">
+  <Object type="0x9052" id="SottlerArmor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1919,7 +1911,7 @@
     <feedPower>435</feedPower>
     <DisplayId>Infected Armor</DisplayId>
   </Object>
-  <Object type="0x6703" id="SottlerRing">
+  <Object type="0x9053" id="SottlerRing">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1936,7 +1928,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Constricting Collar</DisplayId>
   </Object>
-  <Object type="0x6704" id="Gauntlet Mayhem">
+  <Object type="0x9054" id="Gauntlet Mayhem">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1954,7 +1946,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Gauntlet of Mayhem</DisplayId>
   </Object>
-  <Object type="0x6705" id="Gauntlet Chaos">
+  <Object type="0x9055" id="Gauntlet Chaos">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1972,7 +1964,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Gauntlet of Chaos</DisplayId>
   </Object>
-  <Object type="0x6706" id="Sanic Helm">
+  <Object type="0x9056" id="Sanic Helm">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -1994,7 +1986,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Sanic Head</DisplayId>
   </Object>
-  <Object type="0x6707" id="Wand of Pristine Environments">
+  <Object type="0x9057" id="Wand of Pristine Environments">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2024,7 +2016,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Wand of Pristine Environments</DisplayId>
   </Object>
-  <Object type="0x6708" id="ShrimpQuiver">
+  <Object type="0x9058" id="ShrimpQuiver">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2055,7 +2047,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Shrimp Shooter</DisplayId>
   </Object>
-  <Object type="0x6709" id="Staff of Noble Magic">
+  <Object type="0x9059" id="Staff of Noble Magic">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2086,7 +2078,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Staff of Noble Magic</DisplayId>
   </Object>
-  <Object type="0x670a" id="Orb of Heavenly Sight">
+  <Object type="0x905a" id="Orb of Heavenly Sight">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2102,16 +2094,13 @@
     <FameBonus>5</FameBonus>
     <MpCost>125</MpCost>
     <Activate duration="5">StasisBlast</Activate>
-    <Activate effect="Curse" duration="5" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"
-              useWisMod="true">
-      GenericActivate
-    </Activate>
+    <Activate effect="Curse" duration="5" range="5" color="0x808080" target="enemy" center="mouse" visualEffect="8"              useWisMod="true">      GenericActivate    </Activate>
     <Activate effect="Damaging" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
     <Cooldown>4</Cooldown>
     <feedPower>0</feedPower>
     <DisplayId>Orb of Heavenly Sight</DisplayId>
   </Object>
-  <Object type="0x670b" id="Heaven Monk's Apparel">
+  <Object type="0x905b" id="Heaven Monk's Apparel">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2129,7 +2118,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Heaven Monk's Apparel</DisplayId>
   </Object>
-  <Object type="0x670c" id="Necklace of Crystalline Celestial Forces">
+  <Object type="0x905c" id="Necklace of Crystalline Celestial Forces">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2147,8 +2136,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Necklace of Crystalline Celestial Forces</DisplayId>
   </Object>
-
-  <Object type="0x670d" id="Lucky Sword">
+  <Object type="0x905d" id="Lucky Sword">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2175,7 +2163,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Shalaylee</DisplayId>
   </Object>
-  <Object type="0x670e" id="Lucky Armor">
+  <Object type="0x905e" id="Lucky Armor">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2193,7 +2181,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unlucky Leprechaun's Coat</DisplayId>
   </Object>
-  <Object type="0x670f" id="Lucky Ring">
+  <Object type="0x905f" id="Lucky Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2211,7 +2199,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Unlucky Leprechaun's Hat</DisplayId>
   </Object>
-  <Object type="0x6710" id="Lucky Seal">
+  <Object type="0x9060" id="Lucky Seal">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2232,7 +2220,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Four-Leaf Seal</DisplayId>
   </Object>
-  <Object type="0x6711" id="Ring of Boiling Lava">
+  <Object type="0x9061" id="Ring of Boiling Lava">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2252,7 +2240,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Ring of Boiling Lava</DisplayId>
   </Object>
-  <Object type="0x6712" id="Seal of Splashing Lava">
+  <Object type="0x9062" id="Seal of Splashing Lava">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2265,20 +2253,14 @@
     <Usable />
     <BagType>6</BagType>
     <MpCost>100</MpCost>
-    <Activate effect="Healing" duration="5" range="6" color="0x000000" target="player" center="player" visualEffect="5"
-              useWisMod="true">
-      GenericActivate
-    </Activate>
-    <Activate effect="Damaging" duration="3" range="6" color="0xffffff" target="player" center="player"
-              visualEffect="0" useWisMod="true">
-      GenericActivate
-    </Activate>
+    <Activate effect="Healing" duration="5" range="6" color="0x000000" target="player" center="player" visualEffect="5"              useWisMod="true">      GenericActivate    </Activate>
+    <Activate effect="Damaging" duration="3" range="6" color="0xffffff" target="player" center="player"              visualEffect="0" useWisMod="true">      GenericActivate    </Activate>
     <Activate effect="Armored" duration="2" useWisMod="true">ConditionEffectSelf</Activate>
     <Activate stat="0" amount="75" duration="3" range="6" noStack="true" useWisMod="true">StatBoostAura</Activate>
     <feedPower>750</feedPower>
     <DisplayId>Seal of Splashing Lava</DisplayId>
   </Object>
-  <Object type="0x6713" id="Steel Armor of Magma">
+  <Object type="0x9063" id="Steel Armor of Magma">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2297,7 +2279,7 @@
     <feedPower>750</feedPower>
     <DisplayId>Steel Armor of Magma</DisplayId>
   </Object>
-  <Object type="0x6714" id="Flaming Sword of Fury">
+  <Object type="0x9064" id="Flaming Sword of Fury">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2323,7 +2305,7 @@
     <feedPower>750</feedPower>
     <DisplayId>Flaming Sword of Fury</DisplayId>
   </Object>
-  <Object type="0x6715" id="Skull of the Cubes">
+  <Object type="0x9065" id="Skull of the Cubes">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2342,7 +2324,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Skull of the Cubes</DisplayId>
   </Object>
-  <Object type="0x6716" id="Dagger of the Flaming Stinger">
+  <Object type="0x9066" id="Dagger of the Flaming Stinger">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2367,7 +2349,7 @@
     <feedPower>450</feedPower>
     <DisplayId>Dagger of the Flaming Stinger</DisplayId>
   </Object>
-  <Object type="0x6717" id="Prism of Bright Star">
+  <Object type="0x9067" id="Prism of Bright Star">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2386,7 +2368,7 @@
     <feedPower>400</feedPower>
     <DisplayId>Prism of Bright Star</DisplayId>
   </Object>
-  <Object type="0x6718" id="Armor from the Bowels of Hell">
+  <Object type="0x9068" id="Armor from the Bowels of Hell">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2403,7 +2385,7 @@
     <feedPower>700</feedPower>
     <DisplayId>Armor from the Bowels of Hell</DisplayId>
   </Object>
-  <Object type="0x6719" id="The Ring of Flaming Power">
+  <Object type="0x9069" id="The Ring of Flaming Power">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2422,7 +2404,7 @@
     <feedPower>600</feedPower>
     <DisplayId>The Ring of Flaming Power</DisplayId>
   </Object>
-  <Object type="0x671a" id="Torn Garment of Esben">
+  <Object type="0x906a" id="Torn Garment of Esben">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2440,7 +2422,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Torn Garment of Esben</DisplayId>
   </Object>
-  <Object type="0x671b" id="The Frozen Ring of Esben">
+  <Object type="0x906b" id="The Frozen Ring of Esben">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2457,7 +2439,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Frozen Ring of Esben</DisplayId>
   </Object>
-  <Object type="0x671c" id="Hairy Karambit">
+  <Object type="0x906c" id="Hairy Karambit">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2486,7 +2468,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Hairy Karambit</DisplayId>
   </Object>
-  <Object type="0x671d" id="Toad Bile Cannister">
+  <Object type="0x906d" id="Toad Bile Cannister">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2504,7 +2486,7 @@
     <feedPower>450</feedPower>
     <DisplayId>Toad Bile Cannister</DisplayId>
   </Object>
-  <Object type="0x671e" id="Skinned Toad Hide">
+  <Object type="0x906e" id="Skinned Toad Hide">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2521,7 +2503,7 @@
     <feedPower>500</feedPower>
     <DisplayId>Skinned Toad Armor</DisplayId>
   </Object>
-  <Object type="0x671f" id="Frog's Eye Ring">
+  <Object type="0x906f" id="Frog's Eye Ring">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2539,7 +2521,7 @@
     <feedPower>450</feedPower>
     <DisplayId>Frog's Eye Ring</DisplayId>
   </Object>
-  <Object type="0x6720" id="Ent Ancients Log">
+  <Object type="0x9070" id="Ent Ancients Log">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2567,7 +2549,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ent Ancients Log</DisplayId>
   </Object>
-  <Object type="0x6721" id="Corpse of an Ent Ancient">
+  <Object type="0x9071" id="Corpse of an Ent Ancient">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2588,7 +2570,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Corpse of an Ent Ancient</DisplayId>
   </Object>
-  <Object type="0x6722" id="Ripe Apple">
+  <Object type="0x9072" id="Ripe Apple">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2608,7 +2590,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Ripe Apple</DisplayId>
   </Object>
-  <Object type="0x6723" id="Clump of Bark">
+  <Object type="0x9073" id="Clump of Bark">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2644,7 +2626,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Clump of Bark</DisplayId>
   </Object>
-  <Object type="0x6724" id="FireStorm">
+  <Object type="0x9074" id="FireStorm">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2672,7 +2654,7 @@
     <feedPower>0</feedPower>
     <DisplayId>FireStorm</DisplayId>
   </Object>
-  <Object type="0x6725" id="Mega Blaster">
+  <Object type="0x9075" id="Mega Blaster">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2700,7 +2682,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Mega Blaster</DisplayId>
   </Object>
-  <Object type="0x6726" id="Kid Cape">
+  <Object type="0x9076" id="Kid Cape">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2721,7 +2703,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Kid Cape</DisplayId>
   </Object>
-  <Object type="0x6727" id="ZSaber">
+  <Object type="0x9077" id="ZSaber">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -2748,7 +2730,7 @@
     <feedPower>5</feedPower>
     <DisplayId>Z-Saber</DisplayId>
   </Object>
-  <Object type="0x6728" id="Staff of Insanity">
+  <Object type="0x9078" id="Staff of Insanity">
     <Class>Equipment</Class>
     <Item />
     <Sound>weapon/wand_of_death</Sound>
@@ -2774,7 +2756,7 @@
     <BagType>6</BagType>
     <FameBonus>5</FameBonus>
   </Object>
-  <Object type="0x6729" id="Gladius of Hell's Forge">
+  <Object type="0x9079" id="Gladius of Hell's Forge">
     <Class>Equipment</Class>
     <Item/>
     <Texture>
@@ -2802,7 +2784,7 @@
     <feedPower>450</feedPower>
     <DisplayId>Gladius of Hell's Forge</DisplayId>
   </Object>
-  <Object type="0x672a" id="Unholy Wand">
+  <Object type="0x907a" id="Unholy Wand">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2831,7 +2813,7 @@
     <FameBonus>6</FameBonus>
     <DisplayId>Unholy Wand</DisplayId>
   </Object>
-  <Object type="0x672b" id="Wavebreaker">
+  <Object type="0x907b" id="Wavebreaker">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2862,7 +2844,7 @@
     <FameBonus>6</FameBonus>
     <DisplayId>Wavebreaker</DisplayId>
   </Object>
-  <Object type="0x672c" id="Heavenly Hammer">
+  <Object type="0x907c" id="Heavenly Hammer">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2889,7 +2871,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Heavenly Hammer</DisplayId>
   </Object>
-  <Object type="0x672d" id="Tremor Staff" setType="0x2BA" setName="Sky Guardian Set">
+  <Object type="0x907d" id="Tremor Staff" setType="0x2BA" setName="Sky Guardian Set">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2917,7 +2899,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Tremor Staff</DisplayId>
   </Object>
-  <Object type="0x672e" id="Hymn of the Sky" setType="0x2BA" setName="Sky Guardian Set">
+  <Object type="0x907e" id="Hymn of the Sky" setType="0x2BA" setName="Sky Guardian Set">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2944,7 +2926,7 @@
     <feedPower>380</feedPower>
     <DisplayId>Hymn of the Sky</DisplayId>
   </Object>
-  <Object type="0x672f" id="Robe of Storms" setType="0x2BA" setName="Sky Guardian Set">
+  <Object type="0x907f" id="Robe of Storms" setType="0x2BA" setName="Sky Guardian Set">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2962,7 +2944,7 @@
     <feedPower>0</feedPower>
     <DisplayId>Robe of Storms</DisplayId>
   </Object>
-  <Object type="0x6730" id="The Frozen Compass" setType="0x2BA" setName="Sky Guardian Set">
+  <Object type="0x9080" id="The Frozen Compass" setType="0x2BA" setName="Sky Guardian Set">
     <Class>Equipment</Class>
     <Item />
     <Texture>
@@ -2980,7 +2962,7 @@
     <feedPower>0</feedPower>
     <DisplayId>The Frozen Compass</DisplayId>
   </Object>
-<Object type="0x6731" id="Band of Ouroboros">
+  <Object type="0x9081" id="Band of Ouroboros">
     <DisplayId>Band of Ouroboros</DisplayId>
     <Class>Equipment</Class>
     <Item/>
@@ -3001,4 +2983,98 @@
     <BagType>4</BagType>
     <feedPower>500</feedPower>
   </Object>
-</Objects>
+  <Object type="0x9082" id="Crimson Doom Shield">
+    <Class>Equipment</Class>
+    <Item/>
+    <Texture>
+      <File>LunarDoomShield</File>
+    </Texture>
+    <SlotType>5</SlotType>
+    <Description>Devoted's Doom Shield</Description>
+    <Sound>spell/fire_spray</Sound>
+    <Projectile>
+      <ObjectId>Souls1</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>400</MaxDamage>
+      <LifetimeMS>230</LifetimeMS>
+      <Size>140</Size>
+      <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+      <ConditionEffect duration="4">Slowed</ConditionEffect>
+      <MultiHit/>
+      <PassesCover/>
+      <ParticleTrail/>
+    </Projectile>
+    <ActivateOnEquip stat="21" amount="14">IncrementStat</ActivateOnEquip>
+    <ActivateOnEquip stat="0" amount="60">IncrementStat</ActivateOnEquip>
+    <ConditionEffect duration="4">Armor Broken</ConditionEffect>
+    <ConditionEffect duration="4">Slowed</ConditionEffect>
+    <Usable/>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <MpCost>80</MpCost>
+    <Activate>Shoot</Activate>
+    <NumProjectiles>5</NumProjectiles>
+    <feedPower>0</feedPower>
+    <DisplayId>Crimson Doom Shield</DisplayId>
+  </Object>
+  <Object type="0x9083" id="Crimson Doom Sword">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x01</Index>
+    </Texture>
+    <SlotType>1</SlotType>
+    <Description>Devoted's Crimson Sword.</Description>
+    <RateOfFire>1</RateOfFire>
+    <OldSound>weapon/mithril_sword</OldSound>
+    <Projectile>
+      <ObjectId>Souls2</ObjectId>
+      <Speed>130</Speed>
+      <LifetimeMS>360</LifetimeMS>
+      <MinDamage>160</MinDamage>
+      <MaxDamage>200</MaxDamage>
+      <MultiHit />
+      <ArmorPiercing />
+    </Projectile>
+    <BagType>6</BagType>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>10</ArcGap>
+    <FameBonus>6</FameBonus>
+    <OldSound>bladeSwing</OldSound>
+    <feedPower>0</feedPower>
+    <DisplayId>Guardian Sword</DisplayId>
+    <PlayerExclusive>Sottler</PlayerExclusive>
+  </Object>
+  <Object type="0x9084" id="Predator Bow">
+    <Class>Equipment</Class>
+    <Item />
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x02</Index>
+    </Texture>
+    <SlotType>3</SlotType>
+    <Description>Hubbler's Predator Bow</Description>
+    <RateOfFire>1.25</RateOfFire>
+    <OldSound>weapon/blaster</OldSound>
+    <Projectile>
+      <ObjectId>BlasterProj</ObjectId>
+      <Speed>160</Speed>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>120</MaxDamage>
+      <LifetimeMS>500</LifetimeMS>
+      <Frequency>10</Frequency>
+      <Size>85</Size>
+      <MultiHit />
+    </Projectile>
+    <NumProjectiles>2</NumProjectiles>
+    <ArcGap>7</ArcGap>
+    <BagType>6</BagType>
+    <FameBonus>6</FameBonus>
+    <feedPower>0</feedPower>
+    <DisplayId>Predator Bow</DisplayId>
+  </Object>
+
+
+</Lunar_Items>

@@ -18,6 +18,7 @@ using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.realm.worlds;
 using wServer.realm.entities.merchant;
+using wServer.realm.entities.marketer;
 
 #endregion
 
@@ -108,6 +109,7 @@ namespace wServer.realm
         public ConcurrentDictionary<int, Offer> Marketplace_Consumables { get; set; }
         public List<int> InUse { get; set; }
         public List<int> searched { get; set; }
+        public List<Marketer> marketers = new List<Marketer>();
         private ConcurrentDictionary<string, Vault> vaults;
 
         public Random Random { get; }
@@ -186,8 +188,7 @@ namespace wServer.realm
             Marketplace_Armor = new ConcurrentDictionary<int, Offer>();
             Marketplace_Rings = new ConcurrentDictionary<int, Offer>();
             Marketplace_Consumables = new ConcurrentDictionary<int, Offer>();
-            searched = new List<int>();
-            InUse = new List<int>();
+            
             log.Info("Loading Offers from database");
             Database.DoActionAsync(db =>
             {
@@ -293,14 +294,15 @@ namespace wServer.realm
             AddWorld(World.TUT_ID, new Tutorial(true));
             AddWorld(World.DAILY_QUEST_ID, new DailyQuestRoom());
             
-
+            
             Monitor = new RealmPortalMonitor(this);
 
             Task.Factory.StartNew(() => GameWorld.AutoName(1, true)).ContinueWith(_ => AddWorld(_.Result), TaskScheduler.Default);
 
             Chat = new ChatManager(this);
             Commands = new CommandManager(this);
-            
+            searched = new List<int>();
+            InUse = new List<int>();
             log.Info("Realm Manager initialized.");
         }
 

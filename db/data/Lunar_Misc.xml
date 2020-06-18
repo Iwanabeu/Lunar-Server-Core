@@ -1,5 +1,5 @@
-<Objects>
-<Object type="0xb000" id="Marketer">
+<Lunar_Misc>
+  <Object type="0xd093" id="Marketer">
     <Class>Marketer</Class>
     <Texture>
       <File>lofiObj2</File>
@@ -7,4 +7,5 @@
     </Texture>
     <DisplayId>Market</DisplayId>
   </Object>
-</Objects>
+
+</Lunar_Misc>

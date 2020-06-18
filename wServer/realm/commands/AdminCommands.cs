@@ -14,6 +14,7 @@ using wServer.realm.setpieces;
 using wServer.realm.worlds;
 using System.Collections.Concurrent;
 using wServer.realm.entities.merchant;
+using wServer.realm.entities.marketer;
 
 #endregion
 
@@ -310,6 +311,7 @@ namespace wServer.realm.commands
 
         }
     }
+
 
     internal class TpCommand : Command
     {
@@ -1503,6 +1505,42 @@ namespace wServer.realm.commands
     }
 
     // custom commands for Lunar:
+    class GiveById : Command
+    {
+        public GiveById()
+            : base("giveID", 3)
+        { }
+        public string Command { get { return "giveID"; } }
+        public int RequiredRank { get { return 3; } }
+
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (args.Length != 1)
+            {
+                player.SendInfo("You must give an item id");
+                return false;
+            }
+            for (int i = 4; i < player.Inventory.Length;i++)
+            {
+                if (player.Inventory[i] == null)
+                {
+                    Item item;
+                    if (!player.Manager.GameData.Items.TryGetValue(ushort.Parse(args[0]), out item))
+                    {
+                        player.SendInfo("Item not found!");
+                        return false;
+                    }
+                    player.Inventory[i] = item;
+                    player.UpdateCount++;
+                    player.SaveToCharacter();
+                    player.SendInfo("Success!");
+                    return true;
+                }
+            }
+            player.SendInfo("No empty inventory space to put item in!");
+            return false;
+        }
+    }
     class MaxStar : Command
     {
         public MaxStar()
@@ -2762,12 +2800,12 @@ namespace wServer.realm.commands
                 player.SendInfo("/sell <slot number> <price>. Slotnumber 1-16, price 1-" + int.MaxValue);
                 return false;
             }
-            if ((slot > 8 && !player.HasBackpack) || player.Inventory[slot+3] == null)
+            if ((slot > 8 && !player.HasBackpack) || player.Inventory[slot + 3] == null)
             {
                 player.SendInfo("That item doesn't exist.");
                 return false;
             }
-            if (player.Inventory[slot+3].Soulbound)
+            if (player.Inventory[slot + 3].Soulbound)
             {
                 player.SendInfo("You cannot sell soulbound items.");
                 return false;
@@ -2782,46 +2820,8 @@ namespace wServer.realm.commands
             int itemId = toSell.ObjectType;
             String accId = player.AccountId;
             int itemtype = toSell.SlotType;
-            SellType type;
-            switch (itemtype)
-            {
-                case 24:
-                case 2:
-                case 3:
-                case 1:
-                case 17:
-                case 8:
-                    type = SellType.Weapon;
-                    break;
-                case 13:
-                case 15:
-                case 11:
-                case 4:
-                case 16:
-                case 5:
-                case 12:
-                case 18:
-                case 19:
-                case 20:
-                case 21:
-                case 22:
-                case 23:
-                case 25:
-                    type = SellType.Ability;
-                    break;
-                case 6:
-                case 7:
-                case 14:
-                    type = SellType.Armor;
-                    break;
-                case 9:
-                    type = SellType.Ring;
-                    break;
-                default:
-                    type = SellType.Consumable;
-                    break;
+            SellType type = (SellType)player.ItemToType(toSell);
 
-            }
             int offerid = -1;
             player.Manager.Database.DoActionAsync(db =>
             {
@@ -2886,6 +2886,120 @@ namespace wServer.realm.commands
             player.SaveToCharacter();
             player.UpdateCount++;
             player.SendInfo("Success!");
+            return true;
+        }
+    }
+    class RefundItem : Command
+    {
+        public RefundItem()
+            : base("refund")
+        {
+        }
+        public string Command { get { return "refund"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (!player.Owner.Name.Equals("Marketplace"))
+            {
+                player.SendInfo("You must be in the market to refund an item!");
+                return false;
+            }
+            if (args.Length < 1)
+            {
+                player.SendInfo("You must put an item name to refund.");
+                return false;
+            }
+            int slot = -1;
+            for (int i = 4; i < (player.HasBackpack ? 19 : 11); i++)
+            {
+                if (player.Inventory[i] != null) continue;
+                slot = i;
+                break;
+            }
+            if (slot == -1)
+            {
+                player.SendInfo("Your inventory is full!");
+                return false;
+            }
+            ushort objType;
+            Dictionary<string, ushort> icdatas = new Dictionary<string, ushort>(player.Manager.GameData.IdToObjectType,
+                    StringComparer.OrdinalIgnoreCase);
+            if (!icdatas.TryGetValue(String.Join(" ", args).Trim(), out objType))
+            {
+                player.SendError("Unknown type!");
+                return false;
+            }
+            Item item;
+            if (player.Manager.GameData.Items.TryGetValue(objType, out item) && player.ItemToType(item) != -1)
+            {
+                int selltype = player.ItemToType(item);
+                player.Manager.Database.DoActionAsync(db =>
+                {
+                    MySqlCommand cmd = db.CreateQuery();
+                    cmd.CommandText = "SELECT * FROM offers WHERE accId = @accId AND Type=@type ORDER BY Value DESC LIMIT 1;";
+                    cmd.Parameters.AddWithValue("@accId", player.AccountId);
+                    cmd.Parameters.AddWithValue("@type", selltype.ToString());
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    rdr.Read();
+                    if (rdr.HasRows)
+                    {
+                        int offerId = rdr.GetInt32("offerId");
+                        rdr.Close();
+                        cmd = db.CreateQuery();
+                        cmd.CommandText = "DELETE FROM offers WHERE offerId=@offerId;";
+                        cmd.Parameters.AddWithValue("@offerId", offerId.ToString());
+                        cmd.ExecuteNonQuery();
+                        Offer temp;
+                        player.Manager.InitializeMarket();
+
+                        foreach (Marketer m in player.Manager.marketers)
+                        {
+                            if (m.SellId == item.ObjectType)
+                            {
+                                m.checkPrices();
+
+                            }
+                        }
+                        player.Inventory[slot] = item;
+                        player.UpdateCount++;
+                        player.SaveToCharacter();
+                        player.SendInfo("Success!");
+                    }
+                    else
+                    {
+                        rdr.Close();
+                        player.SendInfo("You don't have any offers for that item!");
+                    }
+                });
+                return true;
+            }
+            player.SendInfo("Item not recognized!");
+            return false;
+        }
+
+    }
+    class SearchItem : Command
+    {
+        public SearchItem()
+            : base("search")
+        {
+        }
+        public string Command { get { return "search"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (!player.Owner.Name.Equals("Marketplace"))
+            {
+                player.SendInfo("You must be in the market to search for an item!");
+                return false;
+            }
+            ushort objType;
+            Dictionary<string, ushort> icdatas = new Dictionary<string, ushort>(player.Manager.GameData.IdToObjectType,
+                    StringComparer.OrdinalIgnoreCase);
+            if (!icdatas.TryGetValue(String.Join(" ", args).Trim(), out objType))
+            {
+                player.SendError("Unknown type!");
+                return false;
+            }
+            player.Manager.searched.Add((int)objType);
             return true;
         }
     }

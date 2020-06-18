@@ -163,6 +163,7 @@
     <Compile Include="logic\db\BehaviorDb.ForestMaze.cs" />
     <Compile Include="logic\db\BehaviorDb.GhostShip.cs" />
     <Compile Include="logic\db\BehaviorDb.Lab.cs" />
+    <Compile Include="logic\db\BehaviorDb.LostHalls.cs" />
     <Compile Include="logic\db\BehaviorDb.Lotll.cs" />
     <Compile Include="logic\db\BehaviorDb.Nexus.cs" />
     <Compile Include="logic\db\BehaviorDb.OryxCastle.cs" />
@@ -464,6 +465,7 @@
     <Compile Include="realm\worlds\ForestMaze.cs" />
     <Compile Include="realm\worlds\GuildHall.cs" />
     <Compile Include="realm\worlds\DailyQuestRoom.cs" />
+    <Compile Include="realm\worlds\LostHalls.cs" />
     <Compile Include="realm\worlds\MadLab.cs" />
     <Compile Include="realm\worlds\Marketplace.cs" />
     <Compile Include="realm\worlds\OryxsChamber.cs" />

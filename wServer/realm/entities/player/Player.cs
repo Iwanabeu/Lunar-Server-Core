@@ -245,7 +245,81 @@ namespace wServer.realm.entities.player
             set { LootTierBoostTimeLeft = value ? LootTierBoostTimeLeft : 0.0f; }
         }
         public float LootTierBoostTimeLeft { get; set; }
+        public int ItemToType(Item i)
+        {
+            int itemtype = i.SlotType;
+            switch (itemtype)
+            {
+                case 24:
+                case 2:
+                case 3:
+                case 1:
+                case 17:
+                case 8:
+                    return 0;
+                case 13:
+                case 15:
+                case 11:
+                case 4:
+                case 16:
+                case 5:
+                case 12:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 25:
+                    return 1;
+                case 6:
+                case 7:
+                case 14:
+                    return 2;
+                case 9:
+                    return 3;
+                default:
+                    return 4;
 
+            }
+        }
+        public int slotToType(int itemtype)
+        {
+            switch (itemtype)
+            {
+                case 24:
+                case 2:
+                case 3:
+                case 1:
+                case 17:
+                case 8:
+                    return 0;
+                case 13:
+                case 15:
+                case 11:
+                case 4:
+                case 16:
+                case 5:
+                case 12:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 25:
+                    return 1;
+                case 6:
+                case 7:
+                case 14:
+                    return 2;
+                case 9:
+                    return 3;
+                default:
+                    return 4;
+
+            }
+        }
         public bool XpBoosted { get; set; }
         public float XpBoostTimeLeft { get; set; }
 

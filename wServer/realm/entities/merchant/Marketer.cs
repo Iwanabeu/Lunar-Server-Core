@@ -65,6 +65,7 @@ namespace wServer.realm.entities.marketer
             ResolveSellId();
             refresh();
             UpdateCount++;
+            Manager.marketers.Add(this);
             //if (SellId == -1) Owner.LeaveWorld(this);
         }
 
@@ -185,12 +186,31 @@ namespace wServer.realm.entities.marketer
                     UpdateCount++;
                 }
 
+                switch (this.SellType)
+                {
+                    case 0:
+                        this.list = Manager.Marketplace_Weapons;
+                        break;
+                    case 1:
+                        this.list = Manager.Marketplace_Abilities;
+                        break;
+                    case 2:
+                        this.list = Manager.Marketplace_Armor;
+                        break;
+                    case 3:
+                        this.list = Manager.Marketplace_Rings;
+                        break;
+                    case 4:
+                        this.list = Manager.Marketplace_Consumables;
+                        break;
 
+                }
                 tickcount++;
                 if (tickcount % (Manager?.TPS * 10) == 0) //once per minute after spawning
                 {
 
                     refresh();
+                    checkPrices();
                     UpdateCount++;
                 }
                 else
@@ -214,51 +234,22 @@ namespace wServer.realm.entities.marketer
         public void checkPrices()
 
         {
-
-            if (this.Owner == null || this.offer == null || this.SellId == -1 || this.list == null || this.list.IsEmpty) return;
-            switch (this.SellType)
+            if (this.Owner == null || this.offer == null || this.SellId == -1 ) { refresh(); return; }
+            
+            if ( this.list == null || this.list.IsEmpty || !this.list.ContainsKey(this.SellId)) { refresh(); return; }
+            if (list[this.SellId].Price < this.Price)
             {
-                case 0:
-                    if (Manager.Marketplace_Weapons[this.SellId].Price < this.Price)
-                    {
-                        this.offer = Manager.Marketplace_Weapons[this.SellId];
-                        this.Price = offer.Price;
-                    }
-                    break;
-                case 1:
-                    if (Manager.Marketplace_Abilities[this.SellId].Price < this.Price)
-                    {
-                        this.offer = Manager.Marketplace_Abilities[this.SellId];
-                        this.Price = offer.Price;
-                    }
-                    break;
-                case 2:
-                    if (Manager.Marketplace_Armor[this.SellId].Price < this.Price)
-                    {
-                        this.offer = Manager.Marketplace_Armor[this.SellId];
-                        this.Price = offer.Price;
-                    }
-                    break;
-                case 3:
-                    if (Manager.Marketplace_Rings[this.SellId].Price < this.Price)
-                    {
-                        this.offer = Manager.Marketplace_Rings[this.SellId];
-                        this.Price = offer.Price;
-                    }
-                    break;
-                case 4:
-                    if (Manager.Marketplace_Consumables[this.SellId].Price < this.Price)
-                    {
-                        this.offer = Manager.Marketplace_Consumables[this.SellId];
-                        this.Price = offer.Price;
-                    }
-                    break;
+                this.offer = list[this.SellId];
+                this.Price = offer.Price;
+                this.UpdateCount++;
 
             }
+
         }
 
         public void refresh()
         {
+
             if (list == null || list.IsEmpty) { this.ResolveSellId(); this.SellId = 0xb000; return; }
             foreach (int demand in Manager.searched)
             {

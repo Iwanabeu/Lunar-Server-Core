@@ -487,14 +487,22 @@ namespace wServer
 
         private void ExportXmls()
         {
-            if (File.Exists(Environment.CurrentDirectory + @"\dat0.xml")) File.Delete(Environment.CurrentDirectory + @"\dat0.xml");
+            String[] filestodelete = { @"\dat0.xml", @"\dat1.xml", @"\EquipmentSets.xml", @"\Lunar_Items.xml", @"\Lunar_Misc.xml",@"\Lunar_Proj.xml" };
+            foreach (String filename in filestodelete)
+            {
+                if (File.Exists(Environment.CurrentDirectory + filename)) File.Delete(Environment.CurrentDirectory + filename);
+            }
+            /*if (File.Exists(Environment.CurrentDirectory + @"\dat0.xml")) File.Delete(Environment.CurrentDirectory + @"\dat0.xml");
             if (File.Exists(Environment.CurrentDirectory + @"\dat1.xml")) File.Delete(Environment.CurrentDirectory + @"\dat1.xml");
             if (File.Exists(Environment.CurrentDirectory + @"\EquipmentSets.xml")) File.Delete(Environment.CurrentDirectory + @"\EquipmentSets.xml");
+            if (File.Exists(Environment.CurrentDirectory + @"\Lunar_Items.xml")) File.Delete(Environment.CurrentDirectory + @"\Lunar_Items.xml");*/
             string[] bins = Directory.GetFiles(Environment.CurrentDirectory, "*.bin");
             string groundxml = "<GroundTypes>";
             string equipentsetsxml = "<EquipmentSets>";
             string objectxml = "<Objects>";
-
+            string lunar_items = "<Lunar_Items>";
+            string lunar_misc = "<Lunar_Misc>";
+            string lunar_proj = "<Lunar_Proj>";
             foreach (var bin in bins)
             {
                 try
@@ -515,6 +523,15 @@ namespace wServer
                             case 2:
                                 equipentsetsxml += xml;
                                 break;
+                            case 3:
+                                lunar_items += xml;
+                                break;
+                            case 4:
+                                lunar_misc += xml;
+                                break;
+                            case 5:lunar_proj += xml;
+                                break;
+
                         }
 
                         using (StreamWriter fullxml = new StreamWriter("dat1.xml"))
@@ -525,6 +542,15 @@ namespace wServer
 
                         using (StreamWriter fullxml = new StreamWriter("EquipmentSets.xml"))
                             fullxml.WriteLine(equipentsetsxml + "</EquipmentSets>");
+
+                        using (StreamWriter fullxml = new StreamWriter("Lunar_Items.xml"))
+                            fullxml.WriteLine(lunar_items + "</Lunar_Items>");
+
+                        using (StreamWriter fullxml = new StreamWriter("Lunar_Misc.xml"))
+                            fullxml.WriteLine(lunar_misc + "</Lunar_Misc>");
+
+                        using (StreamWriter fullxml = new StreamWriter("Lunar_Proj.xml"))
+                            fullxml.WriteLine(lunar_proj + "</Lunar_Proj>");
                     }
                 }
                 catch (Exception ex)
@@ -564,6 +590,33 @@ namespace wServer
                     input = input.Replace("</EquipmentSets>", ""); //<?xml version="1.0" encoding="ISO-8859-1"?>
                     input = input.Replace("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>", "");
                     *type = 2;
+
+                    return input;
+                }
+                else if (input.Contains("<Lunar_Items>"))
+                {
+                    input = input.Replace("<Lunar_Items>", "");
+                    input = input.Replace("</Lunar_Items>", "");
+                    input = input.Replace("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>", "");
+                    *type = 3;
+
+                    return input;
+                }
+                else if (input.Contains("<Lunar_Misc>"))
+                {
+                    input = input.Replace("<Lunar_Misc>", "");
+                    input = input.Replace("</Lunar_Misc>", "");
+                    input = input.Replace("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>", "");
+                    *type = 4;
+
+                    return input;
+                }
+                else if (input.Contains("<GroundTypes>"))
+                {
+                    input = input.Replace("<Lunar_Proj>", "");
+                    input = input.Replace("</Lunar_Proj>", "");
+                    input = input.Replace("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>", "");
+                    *type = 5;
 
                     return input;
                 }

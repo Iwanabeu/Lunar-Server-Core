@@ -48,6 +48,7 @@ namespace wServer.logic.behaviors
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
+            if ((int)host.X == (int)X && (int)host.Y == (int)Y) return;
             if (instant) return;
             if (!returned)
             {
