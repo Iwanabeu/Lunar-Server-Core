@@ -79675,7 +79675,7 @@
     </AltTexture>
     <DisplayId>Marble Colossus</DisplayId>
     <Size>140</Size>
-    <MaxHitPoints>250000</MaxHitPoints>
+    <MaxHitPoints>10000000</MaxHitPoints>
     <Defense>50</Defense>
     <Quest/>
     <God/>
@@ -79693,6 +79693,8 @@
       <Damage>200</Damage>
       <Speed>80</Speed>
       <LifetimeMS>3000</LifetimeMS>
+      <Amplitude>0.5</Amplitude>
+      <Frequency>8</Frequency>
       <ConditionEffect duration="2">Stunned</ConditionEffect>
       <Boomerang/>
     </Projectile>
@@ -81077,6 +81079,35 @@
       <MultiHit/>
     </Projectile>
   </Object>
+  <Object type="0xb070" id="LH Colossus Rock 15">
+    <DisplayId>Marble Colossus Rock</DisplayId>
+    <Class>Character</Class>
+    <NoMiniMap/>
+    <Enemy/>
+    <Texture>
+      <File>lostHallsObjects8x8</File>
+      <Index>31</Index>
+    </Texture>
+    <AltTexture id="1">
+      <Texture>
+        <File>lostHallsObjects8x8</File>
+        <Index>0x1e3</Index>
+      </Texture>
+    </AltTexture>
+    <Invincible/>
+    <Z>0.2</Z>
+    <Flying/>
+    <Sound id="0">spell/fire_spray</Sound>
+    <Projectile id="0">
+      <ObjectId>Colossal Spike</ObjectId>
+      <Damage>70</Damage>
+      <Speed>80</Speed>
+      <LifetimeMS>1000</LifetimeMS>
+      <MultiHit/>
+      <ArmorPiercing/>
+    </Projectile>
+  </Object>
+
   <Object type="0xb03a" id="LH Marble Core 1">
     <Class>Character</Class>
     <Enemy/>

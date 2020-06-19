@@ -3003,4 +3003,17 @@ namespace wServer.realm.commands
             return true;
         }
     }
+    class CountEnemies : Command
+    {
+        public CountEnemies()
+           : base("count", 3)
+        {
+        }
+        public string Command { get { return "count"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            player.SendInfo(player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase(String.Join(" ", args))).Count().ToString());
+            return true;
+        }
+    }
 }

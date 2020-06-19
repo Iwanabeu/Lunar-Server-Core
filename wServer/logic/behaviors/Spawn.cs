@@ -16,10 +16,12 @@ namespace wServer.logic.behaviors
         private readonly int maxChildren;
         private Cooldown coolDown;
         private int cooldownOffset = -1;
+        private readonly string child;
 
         public Spawn(string children, int maxChildren = 5, double initialSpawn = 0.5, Cooldown coolDown = new Cooldown() )
         {
             this.children = BehaviorDb.InitGameData.IdToObjectType[children];
+            this.child = children;
             this.maxChildren = maxChildren;
             this.initialSpawn = (int) (maxChildren*initialSpawn);
             this.coolDown = coolDown.Normalize(0);
@@ -59,11 +61,10 @@ namespace wServer.logic.behaviors
             SpawnState spawn = (SpawnState) state;
             if (host is Enemy)
             {
-                spawn.CurrentNumber = host.Owner.Enemies.Values.Where(e => e.Name.Equals(children)).Count();
+                spawn.CurrentNumber = host.Owner.Enemies.Values.Where(e => e.Name.EqualsIgnoreCase(this.child)).Count();
             }
             if (spawn.RemainingTime <= 0 && spawn.CurrentNumber < maxChildren)
             {
-                log.Error(spawn.RemainingTime);
                 Entity entity = Entity.Resolve(host.Manager, children);
                 entity.Move(host.X, host.Y);
                 if (host is Enemy)
@@ -74,7 +75,6 @@ namespace wServer.logic.behaviors
             }
             else
                 spawn.RemainingTime -= time.thisTickTimes;
-            log.Error(spawn.RemainingTime);
         }
 
         private class SpawnState

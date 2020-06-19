@@ -134,6 +134,7 @@
     <Compile Include="logic\behaviors\ChangeGroundOnDeath.cs" />
     <Compile Include="logic\behaviors\ChangeSize.cs" />
     <Compile Include="logic\behaviors\Charge.cs" />
+    <Compile Include="logic\behaviors\CirclePoint.cs" />
     <Compile Include="logic\behaviors\SpecificBehavior.cs" />
     <Compile Include="logic\behaviors\Debug.cs" />
     <Compile Include="logic\behaviors\ConditionalEffect.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="logic\behaviors\PetBehaviors\PetBehavior.cs" />
     <Compile Include="logic\behaviors\PetBehaviors\PetShoot.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
+    <Compile Include="logic\behaviors\TimedEffect.cs" />
     <Compile Include="logic\behaviors\TPAway.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
     <Compile Include="logic\db\BehaviorDb.CandyLand.cs" />
