@@ -479,7 +479,8 @@ public class Char
     public int LDTimer { get; set; }
     public int LTTimer { get; set; }
     public string PCStats { get; set; }
-
+    public int subclass { get; set; }
+    public bool[] feats { get; set; }
 
     public int inParty { get; set; }
     public String party { get; set; }

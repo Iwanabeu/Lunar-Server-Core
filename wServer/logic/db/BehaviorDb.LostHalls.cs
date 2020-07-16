@@ -14,9 +14,11 @@ namespace wServer.logic
         #region Marble Colossus
            .Init("LH Marble Colossus",
             new State(
+                new SpecificBehavior("Spawn Pillar", 3000),
+                new Debug(300),
                 new State("Idle",
-                    new PlayerWithinTransition(50, "Phase 1")
-
+                    //new PlayerWithinTransition(50, "Phase 1") TEMPORARY
+                    new PlayerWithinTransition(50, "Phase 17 Start")
                 ),
                 new State("Phase 1",
                     new Taunt("Look upon my mighty bulwark."),
@@ -25,7 +27,7 @@ namespace wServer.logic
                     new Shoot(500, 12, shootAngle: 30, projectileIndex: 0, fixedAngle: 15, predictive: 0, coolDownOffset: 1500, coolDown: new Cooldown(3000, 0)),
                     new ConditionalEffect(ConditionEffectIndex.Armored),
                     new HpLessTransition(0.95, "Phase 2"),
-                    new TimedTransition(10000, "Phase 2", false)//10000
+                    new TimedTransition(10000, "Phase 2", false)
 
                 ),
                 new State("Phase 2",
@@ -38,23 +40,19 @@ namespace wServer.logic
                     new Shoot(500, 5, projectileIndex: 1, predictive: 0, shootAngle: 5, angleOffset: 270, coolDown: new Cooldown(3000, 0)),
                     new Shoot(200, 8, projectileIndex: 2, fixedAngle: 0, shootAngle: 45, coolDownOffset: 250, coolDown: new Cooldown(3000, 0)),
                     new HpLessTransition(.9, "Phase 2 to Phase 3"),
-                    new TimedTransition(20000, "Phase 2 to Phase 3", false)//20000
+                    new TimedTransition(20000, "Phase 2 to Phase 3", false)
                 ),
                 new State("Phase 2 to Phase 3",
                     new Taunt("I cast you off!"),
                     new MoveTo(70, 69, 2, isMapPosition: true, instant: false),
-                    new TimedTransition(2000, "Phase 3", false)
+                    new TimedTransition(1000, "Phase 3", false)
                     ),
                 new State("Phase 3",
                     new MoveTo(70, 69, 2, isMapPosition: true, instant: true),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
                     new ConditionalEffect(ConditionEffectIndex.Armored),
-                    new Spawn("LH Colossus Rock 1", 1, 1, coolDown: new Cooldown(5000, 0)),
-                    new Spawn("LH Colossus Rock 2", 1, 1, coolDown: new Cooldown(5000, 0)),
-                    new Spawn("LH Colossus Rock 3", 1, 1, coolDown: new Cooldown(5000, 0)),
-                    new Spawn("LH Colossus Rock 4", new Cooldown(5000, 0), 1, 0, CoolDownOffset: -2500),
-                    new Spawn("LH Colossus Rock 5", new Cooldown(5000, 0), 1, 0, CoolDownOffset: -2500),
-                    new Spawn("LH Colossus Rock 6", new Cooldown(5000, 0), 1, 0, CoolDownOffset: -2500),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
                     new Shoot(200, 12, shootAngle: 3, projectileIndex: 1, fixedAngle: 0, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(5000, 0)),
                     new Shoot(200, 12, shootAngle: 3, projectileIndex: 1, fixedAngle: 90, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(5000, 0)),
                     new Shoot(200, 12, shootAngle: 3, projectileIndex: 1, fixedAngle: 180, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(5000, 0)),
@@ -65,37 +63,8 @@ namespace wServer.logic
                     new Taunt("Your fervent attacks are no match for my strength! BEGONE!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
                     new ConditionalEffect(ConditionEffectIndex.Armored),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 2, predictive: 0, coolDownOffset: 200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 4, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 6, predictive: 0, coolDownOffset: 600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 8, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 10, predictive: 0, coolDownOffset: 1000, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 12, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 14, predictive: 0, coolDownOffset: 1400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 16, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 18, predictive: 0, coolDownOffset: 1800, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 20, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 22, predictive: 0, coolDownOffset: 2200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 24, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 26, predictive: 0, coolDownOffset: 2600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 28, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 30, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 32, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 34, predictive: 0, coolDownOffset: 3400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 36, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 38, predictive: 0, coolDownOffset: 3800, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 40, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 42, predictive: 0, coolDownOffset: 4200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 44, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 46, predictive: 0, coolDownOffset: 4600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 48, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 50, predictive: 0, coolDownOffset: 5000, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 52, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 54, predictive: 0, coolDownOffset: 5400, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 56, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(6000, 0)),
-                    new Shoot(200, 6, shootAngle: 60, projectileIndex: 3, fixedAngle: 58, predictive: 0, coolDownOffset: 5800, coolDown: new Cooldown(6000, 0)),
 
+                    new SpiralShoot(projectileIndex: 3, shotCount: 30, armCount: 6, startAngle: 0, angleBetweenShots: 2, cooldownOffset: 0, msBetweenShots: 0, angleBetweenArms: 60),
 
                     new Shoot(200, 18, shootAngle: 20, projectileIndex: 4, fixedAngle: 0, coolDownOffset: 3000, coolDown: new Cooldown(3000, 0)),
                     new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
@@ -119,36 +88,8 @@ namespace wServer.logic
                     new Taunt("Brace for your demise!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
                     new ConditionalEffect(ConditionEffectIndex.Armored),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 2, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 4, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 6, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 8, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 10, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 12, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 14, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 16, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 18, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 20, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 22, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 24, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 26, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 28, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 30, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 32, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 34, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 36, predictive: 0, coolDownOffset: 7200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 38, predictive: 0, coolDownOffset: 7600, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 40, predictive: 0, coolDownOffset: 8000, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 42, predictive: 0, coolDownOffset: 8400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 44, predictive: 0, coolDownOffset: 8800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 46, predictive: 0, coolDownOffset: 9200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 48, predictive: 0, coolDownOffset: 9600, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 50, predictive: 0, coolDownOffset: 10000, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 52, predictive: 0, coolDownOffset: 10400, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 54, predictive: 0, coolDownOffset: 10800, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 56, predictive: 0, coolDownOffset: 11200, coolDown: new Cooldown(12000, 0)),
-                    new Shoot(200, 4, shootAngle: 90, projectileIndex: 8, fixedAngle: 58, predictive: 0, coolDownOffset: 11600, coolDown: new Cooldown(12000, 0)),
+
+                    new SpiralShoot(projectileIndex: 8, shotCount: 20, armCount: 4, startAngle: 45, angleBetweenShots: 4, cooldownOffset: 0, msBetweenShots: 200, angleBetweenArms: 90),
                     new Spawn("LH Colossus Rock 7", 1, 1, coolDown: new Cooldown(6000, 0)),
                     new Spawn("LH Colossus Rock 8", 1, 1, coolDown: new Cooldown(6000, 0)),
                     new Spawn("LH Colossus Rock 9", 1, 1, coolDown: new Cooldown(6000, 0)),
@@ -168,7 +109,7 @@ namespace wServer.logic
                 new State("Phase 8 Part 1",
                     new Taunt("Call of voice, for naught. Plea of mercy, for naught. None may enter this chamber and live!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
-                    new Follow(3, 30, 0.5, 5000, coolDown: new Cooldown(50, 0)),
+                    new Follow(0.5, 30, 0.5, 5000, coolDown: new Cooldown(50, 0)),
                     new Shoot(500, count: 18, shootAngle: 20, projectileIndex: 11, coolDown: new Cooldown(2000, 0)),
                     new Spawn("LH Colossus Rock 10", 1, 1, coolDown: new Cooldown(30000, 0)),
                     new HpLessTransition(0.66, "Phase 8 Part 2")
@@ -176,14 +117,14 @@ namespace wServer.logic
                 new State("Phase 8 Part 2",
                     new Taunt("SANGUIS! OSSE! CARO! Feel it rend from your body!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
-                    new Follow(3, 30, 0.5, 5000, coolDown: new Cooldown(50, 0)),
+                    new Follow(0.5, 30, 0.5, 5000, coolDown: new Cooldown(50, 0)),
                     new Shoot(500, 4, shootAngle: 90, projectileIndex: 6, predictive: 1, coolDownOffset: 500, coolDown: new Cooldown(1000, 0)),
                     new HpLessTransition(0.63, "Phase 8 Part 3")
                     ),
                 new State("Phase 8 Part 3",
                     new Taunt("PESTIS! The darkness consumes!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
-                    new Follow(3, 30, 0.5, 5000, coolDown: new Cooldown(00, 0)),
+                    new Follow(0.5, 30, 0.5, 5000, coolDown: new Cooldown(00, 0)),
                     new Order(500, "LH Colossus Rock 10", "Idle fast"),
                     new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
                     new HpLessTransition(0.6, "Phase 8 to Phase 9")
@@ -208,18 +149,332 @@ namespace wServer.logic
                     ),
                 new State("Phase 9 to Phase 10",
                     new MoveTo(70, 69, 2, true, true, false),
-                    new TimedTransition(2000,"Phase 10",false)
+                    new TimedTransition(1000, "Phase 10", false)
                     ),
                 new State("Phase 10",
                     new MoveTo(70, 69, 2, true, true, true),
                     new Taunt("Perish, blights upon this realm!"),
-                    new TimedEffect(ConditionEffectIndex.Invulnerable,1500),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new Spawn(once: true, children: "LH Marble Core 1", coolDown: new Cooldown(1000, 0), maxChild: 1, initialSpawn: 1),
+                    new Spawn(true, "LH Marble Core 2", new Cooldown(1000, 0), 1, 1),
+                    new Spawn("LH Colossus Rock 10", 1, 1),
+
+                    new Shoot(500, 30, shootAngle: 12, projectileIndex: 9, coolDownOffset: 250, coolDown: new Cooldown(3000, 0)),
+                    new Shoot(500, 30, shootAngle: 12, projectileIndex: 10, coolDown: new Cooldown(3000, 0)),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 11", "LH Marble Core 1", "LH Marble Core 2")
+                    ),
+                new State("Phase 11",
+                    new Taunt("You have seen your last glimpse of sunlight!"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new Spawn(true, "LH Colossus Rock 11", new Cooldown(1000, 0), 2, 1),
+                    new Order(300, "LH Colossus Rock 10", "Death"),
+
+                    new SpiralShoot(projectileIndex: 3, shotCount: 60, armCount: 3, startAngle: 0, angleBetweenShots: 2, cooldownOffset: 0, msBetweenShots: 0, angleBetweenArms: 120),
+                    new HpLessTransition(0.4, "Phase 12")
+
+
+                    ),
+                new State("Phase 12",
+                    new Taunt("PATI! The prohibited arts allow untold power!"),
+                    new TimedEffect(ConditionEffectIndex.Armored, 1500),
+                    new Order(300, "LH Colossus Rock 11", "Death"),
                     new Spawn("LH Marble Core 1", 1, 1),
-                    new Spawn("LH Marble Core 2",1,1),
-                    //new EntitiesNotExistsTransition(300,"Phase 11","LH Marble Core 1", "LH Marble Core 2"),
-                    new Spawn("LH Colossus Rock 11",1,1),
-                    new Order(300,"LH Colossus Rock 10","Idle")
+                    new Spawn("LH Marble Core 3", 1, 1),
+                    new Follow(4, 300, 0, 2, new Cooldown(5000, 0)),
+                    new Shoot(300, 8, shootAngle: 45, projectileIndex: 14, coolDownOffset: 5500, coolDown: new Cooldown(5000, 0)),
+                    new Shoot(300, 8, shootAngle: 45, projectileIndex: 14, coolDownOffset: 6000, coolDown: new Cooldown(5000, 0)),
+                    new Shoot(300, 8, shootAngle: 45, projectileIndex: 14, coolDownOffset: 6500, coolDown: new Cooldown(5000, 0)),
+                    new Shoot(300, 3, shootAngle: 20, predictive: 1, projectileIndex: 5, coolDownOffset: 7000, coolDown: new Cooldown(5000, 0)),
+                    new Shoot(300, 3, shootAngle: 20, predictive: 1, projectileIndex: 5, coolDownOffset: 7500, coolDown: new Cooldown(5000, 0)),
+                    new Shoot(300, 3, shootAngle: 20, predictive: 1, projectileIndex: 5, coolDownOffset: 8000, coolDown: new Cooldown(5000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 12 to Phase 13", "LH Marble Core 1", "LH Marble Core 3")
+
+                    ),
+                new State("Phase 12 to Phase 13",
+                    new MoveTo(70, 69, 1, true, true, false),
+                    new TimedTransition(1500, "Phase 13", false)
+                    ),
+                new State("Phase 13",
+                    new MoveTo(70, 69, 1, true, true, true),
+                    new Taunt("It is my duty to protect these catacombs! You dare threaten my purpose?"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    //Single shot
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 0, coolDown: 3000, coolDownOffset: 600),
+                    //Paired
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 15, coolDown: 3000, coolDownOffset: 1200),
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 345, coolDown: 3000, coolDownOffset: 1200),
+                    //Single
+                    new Shoot(300, 18, shootAngle: 20, projectileIndex: 15, fixedAngle: 30, coolDown: 3000, coolDownOffset: 1800),
+                    //Paired
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 15, coolDown: 3000, coolDownOffset: 2400),
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 345, coolDown: 3000, coolDownOffset: 2400),
+                    //Single
+                    new Shoot(300, 9, shootAngle: 40, projectileIndex: 15, fixedAngle: 0, coolDown: 3000, coolDownOffset: 3000),
+
+                    new Shoot(300, 4, shootAngle: 90, projectileIndex: 6, fixedAngle: 0, coolDown: 3000),
+
+                    new Shoot(300, 4, shootAngle: 20, projectileIndex: 13, angleOffset: -30, predictive: 0, coolDown: new Cooldown(3000, 0), coolDownOffset: 1500),
+                    new Shoot(300, 2, shootAngle: 30, projectileIndex: 13, angleOffset: -15, predictive: 0, coolDown: new Cooldown(3000, 0), coolDownOffset: 1500),
+                    new HpLessTransition(0.3, "Phase 14 Part 1")
+
+
+                    ),
+                new State("Phase 14 Part 1",
+                    new Taunt("Magia saps from my body… My immense physical strength STILL REMAINS!"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 4, shootAngle: 90, projectileIndex: 6, fixedAngle: 0, coolDown: 3000, coolDownOffset: 1000),
+                    new HpLessTransition(0.25, "Phase 14 Part 2")
+                    ),
+                new State("Phase 14 Part 2",
+                    new Taunt("Fear the halls!"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(2000, 0)),
+                    new HpLessTransition(.2, "Phase 14 Part 3")
+                    ),
+                new State("Phase 14 Part 3",
+                    new Taunt("I… I am… Dying…"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Spawn(children: "LH Colossus Rock 11", maxChildren: 1, initialSpawn: 1),
+                    new HpLessTransition(.15, "Phase 15")
+                    ),
+                new State("Phase 15",
+                    new Taunt("You… YOU WILL COME WITH ME!"),
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable, true),
+                    new Spawn(true, "LH Marble Core 1", new Cooldown(10000, 0), 1, 1, 0),
+                    new Spawn(true, "LH Marble Core 4", new Cooldown(10000, 0), 1, 1, 0),
+                    new Spawn(true, "LH Marble Core 5", new Cooldown(10000, 0), 1, 1, 0),
+                    new EntitiesNotExistsTransition(300, "Phase 15", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new SpiralShoot(projectileIndex: 3, shotCount: 30, armCount: 6, startAngle: 45, angleBetweenShots: 3, cooldownOffset: 0, msBetweenShots: 0, angleBetweenArms: 60),
+                    new RandomTransition(30 * 200, "Phase 15 1 C", "Phase 15 1 CC")
+                    ),
+        #region Randomized Spiral
+                new State("Phase 15 1 C",
+                    new SpiralShoot(3, 20, 6, 135, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 2 C", "Phase 15 2 CC")
+                    ),
+                new State("Phase 15 1 CC",
+                    new SpiralShoot(3, 20, 6, 135, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 6 C", "Phase 15 6 CC")
+                    ),
+                new State("Phase 15 2 C",
+                    new SpiralShoot(3, 20, 6, 195, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 3 C", "Phase 15 3 CC")
+                    ),
+                new State("Phase 15 2 CC",
+                    new SpiralShoot(3, 20, 6, 195, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 1 C", "Phase 15 1 CC")
+                    ),
+                new State("Phase 15 3 C",
+                    new SpiralShoot(3, 20, 6, 255, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 4 C", "Phase 15 4 CC")
+                    ),
+                new State("Phase 15 3 CC",
+                    new SpiralShoot(3, 20, 6, 255, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 2 C", "Phase 15 2 CC")
+                    ),
+                new State("Phase 15 4 C",
+                    new SpiralShoot(3, 20, 6, 315, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 5 C", "Phase 15 5 CC")
+                    ),
+                new State("Phase 15 4 CC",
+                    new SpiralShoot(3, 20, 6, 315, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 3 C", "Phase 15 3 CC")
+                    ),
+                new State("Phase 15 5 C",
+                    new SpiralShoot(3, 20, 6, 15, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 6 C", "Phase 15 6 CC")
+                    ),
+                new State("Phase 15 5 CC",
+                    new SpiralShoot(3, 20, 6, 15, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 4 C", "Phase 15 4 CC")
+                    ),
+                new State("Phase 15 6 C",
+                    new SpiralShoot(3, 20, 6, 75, 3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 1 C", "Phase 15 1 CC")
+                    ),
+                new State("Phase 15 6 CC",
+                    new SpiralShoot(3, 20, 6, 75, -3, 0, 0, 60),
+                    new SpecificBehavior("LH Balls 1", 3000),
+                    new SpecificBehavior("LH Balls 2", 1500),
+                    new Shoot(200, 3, shootAngle: 20, projectileIndex: 5, predictive: 0, coolDownOffset: 3000, coolDown: new Cooldown(4000, 0)),
+                    new Shoot(300, 30, shootAngle: 12, projectileIndex: 9, fixedAngle: 0, coolDown: new Cooldown(10000, 0)),
+                    new EntitiesNotExistsTransition(300, "Phase 16 1", "LH Marble Core 1", "LH Marble Core 4", "LH Marble Core 5"),
+                    new RandomTransition(20 * 200, "Phase 15 5 C", "Phase 15 5 CC")
+                    ),
+
+        #endregion
+                new State("Phase 16 1",
+                    new Taunt("No... I cannot..."),
+                    new SpecificHeal(300, 8500000, "Self", new Cooldown(300000, 0)),
+                    new Order(300, "LH Colossus Rock 1", "Death"),
+                    new Order(300, "LH Colossus Rock 2", "Death"),
+                    new Order(300, "LH Colossus Rock 3", "Death"),
+                    new Order(300, "LH Colossus Rock 4", "Death"),
+                    new Order(300, "LH Colossus Rock 5", "Death"),
+                    new Order(300, "LH Colossus Rock 6", "Death"),
+                    new Shoot(300, 20, 18, 14, 0, coolDown: new Cooldown(1500, 0)),
+                    new Shoot(300, 20, 18, 14, 9, coolDownOffset: 750, coolDown: new Cooldown(1500, 0)),
+                    new TimedTransition(5000, "Phase 16 1 to 2")
+                    ),
+                new State("Phase 16 1 to 2",
+                    new TimedTransition(5000, "Phase 16 2")
+                    ),
+                new State("Phase 16 2",
+                    new SetAltTexture(2),
+                    new Shoot(300, 15, 6, 1, -45, coolDown: new Cooldown(9999999, 0)),
+                    new Shoot(300, 15, 6, 1, 45, coolDownOffset: 500, coolDown: new Cooldown(9999999, 0)),
+                    new Shoot(300, 15, 6, 1, 135, coolDownOffset: 1000, coolDown: new Cooldown(9999999, 0)),
+                    new Shoot(300, 15, 6, 1, 215, coolDownOffset: 1500, coolDown: new Cooldown(9999999, 0)),
+                    new SpiralShoot(7, 20, 4, 0, 5, 3000, 400, 90),
+                    new TimedTransition(8000, "Phase 16 3")
+                    ),
+                new State("Phase 16 3",
+                    new Taunt("...!"),
+                    new SetAltTexture(0),
+                    new TimedTransition(3000, "Phase 17 Start")
+                    ),
+                new State("Phase 17 Start",
+                    new Taunt("I CANNOT FAIL MY PURPOSE!"),
+                    new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
+                    new Order(300, "LH Colossus Pillar", "Gold Start"),
+                    new RandomTransition(3000, "Phase 17 1 a", "Phase 17 2", "Phase 17 3 Start", "Phase 17 4")
+                    ),
+                new State("Phase 17 1 a",
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new MoveTo(70, 69, 1, true, true, false),
+                    new TimedTransition(1000, "Phase 17 1 b")
+                    ),
+                new State("Phase 17 1 b",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new MoveTo(70, 69, 1, true, true, true),
+                    new ConditionalEffect(ConditionEffectIndex.Armored),
+                    new HpShoot(300, 16, 22.5, 19, 0, coolDown: new Cooldown(800, 0), hp_index: new Tuple<double, int>(0.8, 22)),
+                    new RandomTransition(5000, "Phase 17 2", "Phase 17 3 Start", "Phase 17 4")
+                    ),
+                new State("Phase 17 2",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new Follow(2, 8, 0, 2000, new Cooldown(2000, 200)),
+                    new HpShoot(300, 16, 22.5, 20, 15, coolDown: new Cooldown(2500, 0), hp_index: new Tuple<double, int>(0.2, 24)),
+                    new RandomTransition(5000, "Phase 17 1 a", "Phase 17 3 Start", "Phase 17 4")
+                    ),
+                new State("Phase 17 3 Start",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new HpLessTransition(0.2, "Phase 17 3 b"),
+                    new TimedTransition(0, "Phase 17 3 a")
+                    ),
+                new State("Phase 17 3 a",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new HpLessTransition(0.6, "Phase 17 3 b"),
+                    new Wander(1),
+                    new Shoot(300, 30, 12, 11, 24, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(5000, "Phase 17 1 a", "Phase 17 2", "Phase 17 4")
+                    ),
+                new State("Phase 17 3 b",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new Wander(1),
+                    new Order(300, "LH Colossus Pillar", "Void Start"),
+                    new Shoot(300, 15, 24, 21, 24, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(5000, "Phase 17 1 a", "Phase 17 2", "Phase 17 4")
+                    ),
+                new State("Phase 17 4",
+                    new SpecificBehavior("LH Color Changer", 1),
+                    new HpLessTransition(0.01, "Death"),
+                    new Follow(1, 10, 0, 10000, new Cooldown(0, 0)),
+                    new HpShoot(300, 15, 2, 4, predictive: 1, coolDown: new Cooldown(3000, 0), hp_index: new Tuple<double, int>(0.4, 23)),
+                    new HpShoot(300, 15, 2, 4, angleOffset: 90, predictive: 1, coolDown: new Cooldown(3500, 0), hp_index: new Tuple<double, int>(0.4, 23)),
+                    new HpShoot(300, 15, 2, 4, angleOffset: 180, predictive: 1, coolDown: new Cooldown(4000, 0), hp_index: new Tuple<double, int>(0.4, 23)),
+                    new HpShoot(300, 15, 2, 4, angleOffset: 270, predictive: 1, coolDown: new Cooldown(4500, 0), hp_index: new Tuple<double, int>(0.4, 23)),
+                    new RandomTransition(5000, "Phase 17 1 a", "Phase 17 2", "Phase 17 3 Start")
+                    ),
+                new State("Death",
+                    new ConditionalEffect(ConditionEffectIndex.Invulnerable),
+                    new Taunt("I feel myself… Slipping… Into the void… It is so… Dark…"),
+                    new Shoot(300, 60, 6, 16, 0, coolDown: new Cooldown(99999, 0)),
+                    new Shoot(300, 45, 8, 17, 0, coolDown: new Cooldown(99999, 0)),
+                    new Shoot(300, 45, 8, 18, 4, coolDown: new Cooldown(99999, 0)),
+                    new Order(300,"LH Colossus Pillar","Death"),
+                    new Suicide()
                     )
+
+
 
             )
            )
@@ -460,9 +715,10 @@ namespace wServer.logic
         #endregion
         #endregion
         #region Advanced Rocks
-        #region Rock 10
+        #region Colossus Rock 10
         .Init("LH Colossus Rock 10",
             new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible, true),
                 new State("Idle",
                 new CirclePoint(70, 69, 9, 0, 0.5, 0),
                     new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
@@ -485,6 +741,9 @@ namespace wServer.logic
                     new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
                     new TimedTransition(7000, "Shot 1")
                 ),
+                new State("Death",
+                    new Suicide()
+                    ),
                 new State("Shot 1",
                     new SetAltTexture(1),
                 new CirclePoint(70, 69, 9, 0, 0.5, 0),
@@ -1017,24 +1276,372 @@ namespace wServer.logic
                 )
             )
         #endregion
+        #region Colossus Rock 11
+        .Init("LH Colossus Rock 11",
+            new State(
+                new ConditionalEffect(ConditionEffectIndex.Invincible, true),
+                new State("Idle",
+                new CirclePoint(70, 69, 9, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 0, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 1")
+                ),
+                new State("Death",
+                    new Suicide()
+                    ),
+                new State("Shot 1",
+                    new SetAltTexture(1),
+                new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 1, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 2")
+                    ),
+                new State("Shot 2",
+                    new SetAltTexture(2),
+                new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 2, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 3")
+                    ),
+                new State("Shot 3",
+                    new SetAltTexture(3),
+                new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 3, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 4")
+                    ),
+                new State("Shot 4",
+                    new SetAltTexture(4),
+                new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 4, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 5")
+                    ),
+                new State("Shot 5",
+                    new SetAltTexture(5),
+                new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 5, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 6")
+                    ),
+                new State("Shot 6",
+                    new SetAltTexture(6),
+                    new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 6, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Shot 7")
+                    ),
+                new State("Shot 7",
+                    new SetAltTexture(7),
+                    new CirclePoint(70, 69, 1, 0, 0.5, 0),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 0, predictive: 0, coolDownOffset: 0, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 5, predictive: 0, coolDownOffset: 400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 10, predictive: 0, coolDownOffset: 800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 15, predictive: 0, coolDownOffset: 1200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 20, predictive: 0, coolDownOffset: 1600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 25, predictive: 0, coolDownOffset: 2000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 30, predictive: 0, coolDownOffset: 2400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 35, predictive: 0, coolDownOffset: 2800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 40, predictive: 0, coolDownOffset: 3200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 45, predictive: 0, coolDownOffset: 3600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 50, predictive: 0, coolDownOffset: 4000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 55, predictive: 0, coolDownOffset: 4400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 60, predictive: 0, coolDownOffset: 4800, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 65, predictive: 0, coolDownOffset: 5200, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 70, predictive: 0, coolDownOffset: 5600, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 75, predictive: 0, coolDownOffset: 6000, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 80, predictive: 0, coolDownOffset: 6400, coolDown: new Cooldown(12000, 0)),
+                    new Shoot(200, 2, shootAngle: 180, projectileIndex: 7, fixedAngle: 85, predictive: 0, coolDownOffset: 6800, coolDown: new Cooldown(12000, 0)),
+                    new TimedTransition(7000, "Idle")
+                    )
+                )
+            )
+
+        #endregion
         #endregion
         #endregion
         #region LH Marble Cores
         .Init("LH Marble Core 1",
             new State(
-                new ConditionalEffect(ConditionEffectIndex.Invincible, true),
                 new State("Idle",
-                    new CirclePoint(70, 69, 10,0,1,0)
+                    new CirclePoint(70, 69, 10, 0, 1, 0)
                     )
                 )
             )
         .Init("LH Marble Core 2",
             new State(
                 new State("Idle",
-                    new CirclePoint(70, 69, 10, 0, -1, 0)
+                    new CirclePoint(70, 69, 10, 0, 1, 0, true)
                     )
                 )
+            )
+        .Init("LH Marble Core 3",
+            new State(
+                new State("Idle",
+                    new Orbit(1, 2, 300, "LH Marble Colossus", 0.2, 0.4)
+                    )
+                )
+            )
+        .Init("LH Marble Core 4",
+            new State(
+                new State("Idle",
+                    new CirclePoint(70, 69, 10, 0, -1, 0.3)
+                    )
+                )
+            )
+        .Init("LH Marble Core 5",
+            new State(
+                new State("Idle",
+                    new CirclePoint(70, 69, 10, 0, 2, 0.5)
+                    )
+                )
+            )
+        #endregion
+        #region LH Colossus Pillar
+        .Init("LH Colossus Pillar",
+            new State(
+                new State("Idle",
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Purple S",
+                    new SetAltTexture(0),
+                    new SpiralShoot(0, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Purple B",
+                    new SetAltTexture(0),
+                    new Shoot(300, 8, 45, 1, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("White S",
+                    new SetAltTexture(2),
+                    new SpiralShoot(4, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("White B",
+                    new SetAltTexture(2),
+                    new Shoot(300, 8, 45, 5, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Green S",
+                    new SetAltTexture(1),
+                    new SpiralShoot(2, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Green B",
+                    new SetAltTexture(1),
+                    new Shoot(300, 8, 45, 3, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Blue S",
+                    new SetAltTexture(3),
+                    new SpiralShoot(6, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Blue B",
+                    new SetAltTexture(3),
+                    new Shoot(300, 8, 45, 7, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Orange S",
+                    new SetAltTexture(4),
+                    new SpiralShoot(8, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Orange B",
+                    new SetAltTexture(4),
+                    new Shoot(300, 8, 45, 9, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Black S",
+                    new SetAltTexture(5),
+                    new SpiralShoot(10, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Black B",
+                    new SetAltTexture(5),
+                    new Shoot(300, 8, 45, 11, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Red S",
+                    new SetAltTexture(6),
+                    new SpiralShoot(12, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Red B",
+                    new SetAltTexture(6),
+                    new Shoot(300, 8, 45, 13, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Pink S",
+                    new SetAltTexture(7),
+                    new SpiralShoot(14, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Pink B",
+                    new SetAltTexture(7),
+                    new Shoot(300, 8, 45, 15, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Purple S", "Purple B", "White S", "White B", "Green S", "Green B", "Orange S", "Orange B", "Blue S", "Blue B", "Black S", "Black B", "Red S", "Red B", "Pink S", "Pink B")
+                    ),
+                new State("Gold Start",
+                    new RandomTransition(500,"Gold 1", "Gold 2", "Gold 3")
+                    ),
+                new State("Gold 1",
+                    new SetAltTexture(8),
+                    new SpiralShoot(16, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500,"Gold 2", "Gold 3")
+                    ),
+                new State("Gold 2",
+                    new SetAltTexture(8),
+                    new Shoot(300, 8, 45, 17, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Gold 1", "Gold 3")
+                    ),
+                 new State("Gold 3",
+                    new SetAltTexture(8),
+                    new Shoot(300, 8, 45, 18, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500,"Gold 1", "Gold 2")
+                    ),
+                 new State("Void Start",
+                    new RandomTransition(500, "Void 1", "Void 2", "Void 3")
+                    ),
+                 new State("Void 1",
+                    new SetAltTexture(9),
+                    new SpiralShoot(19, 30, 2, 45, 5, 0, 400, 180),
+                    new RandomTransition(500, "Void 2", "Void 3")
+                    ),
+                new State("Void 2",
+                    new SetAltTexture(9),
+                    new Shoot(300, 8, 45, 20, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Void 1", "Void 3")
+                    ),
+                 new State("Void 3",
+                    new SetAltTexture(9),
+                    new Shoot(300, 8, 45, 21, 15, coolDown: new Cooldown(1500, 500)),
+                    new RandomTransition(500, "Void 1", "Void 2")
+                    ),
+                 new State("Death",
+                     new Suicide()
+                     )
+
+
+                )
+                
+
+
             );
         #endregion
+
     }
 }

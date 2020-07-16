@@ -878,7 +878,24 @@ SELECT MAX(chestId) FROM vaults WHERE accId = @accId;";
             cmd.Parameters.AddWithValue("@email", email);
             return (int)(long)cmd.ExecuteScalar() > 0;
         }
-
+        public static string featstostring(bool[] feats)
+        {
+            string result = "";
+            foreach (bool b in feats)
+            {
+                result += b ? "1" : "0";
+            }
+            return result;
+        }
+        public static bool[] stringtofeats(string feats)
+        {
+            bool[] result = new bool[feats.Length];
+            for (int i = 0; i < feats.Length; i++)
+            {
+                result[i] = (feats.ElementAt(i) == '1') ? true : false;
+            }
+            return result;
+        }
         public Char LoadCharacter(Account acc, int charId)
         {
             MySqlCommand cmd = CreateQuery();
@@ -924,7 +941,9 @@ SELECT MAX(chestId) FROM vaults WHERE accId = @accId;";
                     Skin = rdr.GetInt32("skin"),
                     inParty = rdr.GetInt32("inParty"),
                     party = rdr.GetString("Party"),
-                    currentinvite = int.Parse(rdr.GetString("currInv"))
+                    currentinvite = int.Parse(rdr.GetString("currInv")),
+                    subclass = rdr.GetInt32("subclass"),
+                    feats = stringtofeats(rdr.GetString("feats"))
                 };
                 if (!string.IsNullOrEmpty(ret.PCStats) && ret.PCStats != "FameStats")
                     try
@@ -965,7 +984,9 @@ hasBackpack=@hasBackpack,
 skin=@skin,
 xpBoosterTime=@xpTime,
 ldTimer=@lootDropTime,
-ltTimer=@lootTierTime
+ltTimer=@lootTierTime,
+subclass=@subclass,
+feats=@feats
 WHERE accId=@accId AND charId=@charId;";
             cmd.Parameters.AddWithValue("@accId", acc.AccountId);
             cmd.Parameters.AddWithValue("@charId", chr.CharacterId);
@@ -997,6 +1018,8 @@ WHERE accId=@accId AND charId=@charId;";
             cmd.Parameters.AddWithValue("@xpTime", chr.XpTimer);
             cmd.Parameters.AddWithValue("@lootDropTime", chr.LDTimer);
             cmd.Parameters.AddWithValue("@lootTierTime", chr.LTTimer);
+            cmd.Parameters.AddWithValue("@subclass", chr.subclass.ToString());
+            cmd.Parameters.AddWithValue("@feats", featstostring(chr.feats));
             chr.PCStats =
                 Convert.ToBase64String(chr.FameStats.Write())
                     .Replace('+', '-')

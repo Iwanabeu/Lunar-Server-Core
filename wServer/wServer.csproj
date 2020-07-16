@@ -135,6 +135,7 @@
     <Compile Include="logic\behaviors\ChangeSize.cs" />
     <Compile Include="logic\behaviors\Charge.cs" />
     <Compile Include="logic\behaviors\CirclePoint.cs" />
+    <Compile Include="logic\behaviors\HpShoot.cs" />
     <Compile Include="logic\behaviors\SpecificBehavior.cs" />
     <Compile Include="logic\behaviors\Debug.cs" />
     <Compile Include="logic\behaviors\ConditionalEffect.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="logic\behaviors\PetBehaviors\PetBehavior.cs" />
     <Compile Include="logic\behaviors\PetBehaviors\PetShoot.cs" />
     <Compile Include="logic\behaviors\RemoveEntity.cs" />
+    <Compile Include="logic\behaviors\SpiralShoot.cs" />
     <Compile Include="logic\behaviors\TimedEffect.cs" />
     <Compile Include="logic\behaviors\TPAway.cs" />
     <Compile Include="logic\db\BehaviorDb.Abyss.cs" />
@@ -174,6 +176,7 @@
     <Compile Include="logic\db\BehaviorDb.Sphinx.cs" />
     <Compile Include="logic\db\BehaviorDb.SpiderDen.cs" />
     <Compile Include="logic\db\BehaviorDb.SpriteWorld.cs" />
+    <Compile Include="logic\MultiTransition.cs" />
     <Compile Include="logic\transitions\ChatTransition.cs" />
     <Compile Include="logic\transitions\EntitiesNotExistsTransition.cs" />
     <Compile Include="logic\behaviors\RealmPortalDrop.cs" />
@@ -266,6 +269,7 @@
     <Compile Include="logic\transitions\EntityNotExistsTransition.cs" />
     <Compile Include="logic\transitions\PlayerWithinTransition.cs" />
     <Compile Include="logic\transitions\HpLessTransition.cs" />
+    <Compile Include="logic\transitions\RandomTransition.cs" />
     <Compile Include="logic\transitions\TimedTransition.cs" />
     <Compile Include="networking\cliPackets\AcceptTradePacket.cs" />
     <Compile Include="networking\cliPackets\AoEAckPacket.cs" />
@@ -301,6 +305,7 @@
     <Compile Include="networking\cliPackets\PongPacket.cs" />
     <Compile Include="networking\cliPackets\RequestTradePacket.cs" />
     <Compile Include="networking\cliPackets\ReskinPacket.cs" />
+    <Compile Include="networking\cliPackets\SetClassPacket.cs" />
     <Compile Include="networking\cliPackets\SetConditionPacket.cs" />
     <Compile Include="networking\cliPackets\ShootAckPacket.cs" />
     <Compile Include="networking\cliPackets\SquareHitPacket.cs" />
@@ -333,6 +338,7 @@
     <Compile Include="networking\handlers\LeaveArenaHandler.cs" />
     <Compile Include="networking\handlers\LoadHandler.cs" />
     <Compile Include="networking\handlers\MoveHandler.cs" />
+    <Compile Include="networking\handlers\SubClassHandler.cs" />
     <Compile Include="networking\handlers\TinkerQuestHandler.cs" />
     <Compile Include="networking\handlers\TradeHandler.cs" />
     <Compile Include="networking\handlers\ShootAckHandler.cs" />
@@ -401,6 +407,7 @@
     <Compile Include="realm\entities\player\Player.List.cs" />
     <Compile Include="realm\entities\player\Player.Networking.cs" />
     <Compile Include="realm\entities\player\Player.Projectile.cs" />
+    <Compile Include="realm\entities\player\Player.SubClass.cs" />
     <Compile Include="realm\entities\player\Player.Trade.cs" />
     <Compile Include="realm\entities\player\Player.Update.cs" />
     <Compile Include="realm\entities\player\Player.UseItem.cs" />

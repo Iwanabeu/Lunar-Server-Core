@@ -17,6 +17,7 @@ namespace wServer.logic.behaviors
         private Cooldown coolDown;
         private int cooldownOffset = -1;
         private readonly string child;
+        private bool once = false;
 
         public Spawn(string children, int maxChildren = 5, double initialSpawn = 0.5, Cooldown coolDown = new Cooldown() )
         {
@@ -26,13 +27,14 @@ namespace wServer.logic.behaviors
             this.initialSpawn = (int) (maxChildren*initialSpawn);
             this.coolDown = coolDown.Normalize(0);
         }
-        public Spawn(string children, Cooldown coolDown,int maxChild, double initialSpawn,int CoolDownOffset=0)
+        public Spawn(bool once, string children, Cooldown coolDown,int maxChild, double initialSpawn,int CoolDownOffset=0)
         {
             this.children = BehaviorDb.InitGameData.IdToObjectType[children];
             this.maxChildren = maxChild;
             this.initialSpawn = (int)(maxChildren * initialSpawn);
             this.coolDown = coolDown.Normalize(0);
             this.cooldownOffset = CoolDownOffset;
+            this.once = once;
         }
 
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
@@ -58,6 +60,7 @@ namespace wServer.logic.behaviors
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
+            if (once) return;
             SpawnState spawn = (SpawnState) state;
             if (host is Enemy)
             {

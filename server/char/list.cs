@@ -59,52 +59,53 @@ namespace server.@char
 
         protected override void HandleRequest()
         {
-            using (Database db = new Database())
-            {
-                Account a = db.Verify(Query["guid"], Query["password"], Program.GameData);
-                if (!CheckAccount(a, db)) return;
-                db.LockAccount(a);
-                Chars chrs = new Chars
+                using (Database db = new Database())
                 {
-                    Characters = new List<Char>(),
-                    NextCharId = 2,
-                    MaxNumChars = 1,
-                    Account = a,
-                    Servers = GetServerList()
-                };
-                if (chrs.Account != null)
-                {
-                    db.GetCharData(chrs.Account, chrs);
-                    db.LoadCharacters(chrs.Account, chrs);
-                    chrs.News = db.GetNews(Program.GameData, chrs.Account);
-                    chrs.OwnedSkins = Utils.GetCommaSepString(chrs.Account.OwnedSkins.ToArray());
-                    db.UnlockAccount(chrs.Account);
-                }
-                else
-                {
-                    chrs.Account = Database.CreateGuestAccount(Query["guid"] ?? "");
-                    chrs.News = db.GetNews(Program.GameData, null);
-                }
-                MapPoint p = GetLatLong(Context.Request.RemoteEndPoint.Address);
-                if (p != null)
-                {
-                    chrs.Lat = p.Latitude.ToString().Replace(',', '.');
-                    chrs.Long = p.Longitude.ToString().Replace(',', '.');
-                }
-                chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
-                chrs.TOSPopup = chrs.Account.NotAcceptedNewTos;
+                    Account a = db.Verify(Query["guid"], Query["password"], Program.GameData);
+                    if (!CheckAccount(a, db)) return;
+                    db.LockAccount(a);
+                    Chars chrs = new Chars
+                    {
+                        Characters = new List<Char>(),
+                        NextCharId = 2,
+                        MaxNumChars = 1,
+                        Account = a,
+                        Servers = GetServerList()
+                    };
+                    if (chrs.Account != null)
+                    {
+                        db.GetCharData(chrs.Account, chrs);
+                        db.LoadCharacters(chrs.Account, chrs);
+                        chrs.News = db.GetNews(Program.GameData, chrs.Account);
+                        chrs.OwnedSkins = Utils.GetCommaSepString(chrs.Account.OwnedSkins.ToArray());
+                        db.UnlockAccount(chrs.Account);
+                    }
+                    else
+                    {
+                        chrs.Account = Database.CreateGuestAccount(Query["guid"] ?? "");
+                        chrs.News = db.GetNews(Program.GameData, null);
+                    }
+                    MapPoint p = GetLatLong(Context.Request.RemoteEndPoint.Address);
+                    if (p != null)
+                    {
+                        chrs.Lat = p.Latitude.ToString().Replace(',', '.');
+                        chrs.Long = p.Longitude.ToString().Replace(',', '.');
+                    }
+                    chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
+                    chrs.TOSPopup = chrs.Account.NotAcceptedNewTos;
 
-                chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
-                XmlSerializer serializer = new XmlSerializer(chrs.GetType(),
-                    new XmlRootAttribute(chrs.GetType().Name) {Namespace = ""});
+                    chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
+                    XmlSerializer serializer = new XmlSerializer(chrs.GetType(),
+                        new XmlRootAttribute(chrs.GetType().Name) { Namespace = "" });
 
-                XmlWriterSettings xws = new XmlWriterSettings();
-                xws.OmitXmlDeclaration = true;
-                xws.Encoding = Encoding.UTF8;
-                xws.Indent = true;
-                XmlWriter xtw = XmlWriter.Create(Context.Response.OutputStream, xws);
-                serializer.Serialize(xtw, chrs, chrs.Namespaces);
-            }
+                    XmlWriterSettings xws = new XmlWriterSettings();
+                    xws.OmitXmlDeclaration = true;
+                    xws.Encoding = Encoding.UTF8;
+                    xws.Indent = true;
+                    XmlWriter xtw = XmlWriter.Create(Context.Response.OutputStream, xws);
+                    serializer.Serialize(xtw, chrs, chrs.Namespaces);
+                }
+            
         }
 
         private string GetAddress(IPAddress ip)
@@ -284,20 +285,6 @@ namespace server.@char
                 return chrs;
             }
         }
-
-        private class locationPoint
-        {
-            public string ip;
-            public string country_code;
-            public string country_name;
-            public string region_code;
-            public string region_name;
-            public string city;
-            public string zip_code;
-            public string time_zone;
-            public double latitude;
-            public double longitude;
-            public int metro_code;
-        }
+        
     }
 }

@@ -44,6 +44,7 @@ namespace wServer.realm.entities
         protected override void ExportStats(IDictionary<StatsType, object> stats)
         {
             stats[StatsType.AltTextureIndex] = AltTextureIndex;
+            stats[StatsType.HP] = HP;
             base.ExportStats(stats);
         }
 

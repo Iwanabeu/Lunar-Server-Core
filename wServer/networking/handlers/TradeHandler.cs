@@ -44,7 +44,6 @@ namespace wServer.networking.handlers
             client.Manager.Logic.AddPendingAction(t => client.Player.AcceptTrade(t, packet));
         }
     }
-
     internal class CancelTradeHandler : PacketHandlerBase<CancelTradePacket>
     {
         public override PacketID ID

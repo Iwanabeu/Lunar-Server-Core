@@ -26,6 +26,7 @@ namespace wServer.logic
             States = new List<State>();
             Behaviors = new List<Behavior>();
             Transitions = new List<Transition>();
+            MultiTransitions = new List<MultiTransition>();
             foreach (IStateChildren i in children)
             {
                 if (i is State)
@@ -38,6 +39,9 @@ namespace wServer.logic
                     Behaviors.Add(i as Behavior);
                 else if (i is Transition)
                     Transitions.Add(i as Transition);
+                else if (i is MultiTransition)
+                    MultiTransitions.Add(i as MultiTransition);
+
                 else
                     throw new NotSupportedException("Unknown children type.");
             }
@@ -48,6 +52,7 @@ namespace wServer.logic
         public IList<State> States { get; private set; }
         public IList<Behavior> Behaviors { get; private set; }
         public IList<Transition> Transitions { get; private set; }
+        public IList<MultiTransition> MultiTransitions { get; private set; }
 
         public static State CommonParent(State a, State b)
         {
@@ -96,6 +101,8 @@ namespace wServer.logic
                 j.Resolve(states);
             foreach (Behavior j in Behaviors)
                 j.Resolve(this);
+            foreach (MultiTransition i in MultiTransitions)
+                i.Resolve(states);
         }
 
         private void ResolveTransition(Dictionary<string, State> states)

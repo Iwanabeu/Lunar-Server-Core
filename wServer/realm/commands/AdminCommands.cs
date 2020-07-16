@@ -469,14 +469,14 @@ namespace wServer.realm.commands
                 var p = player.Manager.FindPlayer(args[0]);
                 if (p == null)
                 {
-                    player.Stats[0] = player.ObjectDesc.MaxHitPoints;
-                    player.Stats[1] = player.ObjectDesc.MaxMagicPoints;
-                    player.Stats[2] = player.ObjectDesc.MaxAttack;
-                    player.Stats[3] = player.ObjectDesc.MaxDefense;
-                    player.Stats[4] = player.ObjectDesc.MaxSpeed;
-                    player.Stats[5] = player.ObjectDesc.MaxHpRegen;
-                    player.Stats[6] = player.ObjectDesc.MaxMpRegen;
-                    player.Stats[7] = player.ObjectDesc.MaxDexterity;
+                    player.Stats[0] = player.ObjectDesc.MaxHitPoints + (player.Level>20?10*(player.Level-20):0);
+                    player.Stats[1] = player.ObjectDesc.MaxMagicPoints + (player.Level > 20 ? 5 * (player.Level - 20) : 0);
+                    player.Stats[2] = player.ObjectDesc.MaxAttack + (player.Level > 20 ?player.Level - 20 : 0);
+                    player.Stats[3] = player.ObjectDesc.MaxDefense + (player.Level > 20 ? player.Level - 20 : 0);
+                    player.Stats[4] = player.ObjectDesc.MaxSpeed + (player.Level > 20 ? player.Level - 20 : 0);
+                    player.Stats[5] = player.ObjectDesc.MaxHpRegen + (player.Level > 20 ? player.Level - 20 : 0);
+                    player.Stats[6] = player.ObjectDesc.MaxMpRegen + (player.Level > 20 ? player.Level - 20 : 0);
+                    player.Stats[7] = player.ObjectDesc.MaxDexterity + (player.Level > 20 ? player.Level - 20 : 0);
                     player.SaveToCharacter();
                     player.Client.Save();
                     player.UpdateCount++;
@@ -2948,7 +2948,6 @@ namespace wServer.realm.commands
                         cmd.CommandText = "DELETE FROM offers WHERE offerId=@offerId;";
                         cmd.Parameters.AddWithValue("@offerId", offerId.ToString());
                         cmd.ExecuteNonQuery();
-                        Offer temp;
                         player.Manager.InitializeMarket();
 
                         foreach (Marketer m in player.Manager.marketers)

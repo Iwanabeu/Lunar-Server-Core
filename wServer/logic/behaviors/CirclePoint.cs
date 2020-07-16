@@ -16,6 +16,7 @@ namespace wServer.logic.behaviors
         private readonly float radiusVariance;
         private readonly float speed;
         private readonly float speedVariance;
+        private bool backwards = false;
         public CirclePoint(int X, int Y, double radius, double radiusVariance, double speed, double speedVariance)
         {
             this.X = X;
@@ -24,6 +25,16 @@ namespace wServer.logic.behaviors
             this.radiusVariance = (float)radiusVariance;
             this.speed = (float)speed;
             this.speedVariance = (float)speedVariance;
+        }
+        public CirclePoint(int X, int Y, double radius, double radiusVariance, double speed, double speedVariance, bool backwards=false)
+        {
+            this.X = X;
+            this.Y = Y;
+            this.radius = (float)radius;
+            this.radiusVariance = (float)radiusVariance;
+            this.speed = (float)speed;
+            this.speedVariance = (float)speedVariance;
+            this.backwards = backwards;
         }
         protected override void OnStateEntry(Entity host, RealmTime time, ref object state)
         {
@@ -57,7 +68,7 @@ namespace wServer.logic.behaviors
             else
                 angle = Math.Atan2(host.Y - this.Y, host.X - this.X);
             float angularSpd = host.GetSpeed(host.CurrentState.Name.Contains("fast")?s.Speed*2:s.Speed) / s.Radius;
-            angle += angularSpd * (time.thisTickTimes / 1000f);
+            angle += angularSpd * (time.thisTickTimes / 1000f) * (this.backwards?-1:1);
 
             double x = this.X + Math.Cos(angle) * radius;
             double y = this.Y + Math.Sin(angle) * radius;

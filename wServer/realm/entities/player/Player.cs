@@ -8,7 +8,7 @@ using wServer.logic;
 using wServer.networking;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
-
+using db;
 #endregion
 
 namespace wServer.realm.entities.player
@@ -103,6 +103,8 @@ namespace wServer.realm.entities.player
                 if (this.Client.Account.Rank == 3) this.Stars = 100;
                 Locked = psr.Account.Locked ?? new List<string>();
                 Ignored = psr.Account.Ignored ?? new List<string>();
+                subclass = psr.Character.subclass;
+                feats = psr.Character.feats;
                 try
                 {
                     Manager.Database.DoActionAsync(db =>
@@ -489,6 +491,10 @@ namespace wServer.realm.entities.player
             stats[StatsType.XpBoosterTime] = (int)XpBoostTimeLeft;
             stats[StatsType.LootDropBoostTimer] = (int)LootDropBoostTimeLeft;
             stats[StatsType.LootTierBoostTimer] = (int)LootTierBoostTimeLeft;
+
+            stats[StatsType.Subclass] = (int)subclass;
+            stats[StatsType.Feat] = db.Database.featstostring(feats).ToString();
+
         }
 
         public void CalcBoost()
@@ -725,6 +731,8 @@ namespace wServer.realm.entities.player
             chr.CurrentFame = Fame;
             chr.HitPoints = HP;
             chr.MagicPoints = Mp;
+            chr.feats = feats;
+            chr.subclass = subclass;
             switch (Inventory.Length)
             {
                 case 12:

@@ -50,7 +50,14 @@ namespace wServer.logic
 
         internal void Resolve(IDictionary<string, State> states)
         {
-            TargetState = states[targetStateName];
+            try
+            {
+                TargetState = states[targetStateName];
+            }
+            catch (System.Collections.Generic.KeyNotFoundException e)
+            {
+                throw new Exception(targetStateName + "\n" + e.StackTrace);
+            }
         }
     }
 }

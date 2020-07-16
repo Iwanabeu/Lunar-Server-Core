@@ -346,12 +346,13 @@ namespace wServer.realm.entities.player
                 {
                     foreach (var i in Manager.GameData.ObjectTypeToElement[ObjectType].Elements("LevelIncrease"))
                     {
-                        
                         var xElement = Manager.GameData.ObjectTypeToElement[ObjectType].Element(i.Value);
                         if (xElement == null) continue;
                         
                         var idx = StatsManager.StatsNameToIndex(i.Value);
-                        Stats[idx] += 1;
+                        if (i.Value == "MaxHitPoints") Stats[idx] += 10;
+                        if (i.Value == "MaxMagicPoints") Stats[idx] += 5;
+                        else Stats[idx] += 1;
                     }
                 }
                 HP = Stats[0] + Boost[0];

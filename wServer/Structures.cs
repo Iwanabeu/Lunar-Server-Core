@@ -260,7 +260,7 @@ namespace wServer
             for (int i = 0; i < ret.Stats.Length; i++)
             {
                 StatsType type = (StatsType) rdr.ReadByte();
-                if (type == StatsType.Guild || type == StatsType.Name)
+                if (type == StatsType.Guild || type == StatsType.Name || type==StatsType.Feat)
                     ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadUTF());
                 else
                     ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadInt32());

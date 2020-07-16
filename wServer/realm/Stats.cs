@@ -134,7 +134,7 @@ namespace wServer.realm
         public bool IsUTF()
         {
             if(this == StatsType.Name || this == StatsType.AccountId || this == StatsType.OwnerAccountId
-               || this == StatsType.Guild || this == StatsType.PetSkin)
+               || this == StatsType.Guild || this == StatsType.PetSkin || this == StatsType.Feat)
                     return true;
             return false;
         }

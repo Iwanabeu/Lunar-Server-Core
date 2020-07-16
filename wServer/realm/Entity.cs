@@ -172,7 +172,7 @@ namespace wServer.realm
             while (state != null)
             {
                 if (!transited)
-                    if (state.Transitions.Any(i => i.Tick(this, time)))
+                    if (state.Transitions.Any(i => i.Tick(this, time)) || state.MultiTransitions.Any(i=>i.Tick(this,time)))
                         transited = true;
 
                 foreach (var i in state.Behaviors.TakeWhile(i => Owner != null))
@@ -227,6 +227,7 @@ namespace wServer.realm
                 Position = new Position { X = X, Y = Y },
                 Stats = stats.ToArray()
             };
+            
             
         }
 
