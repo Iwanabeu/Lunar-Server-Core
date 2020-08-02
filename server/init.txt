@@ -1,4 +1,4 @@
-﻿<AppSettings><UseExternalPayments>1</UseExternalPayments><MaxStackablePotions>6</MaxStackablePotions><PotionPurchaseCooldown>400</PotionPurchaseCooldown><PotionPurchaseCostCooldown>8000</PotionPurchaseCostCooldown><PotionPurchaseCosts><cost>5</cost><cost>10</cost><cost>20</cost><cost>40</cost><cost>80</cost><cost>120</cost><cost>200</cost><cost>300</cost><cost>450</cost><cost>600</cost></PotionPurchaseCosts><FilterList>[a4]mmysh[o0]p
+﻿<AppSettings><UseExternalPayments>1</UseExternalPayments><MaxStackablePotions>8</MaxStackablePotions><PotionPurchaseCooldown>400</PotionPurchaseCooldown><PotionPurchaseCostCooldown>8000</PotionPurchaseCostCooldown><PotionPurchaseCosts><cost>5</cost><cost>10</cost><cost>20</cost><cost>40</cost><cost>80</cost><cost>120</cost><cost>200</cost><cost>300</cost><cost>450</cost><cost>600</cost></PotionPurchaseCosts><FilterList>[a4]mmysh[o0]p
 "[i1|l].{0,15}p[o0]?ts.{0,15}c[o0]?"
 [i1|l]nst[a4]ntd[e3][il1|][i1|l]v[e3]ry
 [i1|l]nst[a4]p[o0]ts

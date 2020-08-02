@@ -1,5 +1,7 @@
 ﻿#region
 
+using log4net;
+using System;
 using System.Collections.Generic;
 
 #endregion
@@ -14,6 +16,7 @@ namespace wServer.networking.svrPackets
         public bool Killed { get; set; }
         public byte BulletId { get; set; }
         public int ObjectId { get; set; }
+        public bool remove { get; set; } = false;
 
         public override PacketID ID
         {
@@ -22,6 +25,7 @@ namespace wServer.networking.svrPackets
 
         public override Packet CreateInstance()
         {
+            
             return new DamagePacket();
         }
 
@@ -36,6 +40,7 @@ namespace wServer.networking.svrPackets
             Killed = rdr.ReadBoolean();
             BulletId = rdr.ReadByte();
             ObjectId = rdr.ReadInt32();
+            remove = rdr.ReadBoolean();
         }
 
         protected override void Write(Client psr, NWriter wtr)
@@ -51,6 +56,7 @@ namespace wServer.networking.svrPackets
             wtr.Write(Killed);
             wtr.Write(BulletId);
             wtr.Write(ObjectId);
+            wtr.Write(remove);
         }
     }
 }

@@ -46,7 +46,8 @@ namespace wServer.networking.handlers
                             player.SendInfo(String.Format("Player {0} is shooting with a weapon that doesnt match the class slot type.", client.Player.Name));
                     return;
                 }
-                ProjectileDesc prjDesc = item.Projectiles[0]; //Assume only one
+                ProjectileDesc prjDesc = new ProjectileDesc(item.Projectiles[0]); //Assume only one
+                prjDesc = client.Player.applyProjectileEffects(prjDesc);
                 Projectile prj = client.Player.PlayerShootProjectile(
                     packet.BulletId, prjDesc, item.ObjectType,
                     packet.Time, packet.Position, packet.Angle);

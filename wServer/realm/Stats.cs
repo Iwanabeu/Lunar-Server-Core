@@ -124,6 +124,7 @@ namespace wServer.realm
         public readonly static StatsType Feat=99;
         public readonly static StatsType Market_Type = 100;
         public readonly static StatsType Market_Price = 101;
+        public readonly static StatsType Blocks_Projs = 102;
         private byte _type;
 
         private StatsType(byte type)
@@ -138,7 +139,12 @@ namespace wServer.realm
                     return true;
             return false;
         }
-
+        public bool IsBool()
+        {
+            if (this==StatsType.Has_Backpack || this ==StatsType.NameChosen || this ==StatsType.PortalUsable ||this==StatsType.Blocks_Projs)
+                return true;
+            return false;
+        }
         public static implicit operator StatsType(int type)
         {
             if (type > byte.MaxValue) throw new Exception("Not a valid StatData number.");

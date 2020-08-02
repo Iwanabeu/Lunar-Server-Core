@@ -36,7 +36,7 @@ namespace wServer.realm.entities.player
                     UpdateCount++;
                     healCount++;
                 }
-                healing += 28*(time.thisTickTimes/1000f);
+                healing += 56*(time.thisTickTimes/1000f);
             }
             if (HasConditionEffect(ConditionEffectIndex.Quiet) &&
                 Mp > 0)

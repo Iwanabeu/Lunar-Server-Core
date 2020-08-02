@@ -480,7 +480,7 @@ public class Char
     public int LTTimer { get; set; }
     public string PCStats { get; set; }
     public int subclass { get; set; }
-    public bool[] feats { get; set; }
+    public bool[] feats { get; set; } = Enumerable.Repeat(false,28).ToArray();
 
     public int inParty { get; set; }
     public String party { get; set; }

@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\wServer",
+    "\\wServer\\logic",
+    "\\wServer\\logic\\db",
+    "\\wServer\\realm",
+    "\\wServer\\realm\\terrain"
+  ],
+  "SelectedNode": "\\wServer\\logic\\db\\BehaviorDb.Mountain.cs",
+  "PreviewInSolutionExplorer": false
+}

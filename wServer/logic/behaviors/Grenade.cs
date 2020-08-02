@@ -77,7 +77,7 @@ namespace wServer.logic.behaviors
                             Effects = 0,
                             OriginType = (short)host.ObjectType
                         }, null);
-                        world.Aoe(target, radius, true, p => { (p as IPlayer).Damage(damage, host as Character); });
+                        world.Aoe(target, radius, true, p => { (p as IPlayer).Damage(damage, host as Character,false); });
                     }));
                 }
                 cool = coolDown.Next(Random);

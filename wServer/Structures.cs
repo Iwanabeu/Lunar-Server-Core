@@ -279,6 +279,7 @@ namespace wServer
                 {
                     wtr.Write((byte)i.Key);
                     if (i.Key.IsUTF() && i.Value != null) wtr.WriteUTF(i.Value.ToString());
+                    else if (i.Key.IsBool() && i.Value != null) wtr.Write((bool)i.Value);
                     else wtr.Write((int)i.Value);
                 }
             }

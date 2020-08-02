@@ -71,13 +71,6 @@ namespace wServer.logic.behaviors
                         entity.Move(63, 62);
                         (entity as Enemy).Terrain = (host as Enemy).Terrain;
                         host.Owner.EnterWorld(entity);
-                        State pillar = host.Manager.Behaviors.Definitions[BehaviorDb.InitGameData.IdToObjectType["LH Colossus Pillar"]].Item1;
-                        State voidstate = null;
-                        foreach (State i in pillar.States)
-                        {
-                            if (i.Name == "Void Start") voidstate = i;
-                        }
-                        if (states_of_void.Contains(host.CurrentState.Name) && (host as Enemy).HP < (.6 * host.ObjectDesc.MaxHP)) entity.SwitchTo(voidstate);
                     }
                     if (tobemade % 3 != 0)
                     {
@@ -85,13 +78,6 @@ namespace wServer.logic.behaviors
                         entity.Move(63, 76);
                         (entity as Enemy).Terrain = (host as Enemy).Terrain;
                         host.Owner.EnterWorld(entity);
-                        State pillar = host.Manager.Behaviors.Definitions[BehaviorDb.InitGameData.IdToObjectType["LH Colossus Pillar"]].Item1;
-                        State voidstate = null;
-                        foreach (State i in pillar.States)
-                        {
-                            if (i.Name == "Void Start") voidstate = i;
-                        }
-                        if (states_of_void.Contains(host.CurrentState.Name) && (host as Enemy).HP < (.6 * host.ObjectDesc.MaxHP)) entity.SwitchTo(voidstate);
                     }
                     if (tobemade % 5 != 0)
                     {
@@ -99,26 +85,13 @@ namespace wServer.logic.behaviors
                         entity.Move(77, 62);
                         (entity as Enemy).Terrain = (host as Enemy).Terrain;
                         host.Owner.EnterWorld(entity);
-                        State pillar = host.Manager.Behaviors.Definitions[BehaviorDb.InitGameData.IdToObjectType["LH Colossus Pillar"]].Item1;
-                        State voidstate = null;
-                        foreach (State i in pillar.States)
-                        {
-                            if (i.Name == "Void Start") voidstate = i;
-                        }
-                        if (states_of_void.Contains(host.CurrentState.Name) && (host as Enemy).HP < (.6 * host.ObjectDesc.MaxHP)) entity.SwitchTo(voidstate);
                     }
                     if (tobemade % 7 != 0)
                     {
                         Entity entity = Entity.Resolve(host.Manager, "LH Colossus Pillar");
                         entity.Move(77, 76);
                         (entity as Enemy).Terrain = (host as Enemy).Terrain;
-                        State pillar = host.Manager.Behaviors.Definitions[BehaviorDb.InitGameData.IdToObjectType["LH Colossus Pillar"]].Item1;
-                        State voidstate = null;
-                        foreach (State i in pillar.States)
-                        {
-                            if (i.Name == "Void Start") voidstate = i;
-                        }
-                        if (states_of_void.Contains(host.CurrentState.Name) && (host as Enemy).HP < (.6 * host.ObjectDesc.MaxHP)) entity.SwitchTo(voidstate);
+                        host.Owner.EnterWorld(entity);
                     }
 
 

@@ -389,7 +389,7 @@ namespace wServer.realm.entities
             newPetStruct = s;
         }
 
-        public void Damage(int dmg, Entity chr) { }
+        public void Damage(int dmg, Entity chr,bool remove = false) { }
 
         public bool IsVisibleToEnemy()
         {

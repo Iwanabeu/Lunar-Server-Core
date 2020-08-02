@@ -33,7 +33,7 @@ namespace wServer.realm.entities
         protected override void ExportStats(IDictionary<StatsType, object> stats)
         {
             if (ObjectType != 0x072f)
-                stats[StatsType.PortalUsable] = Usable ? 1 : 0;
+                stats[StatsType.PortalUsable] = Usable;
             base.ExportStats(stats);
             stats[StatsType.Name] = ObjectDesc.DungeonName ?? Name;
         }

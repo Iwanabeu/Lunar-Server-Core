@@ -1147,7 +1147,7 @@ VALUES(@accId, @chrId, @name, @objType, @tex1, @tex2, @skin, @items, @fame, @exp
             cmd.Parameters.AddWithValue("@fameStats", chr.PCStats);
             cmd.Parameters.AddWithValue("@totalFame", finalFame);
             cmd.Parameters.AddWithValue("@firstBorn", firstBorn);
-            cmd.Parameters.AddWithValue("@killer", killer);
+            cmd.Parameters.AddWithValue("@killer", killer==null?"yep cock":killer);
             cmd.ExecuteNonQuery();
         }
 

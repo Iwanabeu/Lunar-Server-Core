@@ -97,7 +97,18 @@ public enum ConditionEffects : ulong
     SpdBoost = (ulong)1 << 43,
     VitBoost = (ulong)1 << 44,
     WisBoost = (ulong)1 << 45,
-    DexBoost = (ulong)1 << 46
+    DexBoost = (ulong)1 << 46,
+    Silenced = (ulong)1 << 47,
+    Exposed = (ulong)1<<48,
+    Energized=(ulong)1<<49,
+    Hp_debuff= (ulong)1<<50,
+    Mp_debuff= (ulong)1<<51,
+    Atk_debuff= (ulong)1<<52,
+    Def_debuff= (ulong)1<<53,
+    Spd_debuff= (ulong)1<<54,
+    Vit_debuff= (ulong)1<<55,
+    Wis_debuff= (ulong)1<<56,
+    Dex_debuff= (ulong)1<<57
 }
 
 public enum ConditionEffectIndex
@@ -148,7 +159,18 @@ public enum ConditionEffectIndex
     SpdBoost = 43,
     VitBoost = 44,
     WisBoost = 45,
-    DexBoost = 46
+    DexBoost = 46,
+    Silenced = 47,
+    Exposed=48,
+    Energized=49,
+    Hp_debuff=50,
+    Mp_debuff=51,
+    Atk_debuff=52,
+    Def_debuff=53,
+    Spd_debuff=54,
+    Vit_debuff=55,
+    Wis_debuff=56,
+    Dex_debuff=57
 }
 
 public class PetStruct
@@ -212,6 +234,7 @@ public class ConditionEffect
             Target = int.Parse(elem.Attribute("target").Value, NumberStyles.Any, ci);
     }
 
+
     public ConditionEffectIndex Effect { get; set; }
     public int DurationMS { get; set; }
     public int Target { get; set; }
@@ -238,8 +261,11 @@ public class ProjectileDesc
             MinDamage = MaxDamage = Utils.FromString(dmg.Value);
         else
         {
-            MinDamage = Utils.FromString(elem.Element("MinDamage").Value);
-            MaxDamage = Utils.FromString(elem.Element("MaxDamage").Value);
+            XElement min = elem.Element("MinDamage");
+            XElement max = elem.Element("MaxDamage");
+            if (min == null && max == null) MinDamage = MaxDamage = 0;
+            else if (min == null) MinDamage = MaxDamage = Utils.FromString(max.Value);
+            else MinDamage = MaxDamage = Utils.FromString(min.Value);
         }
 
         Effects = elem.Elements("ConditionEffect").Select(i => new ConditionEffect(i)).ToArray();
@@ -259,16 +285,36 @@ public class ProjectileDesc
         n = elem.Element("Magnitude");
         Magnitude = n != null ? float.Parse(n.Value, NumberStyles.Any, ci) : 3; 
     }
-
+    public ProjectileDesc(ProjectileDesc pd)
+    {
+        BulletType = pd.BulletType;
+        ObjectId = pd.ObjectId;
+        LifetimeMS = pd.LifetimeMS;
+        Speed = pd.Speed;
+        Size = pd.Size;
+        MinDamage = pd.MinDamage;
+        MaxDamage = pd.MaxDamage;
+        Effects = pd.Effects;
+        MultiHit = pd.MultiHit;
+        PassesCover = pd.PassesCover;
+        ArmorPiercing = pd.ArmorPiercing;
+        ParticleTrail = pd.ParticleTrail;
+        Wavy = pd.Wavy;
+        Parametric = pd.Parametric;
+        Boomerang = pd.Boomerang;
+        Amplitude = pd.Amplitude;
+        Frequency = pd.Frequency;
+        Magnitude = pd.Magnitude;
+    }
     public int BulletType { get; private set; }
     public string ObjectId { get; private set; }
     public int LifetimeMS { get; private set; }
     public float Speed { get; private set; }
     public int Size { get; private set; }
-    public int MinDamage { get; private set; }
-    public int MaxDamage { get; private set; }
+    public int MinDamage { get; set; }
+    public int MaxDamage { get; set; }
 
-    public ConditionEffect[] Effects { get; private set; }
+    public ConditionEffect[] Effects { get; set; }
 
     public bool MultiHit { get; private set; }
     public bool PassesCover { get; private set; }

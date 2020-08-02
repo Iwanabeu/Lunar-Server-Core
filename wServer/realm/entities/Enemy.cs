@@ -138,22 +138,22 @@ namespace wServer.realm.entities
                 !HasConditionEffect(ConditionEffectIndex.Paused) &&
                 !HasConditionEffect(ConditionEffectIndex.Stasis))
             {
+                
                 var prevHp = HP;
                 var dmg = (int)StatsManager.GetDefenseDamage(this, projectile.Damage, projectile.Descriptor.ArmorPiercing ? 0 : ObjectDesc.Defense);
                 if (!HasConditionEffect(ConditionEffectIndex.Invulnerable))
                     HP -= dmg;
                 foreach (ConditionEffect effect in projectile.Descriptor.Effects.Where(effect => (effect.Effect != ConditionEffectIndex.Stunned || !ObjectDesc.StunImmune) && (effect.Effect != ConditionEffectIndex.Paralyzed || !ObjectDesc.ParalyzedImmune) && (effect.Effect != ConditionEffectIndex.Dazed || !ObjectDesc.DazedImmune)))
                     ApplyConditionEffect(effect);
-
                 Owner.BroadcastPacket(new DamagePacket
                 {
                     TargetId = Id,
                     Effects = projectile.ConditionEffects,
-                    Damage = (ushort) dmg,
+                    Damage = (ushort)dmg,
                     Killed = HP < 0,
                     BulletId = projectile.ProjectileId,
                     ObjectId = projectile.ProjectileOwner.Self.Id
-                }, HP < 0 && !IsOneHit(dmg, prevHp) ? null : projectile.ProjectileOwner as Player);
+                }, null);//HP < 0 && !IsOneHit(dmg, prevHp) ? null : projectile.ProjectileOwner as Player);
 
                 counter.HitBy(projectile.ProjectileOwner as Player, time, projectile, dmg);
 

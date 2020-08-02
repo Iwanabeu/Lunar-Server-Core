@@ -213,9 +213,9 @@ namespace wServer.realm.commands
                     player.SendInfo("Success!");
                 }
             }
-            catch
+            catch (Exception e)
             {
-                player.SendError("Invalid effect!");
+                player.SendError("Invalid effect! " + e);
                 return false;
             }
             return true;
@@ -469,9 +469,9 @@ namespace wServer.realm.commands
                 var p = player.Manager.FindPlayer(args[0]);
                 if (p == null)
                 {
-                    player.Stats[0] = player.ObjectDesc.MaxHitPoints + (player.Level>20?10*(player.Level-20):0);
+                    player.Stats[0] = player.ObjectDesc.MaxHitPoints + (player.Level > 20 ? 10 * (player.Level - 20) : 0);
                     player.Stats[1] = player.ObjectDesc.MaxMagicPoints + (player.Level > 20 ? 5 * (player.Level - 20) : 0);
-                    player.Stats[2] = player.ObjectDesc.MaxAttack + (player.Level > 20 ?player.Level - 20 : 0);
+                    player.Stats[2] = player.ObjectDesc.MaxAttack + (player.Level > 20 ? player.Level - 20 : 0);
                     player.Stats[3] = player.ObjectDesc.MaxDefense + (player.Level > 20 ? player.Level - 20 : 0);
                     player.Stats[4] = player.ObjectDesc.MaxSpeed + (player.Level > 20 ? player.Level - 20 : 0);
                     player.Stats[5] = player.ObjectDesc.MaxHpRegen + (player.Level > 20 ? player.Level - 20 : 0);
@@ -1299,10 +1299,12 @@ namespace wServer.realm.commands
                         return false;
                     }
                     int xp = Player.GetLevelExp(newLevel);
+
                     player.Client.Character.Level = newLevel;
                     player.Client.Player.Level = newLevel;
                     player.Client.Player.Experience = xp;
                     player.Client.Character.Exp = xp;
+
                     player.UpdateCount++;
                     player.SendInfo("Success!");
                 }
@@ -1520,7 +1522,7 @@ namespace wServer.realm.commands
                 player.SendInfo("You must give an item id");
                 return false;
             }
-            for (int i = 4; i < player.Inventory.Length;i++)
+            for (int i = 4; i < player.Inventory.Length; i++)
             {
                 if (player.Inventory[i] == null)
                 {
@@ -3013,6 +3015,55 @@ namespace wServer.realm.commands
         {
             player.SendInfo(player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase(String.Join(" ", args))).Count().ToString());
             return true;
+        }
+    }
+    class CheckEffects : Command
+    {
+        public CheckEffects()
+           : base("checkeffs", 3)
+        {
+        }
+        public string Command { get { return "checkeffs"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+
+        {
+            String result = "";
+            foreach (ConditionEffectIndex i in (ConditionEffectIndex[])Enum.GetValues(typeof(ConditionEffectIndex)))
+            {
+                if (player.HasConditionEffect(i))
+                    result += "You have effect: " + i.ToString() + "\n";
+            }
+            if (result == "")
+                result = "You have no effects";
+            player.SendInfo(result);
+            return true;
+        }
+    }
+    class SendStatusText : Command
+    {
+        public SendStatusText()
+           : base("status", 3)
+        {
+        }
+        public string Command { get { return "status"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            try
+            {
+                Packet pkt = new EffectTextPacket
+                {
+                    Message = "YOOOOOO"
+                };
+                player.Client.SendPacket(pkt);
+                
+                return true;
+            }
+            catch (Exception e)
+            {
+                log.Error(e);
+                return false;
+            }
+
         }
     }
 }

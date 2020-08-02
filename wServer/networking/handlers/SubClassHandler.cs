@@ -13,7 +13,7 @@ namespace wServer.networking.handlers
         }
         protected override void HandlePacket(Client client, SetClassPacket packet)
         {
-            client.Manager.Logic.AddPendingAction(t => client.Player.Set_Subclass(t, packet));
+            client.Manager.Logic.AddPendingAction(t => client.Player.Set_Subclass(t, packet),realm.PendingPriority.Networking);
         }
     }
 }

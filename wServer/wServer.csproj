@@ -325,6 +325,7 @@
     <Compile Include="networking\handlers\CreateGuildHandler.cs" />
     <Compile Include="networking\handlers\CreateHandler.cs" />
     <Compile Include="networking\handlers\EditAccountListHandler.cs" />
+    <Compile Include="networking\handlers\EffectTextPacket.cs" />
     <Compile Include="networking\handlers\EnemyHitHandler.cs" />
     <Compile Include="networking\handlers\EscapeHander.cs" />
     <Compile Include="networking\handlers\GotoAckHandler.cs" />

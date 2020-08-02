@@ -95,6 +95,7 @@ namespace wServer
         PET_CHANGE_FORM_MSG = 42,
         KEY_INFO_REQUEST = 66,
         KEY_INFO_RESPONSE = 19,
-        CHANGESUBCLASS=103
+        CHANGESUBCLASS=103,
+        SENDEFFECTTEXT=104
     }
 }

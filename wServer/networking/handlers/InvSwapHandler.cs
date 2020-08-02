@@ -45,13 +45,13 @@ namespace wServer.networking.handlers
                     packet.SlotObject2.SlotId == 254 || packet.SlotObject2.SlotId == 255)
                 {
                     if (packet.SlotObject2.SlotId == 254)
-                        if (client.Player.HealthPotions < 6)
+                        if (client.Player.HealthPotions < 8)
                         {
                             client.Player.HealthPotions++;
                             con1.Inventory[packet.SlotObject1.SlotId] = null;
                         }
                     if (packet.SlotObject2.SlotId == 255)
-                        if (client.Player.MagicPotions < 6)
+                        if (client.Player.MagicPotions < 8)
                         {
                             client.Player.MagicPotions++;
                             con1.Inventory[packet.SlotObject1.SlotId] = null;

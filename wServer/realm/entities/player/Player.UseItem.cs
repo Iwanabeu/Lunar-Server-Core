@@ -157,8 +157,7 @@ namespace wServer.realm.entities.player
         {
             double arcGap = item.ArcGap*Math.PI/180;
             double startAngle = Math.Atan2(target.Y - Y, target.X - X) - (item.NumProjectiles - 1)/2*arcGap;
-            ProjectileDesc prjDesc = item.Projectiles[0]; //Assume only one
-
+            ProjectileDesc prjDesc = new ProjectileDesc(item.Projectiles[0]); //Assume only one
             for (int i = 0; i < item.NumProjectiles; i++)
             {
                 Projectile proj = CreateProjectile(prjDesc, item.ObjectType,
@@ -225,7 +224,7 @@ namespace wServer.realm.entities.player
             bool endMethod = false;
             Position target = pkt.ItemUsePos;
             Mp -= item.MpCost;
-
+            if (item.MpCost > 0) onAbilityUse();
             IContainer con = Owner.GetEntity(pkt.SlotObject.ObjectId) as IContainer;
             if(con == null) return true;
 
@@ -414,22 +413,22 @@ namespace wServer.realm.entities.player
                                 rangeSBA = UseWisMod(eff.Range);
                             }
 
-                            this.Aoe(rangeSBA, true, player =>
+                            (this).Aoe(rangeSBA, true, (Action<Entity>)(player =>
                             {
-                            ApplyConditionEffect(new ConditionEffect
-                            {
+                                ApplyConditionEffect(new ConditionEffect
+                                {
                                 DurationMS = durationSBA,
                                 Effect = (ConditionEffectIndex)bit
                             });
                             (player as Player).Boost[idx] += amountSBA;
                             if (idx == 0) (player as Player).HP +=  amountSBA;
                                 player.UpdateCount++;
-                                Owner.Timers.Add(new WorldTimer(durationSBA, (world, t) =>
+                                Owner.Timers.Add(new WorldTimer(durationSBA, (Action<World, RealmTime>)((world, t) =>
                                 {
                                     (player as Player).Boost[idx] -= amountSBA;
                                     player.UpdateCount++;
-                                }));
-                            });
+                                })));
+                            }));
                             BroadcastSync(new ShowEffectPacket()
                             {
                                 EffectType = EffectType.AreaBlast,

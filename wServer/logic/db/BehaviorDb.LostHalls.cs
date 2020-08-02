@@ -413,11 +413,13 @@ namespace wServer.logic
                     new RandomTransition(3000, "Phase 17 1 a", "Phase 17 2", "Phase 17 3 Start", "Phase 17 4")
                     ),
                 new State("Phase 17 1 a",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new ConditionalEffect(ConditionEffectIndex.Armored),
                     new MoveTo(70, 69, 1, true, true, false),
                     new TimedTransition(1000, "Phase 17 1 b")
                     ),
                 new State("Phase 17 1 b",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new MoveTo(70, 69, 1, true, true, true),
@@ -426,6 +428,7 @@ namespace wServer.logic
                     new RandomTransition(5000, "Phase 17 2", "Phase 17 3 Start", "Phase 17 4")
                     ),
                 new State("Phase 17 2",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new Follow(2, 8, 0, 2000, new Cooldown(2000, 200)),
@@ -433,12 +436,14 @@ namespace wServer.logic
                     new RandomTransition(5000, "Phase 17 1 a", "Phase 17 3 Start", "Phase 17 4")
                     ),
                 new State("Phase 17 3 Start",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new HpLessTransition(0.2, "Phase 17 3 b"),
                     new TimedTransition(0, "Phase 17 3 a")
                     ),
                 new State("Phase 17 3 a",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new HpLessTransition(0.6, "Phase 17 3 b"),
@@ -450,11 +455,13 @@ namespace wServer.logic
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new Wander(1),
+                    new HpLessOrder(300,0.6,"LH Colossus Pillar", "Void Start"),
                     new Order(300, "LH Colossus Pillar", "Void Start"),
                     new Shoot(300, 15, 24, 21, 24, coolDown: new Cooldown(1500, 500)),
                     new RandomTransition(5000, "Phase 17 1 a", "Phase 17 2", "Phase 17 4")
                     ),
                 new State("Phase 17 4",
+                    new HpLessOrder(300, 0.6, "LH Colossus Pillar", "Void Start"),
                     new SpecificBehavior("LH Color Changer", 1),
                     new HpLessTransition(0.01, "Death"),
                     new Follow(1, 10, 0, 10000, new Cooldown(0, 0)),

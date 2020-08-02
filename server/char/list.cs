@@ -183,7 +183,7 @@ namespace server.@char
             {
                 "Rogue",
                 "Assassin",
-                "Huntress",
+                "Huntsman",
                 "Mystic",
                 "Trickster",
                 "Sorcerer",
@@ -203,7 +203,7 @@ namespace server.@char
                 {
                     new ClassAvailabilityItem {Class = "Rogue", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Assassin", Restricted = "unrestricted"},
-                    new ClassAvailabilityItem {Class = "Huntress", Restricted = "unrestricted"},
+                    new ClassAvailabilityItem {Class = "Huntsman", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Mystic", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Trickster", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Sorcerer", Restricted = "unrestricted"},

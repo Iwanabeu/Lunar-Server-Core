@@ -1,9 +1,9 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using db.data;
 using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
@@ -183,6 +183,34 @@ namespace wServer.logic.loot
             {
                 foreach (ILootDef i in children)
                     i.Populate(manager, enemy, null, rand, lootState, lootDefs);
+            }
+        }
+    }
+
+    public class DamageBoostedLoot : ILootDef
+    {
+        private readonly double threshold;
+        private readonly double chance;
+        private readonly string item;
+
+        public string Lootstate { get; set; }
+
+        public DamageBoostedLoot(double threshold, double chance, string item)
+        {
+            this.threshold = threshold;
+            this.chance = chance;
+            this.item = item;
+        }
+
+        public void Populate(RealmManager manager, Enemy enemy, Tuple<Player, int> playerDat, Random rand,
+            string lootState, IList<LootDef> lootDefs)
+        {
+            Lootstate = lootState;
+            double damage = playerDat.Item2 / enemy.ObjectDesc.MaxHP;
+            if (playerDat != null && damage >= threshold)
+            {
+                XmlData dat = manager.GameData;
+                lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], chance * (0.3+Math.Pow(damage,0.2)) * playerDat.Item1.getLootBoost() , lootState));
             }
         }
     }

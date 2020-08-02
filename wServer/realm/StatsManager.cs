@@ -45,6 +45,8 @@ namespace wServer.realm
 
         public static float GetDefenseDamage(Entity host, int dmg, int def)
         {
+            if (host.HasConditionEffect(ConditionEffectIndex.Exposed))
+                def -= 20;
             if (host.HasConditionEffect(ConditionEffectIndex.Armored))
                 def *= 2;
             if (host.HasConditionEffect(ConditionEffectIndex.ArmorBroken))
@@ -65,11 +67,14 @@ namespace wServer.realm
         public float GetDefenseDamage(int dmg, bool noDef)
         {
             int def = GetStats(3);
+            if (player.HasConditionEffect(ConditionEffectIndex.Exposed))
+                def -= 20;
             if (player.HasConditionEffect(ConditionEffectIndex.Armored))
                 def *= 2;
             if (player.HasConditionEffect(ConditionEffectIndex.ArmorBroken) ||
                 noDef)
                 def = 0;
+           
 
             float limit = dmg*0.15f;
 
@@ -113,7 +118,7 @@ namespace wServer.realm
             int wis = GetStats(6);
             if (player.HasConditionEffect(ConditionEffectIndex.Quiet))
                 return 0;
-            return 0.5f + 0.06f * wis;
+            return 0.5f + 0.06f * wis + (player.HasConditionEffect(ConditionEffectIndex.Energized)?20:0);
         }
 
         public float GetDex()

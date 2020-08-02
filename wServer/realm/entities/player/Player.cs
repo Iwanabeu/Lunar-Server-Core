@@ -15,7 +15,7 @@ namespace wServer.realm.entities.player
 {
     internal interface IPlayer
     {
-        void Damage(int dmg, Entity chr);
+        void Damage(int dmg, Entity chr,bool remove);
         bool IsVisibleToEnemy();
     }
 
@@ -351,7 +351,7 @@ namespace wServer.realm.entities.player
 
         public int Stars { get; set; }
 
-        public int[] Stats { get; }
+        public int[] Stats { get; }//hp,mp,atk,def,spd,vit,wis,dex
 
         public StatsManager StatsManager { get; }
 
@@ -369,7 +369,7 @@ namespace wServer.realm.entities.player
 
         public int[] SlotTypes { get; set; }
 
-        public void Damage(int dmg, Entity chr)
+        public void Damage(int dmg, Entity chr, bool remove)
         {
             try
             {
@@ -381,6 +381,7 @@ namespace wServer.realm.entities.player
                 dmg = (int)StatsManager.GetDefenseDamage(dmg, false);
                 if (!HasConditionEffect(ConditionEffectIndex.Invulnerable))
                     HP -= dmg;
+                dmg = applyOnHitEffects(dmg);
                 UpdateCount++;
                 Owner.BroadcastPacket(new DamagePacket
                 {
@@ -389,7 +390,8 @@ namespace wServer.realm.entities.player
                     Damage = (ushort)dmg,
                     Killed = HP <= 0,
                     BulletId = 0,
-                    ObjectId = chr.Id
+                    ObjectId = chr.Id,
+                    remove = remove
                 }, this);
                 SaveToCharacter();
 
@@ -401,7 +403,14 @@ namespace wServer.realm.entities.player
                 log.Error("Error while processing playerDamage: ", e);
             }
         }
-
+        public override void ApplyConditionEffect(params ConditionEffect[] effs)
+        {
+            foreach (var eff in effs)
+            {
+                if(canApply(eff))
+                ApplyConditionEffect(eff.Effect, eff.DurationMS);
+            }
+        }
         protected override void ExportStats(IDictionary<StatsType, object> stats)
         {
             base.ExportStats(stats);
@@ -422,7 +431,7 @@ namespace wServer.realm.entities.player
 
             stats[StatsType.Credits] = Credits;
             stats[StatsType.Tokens] = Tokens;
-            stats[StatsType.NameChosen] = NameChosen ? 1 : 0;
+            stats[StatsType.NameChosen] = NameChosen;
             stats[StatsType.Texture1] = Texture1;
             stats[StatsType.Texture2] = Texture2;
 
@@ -449,14 +458,14 @@ namespace wServer.realm.entities.player
 
             if (Boost != null)
             {
-                stats[StatsType.MaximumHP] = Stats[0] + Boost[0];
-                stats[StatsType.MaximumMP] = Stats[1] + Boost[1];
-                stats[StatsType.Attack] = Stats[2] + Boost[2];
-                stats[StatsType.Defense] = Stats[3] + Boost[3];
-                stats[StatsType.Speed] = Stats[4] + Boost[4];
-                stats[StatsType.Vitality] = Stats[5] + Boost[5];
-                stats[StatsType.Wisdom] = Stats[6] + Boost[6];
-                stats[StatsType.Dexterity] = Stats[7] + Boost[7];
+                stats[StatsType.MaximumHP] = Stats[0] + Boost[0]+getBonusHp();
+                stats[StatsType.MaximumMP] = Stats[1] + Boost[1]+getBonusMp() ;
+                stats[StatsType.Attack] = Stats[2] + Boost[2]+getBonusAtk();
+                stats[StatsType.Defense] = Stats[3] + Boost[3]+getBonusDef();
+                stats[StatsType.Speed] = Stats[4] + Boost[4]+getBonusSpd();
+                stats[StatsType.Vitality] = Stats[5] + Boost[5]+getBonusVit();
+                stats[StatsType.Wisdom] = Stats[6] + Boost[6]+getBonusWis();
+                stats[StatsType.Dexterity] = Stats[7] + Boost[7]+getBonusDex();
 
                 stats[StatsType.HPBoost] = Boost[0];
                 stats[StatsType.MPBoost] = Boost[1];
@@ -469,7 +478,7 @@ namespace wServer.realm.entities.player
             }
 
             stats[StatsType.Size] = setTypeSkin?.Size ?? Size;
-            stats[StatsType.Has_Backpack] = HasBackpack.GetHashCode();
+            stats[StatsType.Has_Backpack] = HasBackpack;
 
             stats[StatsType.Backpack0] = (int)(HasBackpack ? (Inventory[12]?.ObjectType ?? -1) : -1);
             stats[StatsType.Backpack1] = (int)(HasBackpack ? (Inventory[13]?.ObjectType ?? -1) : -1);
@@ -494,6 +503,7 @@ namespace wServer.realm.entities.player
 
             stats[StatsType.Subclass] = (int)subclass;
             stats[StatsType.Feat] = db.Database.featstostring(feats).ToString();
+            stats[StatsType.Blocks_Projs] = feats[Feat.Man_Of_Steel];
 
         }
 
@@ -633,7 +643,6 @@ namespace wServer.realm.entities.player
                 HasConditionEffect(ConditionEffectIndex.Stasis) ||
                 HasConditionEffect(ConditionEffectIndex.Invincible))
                 return false;
-
             return base.HitByProjectile(projectile, time);
         }
 
@@ -881,6 +890,7 @@ namespace wServer.realm.entities.player
             HandleQuest(time);
             HandleEffects(time);
             HandleGround(time);
+            HandleSubclassEffects(time);
             HandleBoosts();
 
             FameCounter.Tick(time);

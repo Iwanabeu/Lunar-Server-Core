@@ -16,7 +16,7 @@ namespace wServer.realm
 {
     public class Entity : IProjectileOwner, ICollidable<Entity>, IDisposable
     {
-        private const int EFFECT_COUNT = 47;
+        private const int EFFECT_COUNT = 58;
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
         private readonly ObjectDesc desc;
         private readonly int[] effects;
@@ -421,7 +421,6 @@ namespace wServer.realm
 
         public virtual bool HitByProjectile(Projectile projectile, RealmTime time)
         {
-            //Console.WriteLine("[" + DateTime.Now.ToString("h:mm:ss tt") + "] " + "HIT! " + Id);
             if (ObjectDesc == null)
                 return true;
             return ObjectDesc.OccupySquare || ObjectDesc.EnemyOccupySquare || ObjectDesc.FullOccupy;
@@ -486,7 +485,7 @@ namespace wServer.realm
             UpdateCount++;
         }
 
-        public void ApplyConditionEffect(params ConditionEffect[] effs)
+        public virtual void ApplyConditionEffect(params ConditionEffect[] effs)
         {
             foreach (var eff in effs)
                 ApplyConditionEffect(eff.Effect, eff.DurationMS);
