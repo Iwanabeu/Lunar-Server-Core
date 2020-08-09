@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using wServer.realm;
+using log4net;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
 
@@ -39,7 +40,14 @@ namespace wServer.logic.loot
             Lootstate = lootState;
             if (playerDat != null) return;
             XmlData dat = manager.GameData;
-            lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability, lootState));
+            try
+            {
+                lootDefs.Add(new LootDef(dat.Items[dat.IdToObjectType[item]], probability, lootState));
+            }
+            catch (System.Collections.Generic.KeyNotFoundException e)
+            {
+                LogManager.GetLogger(typeof(Enemy)).Error(enemy.Name + " tried to drop: " + item + ".\n" + e.StackTrace);
+    }
         }
     }
 
@@ -109,8 +117,8 @@ namespace wServer.logic.loot
 
     public class TierLoot : ILootDef
     {
-        public static readonly int[] WeaponT = {1, 2, 3, 8, 17, 24};
-        public static readonly int[] AbilityT = {4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25};
+        public static readonly int[] WeaponT = {1, 2, 3, 8, 17, 24,27};
+        public static readonly int[] AbilityT = {4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25,28};
         public static readonly int[] ArmorT = {6, 7, 14};
         public static readonly int[] RingT = {9};
         public static readonly int[] PotionT = {10};

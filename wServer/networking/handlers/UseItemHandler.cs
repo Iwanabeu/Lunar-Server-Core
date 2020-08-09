@@ -49,7 +49,11 @@ namespace wServer.networking.handlers
                         }
 
                         if (client.Player.HealthPotions > 0)
+                        {
                             client.Player.HealthPotions--;
+                            client.Player.usePot(0);
+                        }
+
                         else
                         {
                             if (client.Account.Credits > client.Player.HpPotionPrice)
@@ -150,7 +154,10 @@ namespace wServer.networking.handlers
                         }
 
                         if (client.Player.MagicPotions > 0)
+                        {
                             client.Player.MagicPotions--;
+                            client.Player.usePot(1);
+                        }
                         else
                         {
                             if (client.Account.Credits > client.Player.MpPotionPrice)

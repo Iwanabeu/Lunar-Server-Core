@@ -108,7 +108,9 @@ public enum ConditionEffects : ulong
     Spd_debuff= (ulong)1<<54,
     Vit_debuff= (ulong)1<<55,
     Wis_debuff= (ulong)1<<56,
-    Dex_debuff= (ulong)1<<57
+    Dex_debuff= (ulong)1<<57,
+    Marked= (ulong)1<<58,
+    Inspired = (ulong)1 << 59
 }
 
 public enum ConditionEffectIndex
@@ -170,7 +172,9 @@ public enum ConditionEffectIndex
     Spd_debuff=54,
     Vit_debuff=55,
     Wis_debuff=56,
-    Dex_debuff=57
+    Dex_debuff=57,
+    Marked=58,
+    Inspired=59
 }
 
 public class PetStruct
@@ -308,7 +312,7 @@ public class ProjectileDesc
     }
     public int BulletType { get; private set; }
     public string ObjectId { get; private set; }
-    public int LifetimeMS { get; private set; }
+    public int LifetimeMS { get; set; }
     public float Speed { get; private set; }
     public int Size { get; private set; }
     public int MinDamage { get; set; }

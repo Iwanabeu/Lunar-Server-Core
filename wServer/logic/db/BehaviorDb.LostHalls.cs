@@ -17,8 +17,7 @@ namespace wServer.logic
                 new SpecificBehavior("Spawn Pillar", 3000),
                 new Debug(300),
                 new State("Idle",
-                    //new PlayerWithinTransition(50, "Phase 1") TEMPORARY
-                    new PlayerWithinTransition(50, "Phase 17 Start")
+                    new PlayerWithinTransition(50, "Phase 1") 
                 ),
                 new State("Phase 1",
                     new Taunt("Look upon my mighty bulwark."),

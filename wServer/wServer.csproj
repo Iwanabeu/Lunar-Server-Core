@@ -136,6 +136,7 @@
     <Compile Include="logic\behaviors\Charge.cs" />
     <Compile Include="logic\behaviors\CirclePoint.cs" />
     <Compile Include="logic\behaviors\HpShoot.cs" />
+    <Compile Include="logic\behaviors\NexusHealMp.cs" />
     <Compile Include="logic\behaviors\SpecificBehavior.cs" />
     <Compile Include="logic\behaviors\Debug.cs" />
     <Compile Include="logic\behaviors\ConditionalEffect.cs" />
@@ -636,6 +637,7 @@
     <EmbeddedResource Include="realm\worlds\maps\oryxchamber.jm" />
     <EmbeddedResource Include="realm\worlds\maps\UDL1.jm" />
     <EmbeddedResource Include="realm\worlds\maps\marketplace.jm" />
+    <EmbeddedResource Include="realm\worlds\maps\tutorial.jm" />
     <None Include="wServer.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

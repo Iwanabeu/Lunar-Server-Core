@@ -1308,6 +1308,32 @@ namespace wServer.realm.commands
                     player.UpdateCount++;
                     player.SendInfo("Success!");
                 }
+                if (args.Length == 2)
+                {
+                    int newLevel = int.Parse(args[1]);
+                    if (newLevel > 50 || newLevel < 1)
+                    {
+                        player.SendInfo("Level must be greater than 0 and less than 51.");
+                        return false;
+                    }
+                    int xp = Player.GetLevelExp(newLevel);
+
+                    Player p = player.Manager.FindPlayer(args[0]);
+                    if (p == null)
+                    {
+                        player.SendInfo("Invalid player name!");
+                        return false;
+                    }
+
+
+                    p.Client.Character.Level = newLevel;
+                    p.Level = newLevel;
+                    p.Experience = xp;
+                    p.Client.Character.Exp = xp;
+
+                    p.UpdateCount++;
+                    player.SendInfo("Success!");
+                }
             }
             catch
             {

@@ -86,12 +86,6 @@ namespace wServer.logic
                         new ItemLoot("Ring of the Pyramid", 0.005),
                         new ItemLoot("Tome of Holy Protection", 0.005),
                         new ItemLoot("Wine Cellar Incantation", 0.005)
-                    ),
-                    new Threshold(0.2,
-                        new EggLoot(EggRarity.Common, 0.1),
-                        new EggLoot(EggRarity.Uncommon, 0.05),
-                        new EggLoot(EggRarity.Rare, 0.01),
-                        new EggLoot(EggRarity.Legendary, 0.002)
                     )
             )
             .Init("Tomb Support",
@@ -133,12 +127,6 @@ namespace wServer.logic
                     new Threshold(0.1,
                         new ItemLoot("Ring of the Sphinx", 0.005),
                         new ItemLoot("Wine Cellar Incantation", 0.005)
-                    ),
-                    new Threshold(0.2,
-                        new EggLoot(EggRarity.Common, 0.1),
-                        new EggLoot(EggRarity.Uncommon, 0.05),
-                        new EggLoot(EggRarity.Rare, 0.01),
-                        new EggLoot(EggRarity.Legendary, 0.002)
                     )
             )
 
@@ -166,12 +154,6 @@ namespace wServer.logic
                 new Threshold(0.1,
                     new ItemLoot("Ring of the Nile", 0.002),
                     new ItemLoot("Wine Cellar Incantation", 0.002)
-                ),
-                new Threshold(0.2,
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05),
-                    new EggLoot(EggRarity.Rare, 0.01),
-                    new EggLoot(EggRarity.Legendary, 0.002)
                 )
             )
 
@@ -310,12 +292,6 @@ namespace wServer.logic
                         new ItemLoot("Tincture of Mana", 0.15),
                         new ItemLoot("Tincture of Dexterity", 0.15),
                         new ItemLoot("Tincture of Life", 0.15)
-                    ),
-                    new Threshold(0.2,
-                        new EggLoot(EggRarity.Common, 0.1),
-                        new EggLoot(EggRarity.Uncommon, 0.05),
-                        new EggLoot(EggRarity.Rare, 0.01),
-                        new EggLoot(EggRarity.Legendary, 0.002)
                     )
             )
             .Init("Tomb Boss Anchor",

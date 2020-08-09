@@ -434,13 +434,8 @@ namespace wServer.logic
                     new TierLoot(8, ItemType.Armor, 0.3),
                     new TierLoot(9, ItemType.Armor, 0.2),
                     new TierLoot(10, ItemType.Armor, 0.1)
-                ),
-                new Threshold(0.2,
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05),
-                    new EggLoot(EggRarity.Rare, 0.01),
-                    new EggLoot(EggRarity.Legendary, 0.002)
                 )
+                
             )
             .Init("Snakepit Dart Thrower",
                 new State(

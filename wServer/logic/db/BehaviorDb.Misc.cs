@@ -15,6 +15,14 @@ namespace wServer.logic
                     new NexusHealHp(5, 100, 1000)
                     )
             )
+            .Init("Nexus Brazier",
+            new State(
+                new NexusHealHp(5, 100, 1000),
+                new NexusHealMp(5,100,1000)
+                
+                )
+
+            )
             .Init("Winter Fountain Frozen", //Frozen <3
                                             //Kabam let it go :DDD
                 new State(

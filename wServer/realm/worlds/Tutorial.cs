@@ -23,7 +23,7 @@ namespace wServer.realm.worlds
         {
             if (!(IsLimbo = isLimbo))
             {
-                LoadMap("wServer.realm.worlds.maps.tutorial.wmap", MapType.Wmap);
+                LoadMap("wServer.realm.worlds.maps.tutorial.jm", MapType.Json);
             }
         }
 

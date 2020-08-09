@@ -61,6 +61,8 @@ namespace wServer.realm
             if (host.HasConditionEffect(ConditionEffectIndex.Invulnerable) ||
                 host.HasConditionEffect(ConditionEffectIndex.Invincible))
                 ret = 0;
+            if (host.HasConditionEffect(ConditionEffectIndex.Curse)) ret *= 1.2f;
+            if (host.HasConditionEffect(ConditionEffectIndex.Marked)) ret *= 1.1f;
             return ret;
         }
 
@@ -85,6 +87,9 @@ namespace wServer.realm
             if (player.HasConditionEffect(ConditionEffectIndex.Invulnerable) ||
                 player.HasConditionEffect(ConditionEffectIndex.Invincible))
                 ret = 0;
+
+            if (player.HasConditionEffect(ConditionEffectIndex.Curse)) ret *= 1.2f;
+            if (player.HasConditionEffect(ConditionEffectIndex.Marked)) ret *= 1.1f;
             return ret;
         }
 

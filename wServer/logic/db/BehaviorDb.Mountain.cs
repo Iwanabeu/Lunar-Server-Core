@@ -29,9 +29,7 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Ring, 0.015),
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Attack", 0.01),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Attack", 0.1)
                     )
             )
             .Init("Arena Horseman Anchor",
@@ -90,9 +88,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.02),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Attack", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Attack", 0.1)
                     )
             )
             .Init("Sprite Child",
@@ -126,9 +122,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Speed", 0.01),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Speed", 0.1)
                     )
             )
             .Init("Ent God",
@@ -149,9 +143,7 @@ namespace wServer.logic
                 new TierLoot(9, ItemType.Armor, 0.01),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Defense", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Defense", 0.1)
                     )
             )
             .Init("Lucky Ent God",
@@ -173,9 +165,7 @@ namespace wServer.logic
                 new TierLoot(9, ItemType.Armor, 0.01),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Defense", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Defense", 0.1)
                     )
             )
             .Init("Beholder",
@@ -198,9 +188,7 @@ namespace wServer.logic
                 new TierLoot(3, ItemType.Ring, 0.015),
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Defense", 0.01),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Defense", 0.1)
                     )
             )
             .Init("Flying Brain",
@@ -221,9 +209,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Attack", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Attack", 0.1)
                     )
             )
             .Init("Slime God",
@@ -244,9 +230,7 @@ namespace wServer.logic
                 new TierLoot(9, ItemType.Armor, 0.01),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Defense", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Defense", 0.1)
                     )
             )
             .Init("Ghost God",
@@ -267,9 +251,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Speed", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Speed", 0.1)
                     )
             )
             .Init("Rock Bot",
@@ -410,9 +392,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Speed", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Speed", 0.1)
                     )
             )
             .Init("Lucky Djinn",
@@ -479,9 +459,7 @@ namespace wServer.logic
                 new TierLoot(4, ItemType.Ring, 0.005),
                 new TierLoot(4, ItemType.Ability, 0.02),
                 new Threshold(0.18,
-                    new ItemLoot("Potion of Speed", 0.015),
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05)
+                    new ItemLoot("Potion of Speed", 0.1)
                     )
             )
             .Init("Leviathan",

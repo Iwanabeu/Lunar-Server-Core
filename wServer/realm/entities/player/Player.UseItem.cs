@@ -158,6 +158,7 @@ namespace wServer.realm.entities.player
             double arcGap = item.ArcGap*Math.PI/180;
             double startAngle = Math.Atan2(target.Y - Y, target.X - X) - (item.NumProjectiles - 1)/2*arcGap;
             ProjectileDesc prjDesc = new ProjectileDesc(item.Projectiles[0]); //Assume only one
+            prjDesc = applyProjectileEffects(prjDesc);
             for (int i = 0; i < item.NumProjectiles; i++)
             {
                 Projectile proj = CreateProjectile(prjDesc, item.ObjectType,

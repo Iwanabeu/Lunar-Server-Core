@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace terrain
 {
+
     internal class Biome
     {
         private readonly PolygonMap map;

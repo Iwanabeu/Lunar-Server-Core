@@ -25,7 +25,7 @@ namespace wServer.networking.cliPackets
         protected override void Read(Client client, NReader rdr)
         {
             subclass = rdr.ReadInt16();
-            Feats = new bool[28];
+            Feats = new bool[40];
             for (int i = 0; i < Feats.Length; i++)
                 Feats[i] = rdr.ReadBoolean();
         }

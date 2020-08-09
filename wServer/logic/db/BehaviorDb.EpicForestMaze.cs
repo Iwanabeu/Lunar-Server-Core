@@ -35,12 +35,6 @@ namespace wServer.logic
                     new TierLoot(12, ItemType.Weapon, 0.01),
                     new ItemLoot("Wine Cellar Incantation", 0.01),
                     new ItemLoot("Leaf Bow", 0.005)
-                ),
-                new Threshold(0.2,
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05),
-                    new EggLoot(EggRarity.Rare, 0.01),
-                    new EggLoot(EggRarity.Legendary, 0.002)
                 )
             )
         .Init("Mini Larva",

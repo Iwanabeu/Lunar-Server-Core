@@ -262,11 +262,7 @@ namespace wServer.logic
                     new TierLoot(10, ItemType.Weapon, 0.05),
                     new TierLoot(11, ItemType.Weapon, 0.04),
                     new TierLoot(4, ItemType.Ring, 0.025),
-                    new TierLoot(5, ItemType.Ring, 0.02),
-                    new EggLoot(EggRarity.Common, 0.05),
-                    new EggLoot(EggRarity.Uncommon, 0.025),
-                    new EggLoot(EggRarity.Rare, 0.02),
-                    new EggLoot(EggRarity.Legendary, 0.005)
+                    new TierLoot(5, ItemType.Ring, 0.02)
                 )
             )
 

@@ -4448,5 +4448,314 @@
       </Texture>
     </Top>
   </Ground>
+  
+  
+  
+  
+  <Ground type="0xc048" id="Lunar Nexus Carpet 1">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x00</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc049" id="Lunar Nexus Carpet 2">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x01</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04a" id="Lunar Nexus Carpet 3">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x02</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04b" id="Lunar Nexus Carpet 4">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x03</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04c" id="Lunar Nexus Carpet 5">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x04</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04d" id="Lunar Nexus Carpet 6">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x05</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04e" id="Lunar Nexus Carpet 7">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x06</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc04f" id="Lunar Nexus Carpet 8">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x07</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc050" id="Lunar Nexus Carpet 9">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x08</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc051" id="Lunar Nexus Carpet 10">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x09</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc052" id="Lunar Nexus Carpet 11">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0a</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc053" id="Lunar Nexus Carpet 12">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0b</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc054" id="Lunar Nexus Carpet 13">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0c</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc055" id="Lunar Nexus Carpet 14">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0d</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc056" id="Lunar Nexus Carpet 15">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0e</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc057" id="Lunar Nexus Carpet 16">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x0f</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc058" id="Lunar Nexus Carpet 17">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x10</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc059" id="Lunar Nexus Carpet 18">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x11</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05a" id="Lunar Nexus Carpet 19">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x12</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05b" id="Lunar Nexus Carpet 20">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x13</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05c" id="Lunar Nexus Carpet 21">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x14</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05d" id="Lunar Nexus Carpet 22">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x15</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05e" id="Lunar Nexus Carpet 23">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x16</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc05f" id="Lunar Nexus Carpet 24">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x17</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc060" id="Lunar Nexus Carpet 25">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x18</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc061" id="Lunar Nexus Carpet 26">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x19</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc062" id="Lunar Nexus Dock 1">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1a</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc063" id="Lunar Nexus Dock 2">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1b</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc064" id="Lunar Nexus Dock 3">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1c</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc065" id="Lunar Nexus Dock 4">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1d</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc066" id="Lunar Nexus Dock 5">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1e</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc067" id="Lunar Nexus Tile 1">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x1f</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc068" id="Lunar Nexus Tile 2">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x20</Index>
+    </Texture>
+  </Ground>
+
+  <Ground type="0xc06a" id="Lunar Realm Road 1">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x24</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc06b" id="Lunar Realm Road 2">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x25</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc06c" id="Lunar Walkable Lava">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x26</Index>
+    </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <Speed>0.5</Speed>
+    <MinDamage>30</MinDamage>
+    <MaxDamage>60</MaxDamage>
+  </Ground>
+  <Ground type="0xc06d" id="Lunar Unwalkable Lava">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x27</Index>
+    </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <NoWalk/>
+  </Ground>
+  <Ground type="0xc06e" id="Lunar Unwalkable Water">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x28</Index>
+    </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <NoWalk/>
+  </Ground>
+  <Ground type="0xc06f" id="Lunar Walkable Water">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x29</Index>
+    </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <Speed>0.7</Speed>
+  </Ground>
+  <Ground type="0xc070" id="Lunar Glands Ground">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2a</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc071" id="Lunar Grass 1">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2b</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc072" id="Lunar Grass 2">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2c</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc073" id="Lunar Grass 3">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2d</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc074" id="Lunar Ice">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2e</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc075" id="Lunar Snow">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x2f</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc076" id="Lunar Beach Sand">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x30</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc077" id="Lunar Desert Sand">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x31</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc078" id="Lunar Desert Ground">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x32</Index>
+    </Texture>
+  </Ground>
+  <Ground type="0xc079" id="Lunar Nexus Tile 3">
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x33</Index>
+    </Texture>
+  </Ground>
 
 </GroundTypes>

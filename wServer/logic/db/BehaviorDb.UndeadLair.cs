@@ -447,12 +447,6 @@ namespace wServer.logic
                     new TierLoot(3, ItemType.Ability, 0.2),
                     new TierLoot(4, ItemType.Ability, 0.15),
                     new TierLoot(5, ItemType.Ability, 0.1)
-                ),
-                new Threshold(0.2,
-                    new EggLoot(EggRarity.Common, 0.1),
-                    new EggLoot(EggRarity.Uncommon, 0.05),
-                    new EggLoot(EggRarity.Rare, 0.01),
-                    new EggLoot(EggRarity.Legendary, 0.002)
                 )
             )
             .Init("Ghost Warrior of Septavius",

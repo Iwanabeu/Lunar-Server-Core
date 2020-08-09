@@ -16,7 +16,7 @@ namespace wServer.realm
 {
     public class Entity : IProjectileOwner, ICollidable<Entity>, IDisposable
     {
-        private const int EFFECT_COUNT = 58;
+        private const int EFFECT_COUNT = 60;
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
         private readonly ObjectDesc desc;
         private readonly int[] effects;

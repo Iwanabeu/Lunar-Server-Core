@@ -502,7 +502,7 @@ namespace wServer.realm.entities.player
             stats[StatsType.LootTierBoostTimer] = (int)LootTierBoostTimeLeft;
 
             stats[StatsType.Subclass] = (int)subclass;
-            stats[StatsType.Feat] = db.Database.featstostring(feats).ToString();
+            stats[StatsType.Feat] = db.Database.featstostring(feats);
             stats[StatsType.Blocks_Projs] = feats[Feat.Man_Of_Steel];
 
         }
@@ -568,6 +568,8 @@ namespace wServer.realm.entities.player
             if (Client.Stage == ProtocalStage.Disconnected || resurrecting)
                 return;
             if (CheckResurrection())
+                return;
+            if (onDeath())
                 return;
 
             if (Client.Character.Dead)
@@ -806,7 +808,7 @@ namespace wServer.realm.entities.player
                     SendError("server.teleport_to_self");
                     return;
                 }
-                if (!Owner.AllowTeleport)
+                if (!Owner.AllowTeleport && !allowTP())
                 {
                     SendError(GetLanguageString("server.no_teleport_in_realm", new KeyValuePair<string, object>("realm", Owner.Name)));
                     return;

@@ -578,7 +578,8 @@
   <Object type="0xa096" id="Net8">
     <Class>Projectile</Class>
     <Texture>
-      <File>LunarHuntsmanTiered</File>	 <Index>0x28</Index>
+      <File>LunarHuntsmanTiered</File>
+      <Index>0x28</Index>
     </Texture>
     <AngleCorrection>1</AngleCorrection>
     <Rotation>100</Rotation>
@@ -709,7 +710,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x10</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0a7" id="t1 Sword">
     <Class>Projectile</Class>
@@ -717,7 +717,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x11</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0a8" id="t2 Sword">
     <Class>Projectile</Class>
@@ -725,7 +724,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x12</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0a9" id="t3 Sword">
     <Class>Projectile</Class>
@@ -733,7 +731,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x13</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0aa" id="t4 Sword">
     <Class>Projectile</Class>
@@ -741,7 +738,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x14</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ab" id="t5 Sword">
     <Class>Projectile</Class>
@@ -749,7 +745,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x15</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ac" id="t6 Sword">
     <Class>Projectile</Class>
@@ -765,7 +760,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x17</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ae" id="t8 Sword">
     <Class>Projectile</Class>
@@ -845,7 +839,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x22</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0b8" id="t3 Bow">
     <Class>Projectile</Class>
@@ -869,7 +862,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x25</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0bb" id="t6 Bow">
     <Class>Projectile</Class>
@@ -885,7 +877,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x27</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0bd" id="t8 Bow">
     <Class>Projectile</Class>
@@ -1069,7 +1060,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x40</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d4" id="t1 Wand">
     <Class>Projectile</Class>
@@ -1077,7 +1067,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x41</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d5" id="t2 Wand">
     <Class>Projectile</Class>
@@ -1085,7 +1074,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x42</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d6" id="t3 Wand">
     <Class>Projectile</Class>
@@ -1093,7 +1081,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x43</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d7" id="t4 Wand">
     <Class>Projectile</Class>
@@ -1101,7 +1088,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x44</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d8" id="t5 Wand">
     <Class>Projectile</Class>
@@ -1109,7 +1095,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x45</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0d9" id="t6 Wand">
     <Class>Projectile</Class>
@@ -1125,7 +1110,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x47</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0db" id="t8 Wand">
     <Class>Projectile</Class>
@@ -1133,7 +1117,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x48</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0dc" id="t9 Wand">
     <Class>Projectile</Class>
@@ -1141,7 +1124,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x49</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0dd" id="t10 Wand">
     <Class>Projectile</Class>
@@ -1149,7 +1131,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x4a</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0de" id="t11 Wand">
     <Class>Projectile</Class>
@@ -1157,7 +1138,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x4b</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0df" id="t12 Wand">
     <Class>Projectile</Class>
@@ -1165,7 +1145,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x4c</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e0" id="t13 Wand">
     <Class>Projectile</Class>
@@ -1181,7 +1160,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x4e</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e2" id="t0 Dagger">
     <Class>Projectile</Class>
@@ -1189,7 +1167,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x50</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e3" id="t1 Dagger">
     <Class>Projectile</Class>
@@ -1197,7 +1174,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x51</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e4" id="t2 Dagger">
     <Class>Projectile</Class>
@@ -1205,7 +1181,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x52</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e5" id="t3 Dagger">
     <Class>Projectile</Class>
@@ -1213,7 +1188,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x53</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e6" id="t4 Dagger">
     <Class>Projectile</Class>
@@ -1221,7 +1195,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x54</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e7" id="t5 Dagger">
     <Class>Projectile</Class>
@@ -1229,7 +1202,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x55</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e8" id="t6 Dagger">
     <Class>Projectile</Class>
@@ -1237,7 +1209,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x56</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0e9" id="t7 Dagger">
     <Class>Projectile</Class>
@@ -1245,7 +1216,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x57</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ea" id="t8 Dagger">
     <Class>Projectile</Class>
@@ -1253,7 +1223,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x58</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0eb" id="t9 Dagger">
     <Class>Projectile</Class>
@@ -1261,7 +1230,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x59</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ec" id="t10 Dagger">
     <Class>Projectile</Class>
@@ -1285,7 +1253,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x5c</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0ef" id="t13 Dagger">
     <Class>Projectile</Class>
@@ -1293,7 +1260,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x5d</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0f0" id="t14 Dagger">
     <Class>Projectile</Class>
@@ -1301,7 +1267,6 @@
       <File>LunarTieredProjs</File>
       <Index>0x5e</Index>
     </Texture>
-    <AngleCorrection>1</AngleCorrection>
   </Object>
   <Object type="0xa0f1" id="t0 Quiver">
     <Class>Projectile</Class>
