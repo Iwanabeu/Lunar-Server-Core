@@ -3065,31 +3065,31 @@ namespace wServer.realm.commands
             return true;
         }
     }
-    class SendStatusText : Command
-    {
-        public SendStatusText()
-           : base("status", 3)
+    class checkHP : Command {
+        public checkHP()
+               : base("checkHP", 3)
         {
         }
-        public string Command { get { return "status"; } }
+        public string Command { get { return "checkHP"; } }
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
-            try
+            if (args.Length == 0)
             {
-                Packet pkt = new EffectTextPacket
-                {
-                    Message = "YOOOOOO"
-                };
-                player.Client.SendPacket(pkt);
-                
-                return true;
-            }
-            catch (Exception e)
-            {
-                log.Error(e);
+                player.SendInfo("Need enemy to check.");
                 return false;
             }
-
+            IEnumerable<KeyValuePair<int, Enemy>> enemies = player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase( String.Join(" ", args)));
+            if (enemies.Count() == 0)
+            {
+                player.SendInfo("Couldn't find that enemy!");
+                return false;
+            }
+            foreach (KeyValuePair<int, Enemy> i in enemies)
+            {
+                Enemy e = i.Value;
+                player.SendInfo("Enemy: " + e.Name + " has: " + e.HP + " hp out of: " + e.maxHP);
+            }
+            return true;
         }
     }
 }

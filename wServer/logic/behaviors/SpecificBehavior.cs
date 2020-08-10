@@ -181,25 +181,25 @@ namespace wServer.logic.behaviors
             }
             else if (this.Name == "LH Color Changer")
             {
-                
-                if ((host as Enemy).HP < host.ObjectDesc.MaxHP * 0.8)
+                Enemy e = host as Enemy;
+                if (e.HP < e.maxHP * 0.8)
                 {
-                    (host as Enemy).AltTextureIndex = 5;
+                    e.AltTextureIndex = 5;
                     host.UpdateCount++;
                 }
-                if ((host as Enemy).HP < host.ObjectDesc.MaxHP * 0.6)
+                if (e.HP < e.maxHP * 0.6)
                 {
-                    (host as Enemy).AltTextureIndex = 6;
+                    e.AltTextureIndex = 6;
                     host.UpdateCount++;
                 }
-                if ((host as Enemy).HP < host.ObjectDesc.MaxHP * 0.4)
+                if (e.HP < e.maxHP * 0.4)
                 {
-                    (host as Enemy).AltTextureIndex = 7;
+                    e.AltTextureIndex = 7;
                     host.UpdateCount++;
                 }
-                if ((host as Enemy).HP < host.ObjectDesc.MaxHP * 0.2)
+                if (e.HP < e.maxHP * 0.2)
                 {
-                    (host as Enemy).AltTextureIndex = 8;
+                    e.AltTextureIndex = 8;
                     host.UpdateCount++;
                 }
             }

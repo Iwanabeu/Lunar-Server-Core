@@ -81,7 +81,7 @@ namespace wServer.logic.behaviors
                     {
                         foreach (Tuple<double, int> i in this.thresholds)
                         {
-                            if ((host as Enemy).HP < (i.Item1 * host.ObjectDesc.MaxHP))
+                            if ((host as Enemy).HP < (i.Item1 * (host as Enemy).maxHP))
                             {
                                 desc = host.ObjectDesc.Projectiles[i.Item2];
                                 break;

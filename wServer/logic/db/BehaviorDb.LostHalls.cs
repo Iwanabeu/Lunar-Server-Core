@@ -17,7 +17,7 @@ namespace wServer.logic
                 new SpecificBehavior("Spawn Pillar", 3000),
                 new Debug(300),
                 new State("Idle",
-                    new PlayerWithinTransition(50, "Phase 1") 
+                    new PlayerWithinTransition(50, "Phase 1")
                 ),
                 new State("Phase 1",
                     new Taunt("Look upon my mighty bulwark."),
@@ -32,7 +32,7 @@ namespace wServer.logic
                 new State("Phase 2",
                     new Taunt("You doubt my strength? FATUUS! I will destroy you!"),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
-                    new Follow(2, 15, 2, 5000, new Cooldown(100, 0)),
+                    new Follow(0.3, 15, 2, 5000, new Cooldown(100, 0)),
                     new Shoot(500, 5, projectileIndex: 1, predictive: 0, shootAngle: 5, coolDown: new Cooldown(3000, 0)),
                     new Shoot(500, 5, projectileIndex: 1, predictive: 0, shootAngle: 5, angleOffset: 90, coolDown: new Cooldown(3000, 0)),
                     new Shoot(500, 5, projectileIndex: 1, predictive: 0, shootAngle: 5, angleOffset: 180, coolDown: new Cooldown(3000, 0)),
@@ -47,6 +47,7 @@ namespace wServer.logic
                     new TimedTransition(1000, "Phase 3", false)
                     ),
                 new State("Phase 3",
+                    new HPScale(.1),
                     new MoveTo(70, 69, 2, isMapPosition: true, instant: true),
                     new TimedEffect(ConditionEffectIndex.Invulnerable, 1500),
                     new ConditionalEffect(ConditionEffectIndex.Armored),

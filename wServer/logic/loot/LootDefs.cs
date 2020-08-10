@@ -187,7 +187,7 @@ namespace wServer.logic.loot
             string lootState, IList<LootDef> lootDefs)
         {
             Lootstate = lootState;
-            if (playerDat != null && playerDat.Item2/enemy.ObjectDesc.MaxHP >= threshold)
+            if (playerDat != null && playerDat.Item2/enemy.maxHP >= threshold)
             {
                 foreach (ILootDef i in children)
                     i.Populate(manager, enemy, null, rand, lootState, lootDefs);

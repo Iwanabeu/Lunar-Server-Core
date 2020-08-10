@@ -4631,12 +4631,17 @@
       <File>LunarGround</File>
       <Index>0x1d</Index>
     </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <Speed>0.7</Speed>
+    <Sink/>
   </Ground>
   <Ground type="0xc066" id="Lunar Nexus Dock 5">
     <Texture>
       <File>LunarGround</File>
       <Index>0x1e</Index>
     </Texture>
+    <Animate dx=".5" dy=".5">Wave</Animate>
+    <NoWalk/>
   </Ground>
   <Ground type="0xc067" id="Lunar Nexus Tile 1">
     <Texture>
@@ -4672,6 +4677,7 @@
     <Speed>0.5</Speed>
     <MinDamage>30</MinDamage>
     <MaxDamage>60</MaxDamage>
+    <Sink/>
   </Ground>
   <Ground type="0xc06d" id="Lunar Unwalkable Lava">
     <Texture>
@@ -4696,6 +4702,7 @@
     </Texture>
     <Animate dx=".5" dy=".5">Wave</Animate>
     <Speed>0.7</Speed>
+    <Sink/>
   </Ground>
   <Ground type="0xc070" id="Lunar Glands Ground">
     <Texture>

@@ -28,7 +28,7 @@ namespace wServer.logic.behaviors
         {
             if (threshold > 1.0)
                 return (host as Enemy).HP < threshold;
-            return ((host as Enemy).HP / host.ObjectDesc.MaxHP) < threshold;
+            return ((host as Enemy).HP / (host as Enemy).maxHP) < threshold;
         }
 
         private static State FindState(State state, string name)

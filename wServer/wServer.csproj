@@ -135,6 +135,7 @@
     <Compile Include="logic\behaviors\ChangeSize.cs" />
     <Compile Include="logic\behaviors\Charge.cs" />
     <Compile Include="logic\behaviors\CirclePoint.cs" />
+    <Compile Include="logic\behaviors\HPScale.cs" />
     <Compile Include="logic\behaviors\HpShoot.cs" />
     <Compile Include="logic\behaviors\NexusHealMp.cs" />
     <Compile Include="logic\behaviors\SpecificBehavior.cs" />

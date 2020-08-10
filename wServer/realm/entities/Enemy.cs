@@ -16,6 +16,7 @@ namespace wServer.realm.entities
         private DamageCounter counter;
         private float bleeding;
         private Position? pos;
+        public int maxHP;
 
         public Enemy(RealmManager manager, ushort objType)
             : base(manager, objType, new wRandom())
@@ -24,6 +25,7 @@ namespace wServer.realm.entities
             counter = new DamageCounter(this);
             LootState = "";
             Name = ObjectDesc.ObjectId;
+            maxHP =(int) ObjectDesc.MaxHP;
         }
 
         public DamageCounter DamageCounter
@@ -45,6 +47,7 @@ namespace wServer.realm.entities
         {
             stats[StatsType.AltTextureIndex] = AltTextureIndex;
             stats[StatsType.HP] = HP;
+            stats[StatsType.MaximumHP] = maxHP;
             base.ExportStats(stats);
         }
 

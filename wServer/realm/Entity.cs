@@ -73,7 +73,6 @@ namespace wServer.realm
                 DurationMS = -1
             });
         }
-
         public RealmManager Manager { get; private set; }
 
 

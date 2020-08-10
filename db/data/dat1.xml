@@ -50987,17 +50987,6 @@
     <UnlockSpecial>Unlocked during Halloween 2014</UnlockSpecial>
     <DisplayId>{skins.Infected_Assassin}</DisplayId>
   </Object>
-  <Object type="0x7467" id="Huntsman">
-    <Skin/>
-    <Class>Skin</Class>
-    <AnimatedTexture>
-      <File>playerskins</File>
-      <Index>77</Index>
-    </AnimatedTexture>
-    <PlayerClassType>0x0307</PlayerClassType>
-    <UnlockSpecial>Unlocked during Halloween 2014. Thanks to: WunderWafe</UnlockSpecial>
-    <DisplayId>{skins.Huntsman}</DisplayId>
-  </Object>
   <Object type="0x7468" id="Demon Spawn">
     <Skin/>
     <Class>Skin</Class>
@@ -76660,7 +76649,7 @@
     </AltTexture>
     <DisplayId>Marble Colossus</DisplayId>
     <Size>140</Size>
-    <MaxHitPoints>10000000</MaxHitPoints>
+    <MaxHitPoints>100000</MaxHitPoints>
     <Defense>50</Defense>
     <Quest/>
     <God/>
@@ -85909,7 +85898,7 @@
     <Top>
       <Texture>
         <File>LunarGround</File>
-        <Index>0x36</Index>
+        <Index>0x37</Index>
       </Texture>
     </Top>
     <Animation prob="0.4" period="1">
@@ -85927,6 +85916,43 @@
     <OccupySquare/>
     <EnemyOccupySquare/>
     <BlocksSight/>
+  </Object>
+  <Object type="0xc07b" id="Nexus Wall 3">
+    <Class>Wall</Class>
+    <Texture>
+      <File>LunarGround</File>
+      <Index>0x36</Index>
+    </Texture>
+    <Top>
+      <Texture>
+        <File>LunarGround</File>
+        <Index>0x37</Index>
+      </Texture>
+    </Top>
+    <HitSound>monster/stone_walls_hit</HitSound>
+    <DeathSound>monster/stone_walls_death</DeathSound>
+    <Static/>
+    <FullOccupy/>
+    <OccupySquare/>
+    <EnemyOccupySquare/>
+    <BlocksSight/>
+  </Object>
+  <Object type="0xd099" id="Big Boat">
+    <Class>Portal</Class>
+    <IntergamePortal/>
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x06</Index>
+    </Texture>
+    <Animation prob="0.4" period="1">
+      <Frame time="1">
+        <Texture>
+          <File>LunarAddedItems32x32</File>
+          <Index>0x07</Index>
+        </Texture>
+      </Frame>
+    </Animation>
+    <DisplayId>Big Boat</DisplayId>
   </Object>
 
 </Objects>
