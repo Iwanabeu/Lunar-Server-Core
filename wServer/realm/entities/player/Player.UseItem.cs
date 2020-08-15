@@ -664,7 +664,9 @@ namespace wServer.realm.entities.player
                                 eff.Radius,
                                 eff.TotalDamage,
                                 eff.ConditionEffect ?? ConditionEffectIndex.Slowed,
-                                eff.EffectDuration);
+                                eff.EffectDuration,
+                                eff.ConditionEffect2,
+                                eff.EffectDuration2);
                             trap.Move(target.X, target.Y);
                             world.EnterWorld(trap);
                         }));

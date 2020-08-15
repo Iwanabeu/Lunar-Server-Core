@@ -27,7 +27,7 @@ namespace wServer.realm.worlds
 
         protected override void Init()
         {
-            LoadMap(SUMMER_RESOURCE, MapType.Json);
+            LoadMap("wServer.realm.worlds.maps.LunarNexus.jm", MapType.Json);
         }
 
         public override void Tick(RealmTime time)

@@ -404,6 +404,7 @@
     <Compile Include="realm\entities\player\Player.Effects.cs" />
     <Compile Include="realm\entities\player\Player.Ground.cs" />
     <Compile Include="realm\entities\player\Player.Guild.cs" />
+    <Compile Include="realm\entities\player\Player.Horse.cs" />
     <Compile Include="realm\entities\player\Player.Inventory.cs" />
     <Compile Include="realm\entities\player\Player.KeepAlive.cs" />
     <Compile Include="realm\entities\player\Player.Leveling.cs" />
@@ -639,6 +640,7 @@
     <EmbeddedResource Include="realm\worlds\maps\UDL1.jm" />
     <EmbeddedResource Include="realm\worlds\maps\marketplace.jm" />
     <EmbeddedResource Include="realm\worlds\maps\tutorial.jm" />
+    <EmbeddedResource Include="realm\worlds\maps\LunarNexus.jm" />
     <None Include="wServer.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

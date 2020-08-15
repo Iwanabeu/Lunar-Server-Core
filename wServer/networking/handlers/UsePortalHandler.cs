@@ -59,6 +59,7 @@ namespace wServer.networking.handlers
                             case 0x0d40:
                             case 0x070d:
                             case 0x070e:
+                            case 0xd099:
                             {
                                 if (client.Player.Manager.LastWorld.ContainsKey(client.Player.AccountId))
                                 {
@@ -87,6 +88,7 @@ namespace wServer.networking.handlers
                                 world = client.Player.Manager.GetWorld(World.NEXUS_ID);
                                 break;
                             case 0x1756:
+                            case 0xd09a:
                                 world = client.Player.Manager.GetWorld(World.DAILY_QUEST_ID);
                                 break;
                             case 0x072f:
@@ -97,6 +99,9 @@ namespace wServer.networking.handlers
                                     //client.Player.SendInfo("Thanks.");
                                     world = client.Player.Guild.GuildHall;
                                 }
+                                break;
+                            case 0xd096:
+                                world = client.Player.Manager.GetWorld(World.MARKETPLACE);
                                 break;
                             default:
                                 Type worldType =

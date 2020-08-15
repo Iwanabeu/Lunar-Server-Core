@@ -166,6 +166,7 @@ namespace wServer.networking
         private void DisconnectFromRealm()
         {
             Player.removeBuffs();
+            if (Player.onHorse) Player.exitHorse();
             Manager.Logic.AddPendingAction(t =>
             {
                 Save();

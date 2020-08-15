@@ -15,7 +15,7 @@ namespace wServer.realm.entities.player
 {
     internal interface IPlayer
     {
-        void Damage(int dmg, Entity chr,bool remove);
+        void Damage(int dmg, Entity chr);
         bool IsVisibleToEnemy();
     }
 
@@ -369,7 +369,7 @@ namespace wServer.realm.entities.player
 
         public int[] SlotTypes { get; set; }
 
-        public void Damage(int dmg, Entity chr, bool remove)
+        public void Damage(int dmg, Entity chr)
         {
             try
             {
@@ -390,11 +390,10 @@ namespace wServer.realm.entities.player
                     Damage = (ushort)dmg,
                     Killed = HP <= 0,
                     BulletId = 0,
-                    ObjectId = chr.Id,
-                    remove = remove
+                    ObjectId = chr.Id
                 }, this);
                 SaveToCharacter();
-
+                delayTillHorse = 10000;
                 if (HP <= 0)
                     Death(chr.ObjectDesc.DisplayId, chr.ObjectDesc);
             }
@@ -504,6 +503,7 @@ namespace wServer.realm.entities.player
             stats[StatsType.Subclass] = (int)subclass;
             stats[StatsType.Feat] = db.Database.featstostring(feats);
             stats[StatsType.Blocks_Projs] = feats[Feat.Man_Of_Steel];
+            stats[StatsType.OnHorse] = onHorse;
 
         }
 
@@ -893,6 +893,7 @@ namespace wServer.realm.entities.player
             HandleEffects(time);
             HandleGround(time);
             HandleSubclassEffects(time);
+            handleHorse(time);
             HandleBoosts();
 
             FameCounter.Tick(time);

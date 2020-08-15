@@ -72,148 +72,83 @@ namespace wServer.realm.entities.player
                 {"Oryx the Mad God 1", Tuple.Create(20, 1, 1000)},
                 {"Oryx the Mad God 2", Tuple.Create(20, 1, 1000)},
             };
-
+        private static readonly List<int> levelxps =
+            new List<int>
+            {
+                0,
+                300,
+                400,
+                533,
+                710,
+                946,
+                1261,
+                1681,
+                2241,
+                2988,
+                3984,
+                5312,
+                7082,
+                9442,
+                12589,
+                16785,
+                22380,
+                29840,
+                39786,
+                53048,
+                70730,
+                94306,
+                125741,
+                167654,
+                223538,
+                298050,
+                387400,
+                529866,
+                706488,
+                942444,
+                1178055,
+                1472568,
+                1840710,
+                2300887,
+                2876108,
+                3595135,
+                4493918,
+                5617397,
+                7021746,
+                8777182,
+                10532618,
+                12639141,
+                15166969,
+                18200362,
+                21840434,
+                25480506,
+                28727257,
+                34681799,
+                40462098,
+                47205781,
+                0
+            };
         public Entity Quest { get; private set; }
-
+        public void changeLevel(int level)
+        {
+            this.Level = level;
+            this.Experience = GetLevelExp(level);
+            this.ExperienceGoal = GetExpGoal(level);
+            CalculateFame();
+            UpdateCount++;
+            SaveToCharacter();
+        }
         private static int GetExpGoal(int level)
         {
-            if(level<=20) return 50 + (level - 1)*100;
-            //From levels 21-50 manual xp requirements.
-            switch (level) {
-                case 21:
-                    return 2466;
-                case 22:
-                    return 3288;
-                case 23:
-                    return 4384;
-                case 24:
-                    return 5845;
-                case 25:
-                    return 7793;
-                case 26:
-                    return 10390;
-                case 27:
-                    return 13853;
-                case 28:
-                    return 18470;
-                case 29:
-                    return 24626;
-                case 30:
-                    return 32834;
-                case 31:
-                    return 43778;
-                case 32:
-                    return 58370;
-                case 33:
-                    return 77826;
-                case 34:
-                    return 103768;
-                case 35:
-                    return 138347;
-                case 36:
-                    return 184462;
-                case 37:
-                    return 245949;
-                case 38:
-                    return 327932;
-                case 39:
-                    return 437242;
-                case 40:
-                    return 582989;
-                case 41:
-                    return 777318;
-                case 42:
-                    return 1036424;
-                case 43:
-                    return 1381898;
-                case 44:
-                    return 1842530;
-                case 45:
-                    return 2456706;
-                case 46:
-                    return 3275608;
-                case 47:
-                    return 4367477;
-                case 48:
-                    return 5823302;
-                case 49:
-                    return 7314402;
-                case 50:
-                    return 9752536;
-                default:
-                    return 99999999;
-            }
+            return levelxps[level];
         }
 
-        public static int GetLevelExp(int level)
+        private static int GetLevelExp(int level)
         {
-            if (level == 1) return 0;
-            if(level<=20) return 50*(level - 1) + (level - 2)*(level - 1)*50;
-            //From levels 21-50 manual xp summation.
-            switch (level) {
-                case 21:
-                    return 20505;
-                case 22:
-                    return 23793;
-                case 23:
-                    return 28177;
-                case 24:
-                    return 34022;
-                case 25:
-                    return 41815;
-                case 26:
-                    return 52205;
-                case 27:
-                    return 66058;
-                case 28:
-                    return 84528;
-                case 29:
-                    return 109154;
-                case 30:
-                    return 141988;
-                case 31:
-                    return 185766;
-                case 32:
-                    return 244136;
-                case 33:
-                    return 321962;
-                case 34:
-                    return 425730;
-                case 35:
-                    return 564077;
-                case 36:
-                    return 748539;
-                case 37:
-                    return 994488;
-                case 38:
-                    return 1322420;
-                case 39:
-                    return 1759662;
-                case 40:
-                    return 2342651;
-                case 41:
-                    return 3119969;
-                case 42:
-                    return 4156393;
-                case 43:
-                    return 5538291;
-                case 44:
-                    return 7380821;
-                case 45:
-                    return 9837527;
-                case 46:
-                    return 13113135;
-                case 47:
-                    return 17480612;
-                case 48:
-                    return 23303914;
-                case 49:
-                    return 30618316;
-                case 50:
-                    return 40370852;
-                default:
-                    return 0;
-            }
+            
+            int sum = 0;
+            for (int i = 0; i < level; i++) sum += levelxps[i];
+            return sum;
+            
         }
 
         private static int GetFameGoal(int fame)
@@ -293,9 +228,7 @@ namespace wServer.realm.entities.player
 
         private void CalculateFame()
         {
-            int newFame;
-            if (Experience < 200*1000) newFame = Experience/1000;
-            else newFame = 200 + (Experience - 200*1000)/1000;
+            int newFame = Experience/2000;
             if (newFame == Fame) return;
             Fame = newFame;
             int newGoal;
@@ -321,7 +254,7 @@ namespace wServer.realm.entities.player
 
         private bool CheckLevelUp()
         {
-            if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 51)
+            if (Experience - GetLevelExp(Level) >= ExperienceGoal && Level < 50)
             {
                 Level++;
                 ExperienceGoal = GetExpGoal(Level);
@@ -352,7 +285,10 @@ namespace wServer.realm.entities.player
                         var idx = StatsManager.StatsNameToIndex(i.Value);
                         if (i.Value == "MaxHitPoints") Stats[idx] += 10;
                         if (i.Value == "MaxMagicPoints") Stats[idx] += 5;
-                        else Stats[idx] += 1;
+                        else
+                        {
+                            if(i.Value!="Defense")Stats[idx] += 1;
+                        }
                     }
                 }
                 HP = Stats[0] + Boost[0];

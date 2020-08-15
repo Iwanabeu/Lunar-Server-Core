@@ -2,6 +2,7 @@
 
 using System;
 using wServer.networking.cliPackets;
+using wServer.realm;
 using wServer.realm.entities;
 
 #endregion
@@ -17,10 +18,10 @@ namespace wServer.networking.handlers
 
         protected override void HandlePacket(Client client, PlayerHitPacket packet)
         {
-            client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
+            client.Manager.Logic.AddPendingAction(t => Handle(client, packet,t));
         }
 
-        private void Handle(Client client, PlayerHitPacket packet)
+        private void Handle(Client client, PlayerHitPacket packet, RealmTime t)
         {
             try
             {
@@ -41,7 +42,8 @@ namespace wServer.networking.handlers
                             else
                                 client.Player.ApplyConditionEffect(effect);
                         }
-                        client.Player.Damage(proj.Damage, proj.ProjectileOwner.Self,client.Player.affectBullet(proj));
+                        client.Player.affectBullet(proj,t);
+                        client.Player.Damage(proj.Damage, proj.ProjectileOwner.Self);
                         
                     }
                     else

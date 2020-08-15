@@ -472,7 +472,7 @@ namespace wServer.realm.commands
                     player.Stats[0] = player.ObjectDesc.MaxHitPoints + (player.Level > 20 ? 10 * (player.Level - 20) : 0);
                     player.Stats[1] = player.ObjectDesc.MaxMagicPoints + (player.Level > 20 ? 5 * (player.Level - 20) : 0);
                     player.Stats[2] = player.ObjectDesc.MaxAttack + (player.Level > 20 ? player.Level - 20 : 0);
-                    player.Stats[3] = player.ObjectDesc.MaxDefense + (player.Level > 20 ? player.Level - 20 : 0);
+                    player.Stats[3] = player.ObjectDesc.MaxDefense;
                     player.Stats[4] = player.ObjectDesc.MaxSpeed + (player.Level > 20 ? player.Level - 20 : 0);
                     player.Stats[5] = player.ObjectDesc.MaxHpRegen + (player.Level > 20 ? player.Level - 20 : 0);
                     player.Stats[6] = player.ObjectDesc.MaxMpRegen + (player.Level > 20 ? player.Level - 20 : 0);
@@ -719,7 +719,7 @@ namespace wServer.realm.commands
             {
                 if (i.Name.ToLower() == name.ToLower())
                 {
-                    i.Death(time);
+                    i.Damage(player, time, i.HP + 999, true);
                     numEnemies++;
                 }
 
@@ -1285,55 +1285,26 @@ namespace wServer.realm.commands
         {
             try
             {
-                if (args.Length == 0)
+                if (args.Length == 0 || args.Length > 2)
                 {
-                    player.SendHelp("Use /level <amount>");
+                    player.SendHelp("Use /level <amount> or /level <player> <amount>");
                     return false;
                 }
-                if (args.Length == 1)
+                Player p = args.Length == 1 ? player : player.Manager.FindPlayer(args[0]);
+                int newLevel = args.Length == 1 ? int.Parse(args[0]) : int.Parse(args[2]);
+                if (newLevel > 50 || newLevel < 1)
                 {
-                    int newLevel = int.Parse(args[0]);
-                    if (newLevel > 50 || newLevel < 1)
-                    {
-                        player.SendInfo("Level must be greater than 0 and less than 51.");
-                        return false;
-                    }
-                    int xp = Player.GetLevelExp(newLevel);
-
-                    player.Client.Character.Level = newLevel;
-                    player.Client.Player.Level = newLevel;
-                    player.Client.Player.Experience = xp;
-                    player.Client.Character.Exp = xp;
-
-                    player.UpdateCount++;
-                    player.SendInfo("Success!");
+                    player.SendInfo("Level must be greater than 0 and less than 51.");
+                    return false;
                 }
-                if (args.Length == 2)
+                if (p == null)
                 {
-                    int newLevel = int.Parse(args[1]);
-                    if (newLevel > 50 || newLevel < 1)
-                    {
-                        player.SendInfo("Level must be greater than 0 and less than 51.");
-                        return false;
-                    }
-                    int xp = Player.GetLevelExp(newLevel);
-
-                    Player p = player.Manager.FindPlayer(args[0]);
-                    if (p == null)
-                    {
-                        player.SendInfo("Invalid player name!");
-                        return false;
-                    }
-
-
-                    p.Client.Character.Level = newLevel;
-                    p.Level = newLevel;
-                    p.Experience = xp;
-                    p.Client.Character.Exp = xp;
-
-                    p.UpdateCount++;
-                    player.SendInfo("Success!");
+                    player.SendInfo("Invalid player name!");
+                    return false;
                 }
+                p.changeLevel(newLevel);
+                player.SendInfo("Success!");
+
             }
             catch
             {
@@ -3065,7 +3036,8 @@ namespace wServer.realm.commands
             return true;
         }
     }
-    class checkHP : Command {
+    class checkHP : Command
+    {
         public checkHP()
                : base("checkHP", 3)
         {
@@ -3078,7 +3050,7 @@ namespace wServer.realm.commands
                 player.SendInfo("Need enemy to check.");
                 return false;
             }
-            IEnumerable<KeyValuePair<int, Enemy>> enemies = player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase( String.Join(" ", args)));
+            IEnumerable<KeyValuePair<int, Enemy>> enemies = player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase(String.Join(" ", args)));
             if (enemies.Count() == 0)
             {
                 player.SendInfo("Couldn't find that enemy!");
@@ -3089,6 +3061,20 @@ namespace wServer.realm.commands
                 Enemy e = i.Value;
                 player.SendInfo("Enemy: " + e.Name + " has: " + e.HP + " hp out of: " + e.maxHP);
             }
+            return true;
+        }
+    }
+    class Horse : Command
+    {
+        public Horse()
+               : base("Horse", 3)
+        {
+        }
+        public string Command { get { return "Horse"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (player.onHorse) player.exitHorse();
+            else player.summonHorse();
             return true;
         }
     }

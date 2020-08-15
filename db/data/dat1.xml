@@ -32677,7 +32677,7 @@
     <BagType>6</BagType>
     <FameBonus>4</FameBonus>
     <MpCost>130</MpCost>
-    <Activate radius="4" totalDamage="350" condEffect="Paralyzed" condDuration="3.5">Trap</Activate>
+    <Activate radius="4" totalDamage="350" condEffect="Paralyzed" condDuration="3.5" condEffect2="Marked" condDuration2="6.0">Trap</Activate>
     <feedPower>500</feedPower>
     <DisplayId>{equip.Coral_Venom_Trap}</DisplayId>
   </Object>
@@ -84085,7 +84085,7 @@
     <Usable/>
     <BagType>1</BagType>
     <MpCost>40</MpCost>
-    <Activate radius="4" totalDamage="120" condDuration="4.0">Trap</Activate>
+    <Activate radius="4" totalDamage="120" condDuration="4.0" condEffect2="Marked" condDuration2="3.0">Trap</Activate>
     <feedPower>5</feedPower>
     <DisplayId>Hunting Trap</DisplayId>
   </Object>
@@ -84102,7 +84102,7 @@
     <Usable/>
     <BagType>1</BagType>
     <MpCost>50</MpCost>
-    <Activate radius="4.5" totalDamage="180" condDuration="4.5">Trap</Activate>
+    <Activate radius="4.5" totalDamage="180" condDuration="4.5" condEffect2="Marked" condDuration2="4.0">Trap</Activate>
     <feedPower>10</feedPower>
     <DisplayId>Wilderlands Trap</DisplayId>
   </Object>
@@ -84119,7 +84119,7 @@
     <Usable/>
     <BagType>1</BagType>
     <MpCost>60</MpCost>
-    <Activate radius="5" totalDamage="240" condDuration="5">Trap</Activate>
+    <Activate radius="5" totalDamage="240" condDuration="5" condEffect2="Marked" condDuration2="4.5">Trap</Activate>
     <feedPower>20</feedPower>
     <DisplayId>Deepforest Trap</DisplayId>
   </Object>
@@ -84137,7 +84137,7 @@
     <BagType>2</BagType>
     <FameBonus>1</FameBonus>
     <MpCost>70</MpCost>
-    <Activate radius="5.5" totalDamage="300" condDuration="5.5">Trap</Activate>
+    <Activate radius="5.5" totalDamage="300" condDuration="5.5" condEffect2="Marked" condDuration2="5.0">Trap</Activate>
     <feedPower>45</feedPower>
     <DisplayId>Savage Trap</DisplayId>
   </Object>
@@ -84155,7 +84155,7 @@
     <BagType>2</BagType>
     <FameBonus>2</FameBonus>
     <MpCost>80</MpCost>
-    <Activate radius="6" totalDamage="360" condDuration="6">Trap</Activate>
+    <Activate radius="6" totalDamage="360" condDuration="6" condEffect2="Marked" condDuration2="5.5">Trap</Activate>
     <feedPower>90</feedPower>
     <DisplayId>Demonhunter Trap</DisplayId>
   </Object>
@@ -84173,7 +84173,7 @@
     <BagType>4</BagType>
     <FameBonus>3</FameBonus>
     <MpCost>90</MpCost>
-    <Activate radius="6.5" totalDamage="420" condDuration="6.5">Trap</Activate>
+    <Activate radius="6.5" totalDamage="420" condDuration="6.5" condEffect2="Marked" condDuration2="6.0">Trap</Activate>
     <feedPower>185</feedPower>
     <DisplayId>Dragonstalker Trap</DisplayId>
   </Object>
@@ -84193,7 +84193,7 @@
     <BagType>4</BagType>
     <FameBonus>4</FameBonus>
     <MpCost>95</MpCost>
-    <Activate radius="7" totalDamage="500" condDuration="7">Trap</Activate>
+    <Activate radius="7" totalDamage="500" condDuration="7" condEffect2="Marked" condDuration2="6.5">Trap</Activate>
     <feedPower>380</feedPower>
     <DisplayId>Giantcatcher Trap</DisplayId>
   </Object>
@@ -84213,7 +84213,7 @@
     <BagType>4</BagType>
     <FameBonus>4</FameBonus>
     <MpCost>100</MpCost>
-    <Activate radius="8" totalDamage="580" condDuration="8">Trap</Activate>
+    <Activate radius="8" totalDamage="580" condDuration="8" condEffect2="Marked" condDuration2="7.0">Trap</Activate>
     <feedPower>380</feedPower>
     <DisplayId>Bloodvenom Trap</DisplayId>
   </Object>
@@ -84233,7 +84233,7 @@
     <BagType>4</BagType>
     <FameBonus>4</FameBonus>
     <MpCost>105</MpCost>
-    <Activate radius="9" totalDamage="660" condDuration="9">Trap</Activate>
+    <Activate radius="9" totalDamage="660" condDuration="9" condEffect2="Marked" condDuration2="7.5">Trap</Activate>
     <feedPower>380</feedPower>
     <DisplayId>Nightstalker Trap</DisplayId>
   </Object>
@@ -85952,7 +85952,72 @@
         </Texture>
       </Frame>
     </Animation>
-    <DisplayId>Big Boat</DisplayId>
+    <MinSize>500</MinSize>
+    <MaxSize>500</MaxSize>
+    <DisplayId>Realm Ship</DisplayId>
+  </Object>
+  <Object type="0xd09a" id="Tinkerer Portal">
+    <Class>Portal</Class>
+    <IntergamePortal/>
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x08</Index>
+    </Texture>
+    <DisplayId>Tinkerer Portal</DisplayId>
+  </Object>
+  <Object type="0xd09b" id="Lunar Misc Portal">
+    <Class>Portal</Class>
+    <IntergamePortal/>
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x09</Index>
+    </Texture>
+    <DisplayId>Lunar Misc Portal</DisplayId>
+  </Object>
+  <Object type="0xd09c" id="Nexus Pillar 2">
+    <Class>GameObject</Class>
+    <Texture>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x0a</Index>
+    </Texture>
+    <ShadowSize>0</ShadowSize>
+    <HitSound>monster/trees_hit</HitSound>
+    <DeathSound>monster/tress_death</DeathSound>
+    <MaxHitPoints>1000</MaxHitPoints>
+    <SizeStep>5</SizeStep>
+    <Static/>
+    <XpMult>0.0</XpMult>
+    <OccupySquare/>
+  </Object>
+  <Object type="0xd09d" id="Nexus Banner 2">
+    <Class>GameObject</Class>
+    <Texture>
+      <File>LunarEnvironment</File>
+      <Index>0x0a</Index>
+    </Texture>
+    <ShadowSize>0</ShadowSize>
+    <HitSound>monster/trees_hit</HitSound>
+    <DeathSound>monster/tress_death</DeathSound>
+    <MaxHitPoints>1000</MaxHitPoints>
+    <SizeStep>5</SizeStep>
+    <Static/>
+    <XpMult>0.0</XpMult>
+    <OccupySquare/>
+  </Object>
+  <Object type="0xd09e" id="Nexus Banner 3">
+    <Class>GameObject</Class>
+    <Texture>
+      <File>LunarEnvironment</File>
+      <Index>0x0b</Index>
+    </Texture>
+    <ShadowSize>0</ShadowSize>
+    <HitSound>monster/trees_hit</HitSound>
+    <DeathSound>monster/tress_death</DeathSound>
+    <MaxHitPoints>1000</MaxHitPoints>
+    <SizeStep>5</SizeStep>
+    <Static/>
+    <XpMult>0.0</XpMult>
+    <OccupySquare/>
   </Object>
 
 </Objects>

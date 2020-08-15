@@ -367,7 +367,8 @@ public enum ActivateEffects
     ShurikenAbility,
     UnlockSkin,
     MysteryPortal,
-    GenericActivate
+    GenericActivate,
+    FameToExp
 }
 
 public class ActivateEffect
@@ -398,8 +399,16 @@ public class ActivateEffect
         if (elem.Attribute("condEffect") != null)
             ConditionEffect =
                 (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), elem.Attribute("condEffect").Value);
+
+        if (elem.Attribute("condEffect2") != null)
+            ConditionEffect2 =
+                (ConditionEffectIndex)Enum.Parse(typeof(ConditionEffectIndex), elem.Attribute("condEffect2").Value);
+
         if (elem.Attribute("condDuration") != null)
             EffectDuration = float.Parse(elem.Attribute("condDuration").Value, NumberStyles.Any, ci);
+
+        if (elem.Attribute("condDuration2") != null)
+            EffectDuration2 = float.Parse(elem.Attribute("condDuration2").Value, NumberStyles.Any, ci);
 
         if (elem.Attribute("maxDistance") != null)
             MaximumDistance = Utils.FromString(elem.Attribute("maxDistance").Value);
@@ -451,6 +460,8 @@ public class ActivateEffect
     public int DurationMS2 { get; private set; }
     public ConditionEffectIndex? ConditionEffect { get; private set; }
     public float EffectDuration { get; private set; }
+    public ConditionEffectIndex? ConditionEffect2 { get; private set; }
+    public float EffectDuration2 { get; private set; }
     public int MaximumDistance { get; private set; }
     public float Radius { get; private set; }
     public int TotalDamage { get; private set; }

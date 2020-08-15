@@ -289,20 +289,6 @@ namespace wServer.realm.entities.player
                     addStatBoost(3000, Stat.Dex, .1, 6);
                 }
             }
-            if (feats[Feat.Full_Counter])
-            {
-                if (Random.Next(1, 20) == 1)
-                {
-                    Client.SendPacket(new EffectTextPacket { Message = "Full Counter" });
-                    ApplyConditionEffect(new ConditionEffect[]{
-                        new ConditionEffect
-                        {
-                            Effect=ConditionEffectIndex.Damaging,
-                            DurationMS=3000
-                        }
-                        });
-                }
-            }
             if (feats[Feat.Indomitable])
             {
                 if (HP < 600)
@@ -560,14 +546,27 @@ namespace wServer.realm.entities.player
 
             }
         }
-        public bool affectBullet(Projectile p)
+        public void affectBullet(Projectile p, RealmTime t)
         {
-            if (feats[Feat.Man_Of_Steel])
-            {
-                //p.Destroy(false);
-                return true;
+            if (feats[Feat.Man_Of_Steel]) {
+                p.Dispose();
             }
-            return false;
+            if (feats[Feat.Full_Counter])
+            {
+                if (p.ProjectileOwner == null) return;
+                if (Random.Next(1,20)==1 && p.ProjectileOwner is Enemy)
+                {
+                    Enemy e = p.ProjectileOwner as Enemy;
+                    e.Damage(null, t, p.Damage * 10, false);
+                    Owner.BroadcastPacket(new ShowEffectPacket
+                    {
+                        EffectType = EffectType.Trail,
+                        TargetId = Id,
+                        PosA = new Position { X = p.ProjectileOwner.Self.X, Y = p.ProjectileOwner.Self.Y },
+                        Color = new ARGB(0x00cc0000)
+                    }, null);
+                }
+            }
         }
         public void removeBuffs()
         {

@@ -125,6 +125,7 @@ namespace wServer.realm
         public readonly static StatsType Market_Type = 100;
         public readonly static StatsType Market_Price = 101;
         public readonly static StatsType Blocks_Projs = 102;
+        public readonly static StatsType OnHorse = 103;
         private byte _type;
 
         private StatsType(byte type)
@@ -141,7 +142,7 @@ namespace wServer.realm
         }
         public bool IsBool()
         {
-            if (this==StatsType.Has_Backpack || this ==StatsType.NameChosen || this ==StatsType.PortalUsable ||this==StatsType.Blocks_Projs)
+            if (this==StatsType.Has_Backpack || this ==StatsType.NameChosen || this ==StatsType.PortalUsable ||this==StatsType.Blocks_Projs || this==StatsType.OnHorse)
                 return true;
             return false;
         }
