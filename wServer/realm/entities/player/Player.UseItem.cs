@@ -249,7 +249,7 @@ namespace wServer.realm.entities.player
                 Client.Character.HasBackpack = 1;
                 Manager.Database.DoActionAsync(db =>
                     db.SaveBackpacks(Client.Character, Client.Account));
-                Array.Resize(ref inventory, 20);
+                Array.Resize(ref inventory, 23);
                 int[] slotTypes =
                     Utils.FromCommaSepString32(
                         Manager.GameData.ObjectTypeToElement[ObjectType].Element("SlotTypes").Value);

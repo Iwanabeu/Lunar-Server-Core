@@ -71437,8 +71437,8 @@
     <DeathSound>player/rogue_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>2, 13, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa14, 0xa56, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>2, 6, 9, 9,13,13,13, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa14,-1 , -1, -1,0xa56,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">150</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="50">10</Attack>
@@ -71470,8 +71470,8 @@
     <DeathSound>player/archer_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>3, 15, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa1a, 0xa61, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>3, 6, 9, 9,15,15,15, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa1a,-1 , -1, -1,0xa61,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">130</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="55">12</Attack>
@@ -71503,8 +71503,8 @@
     <DeathSound>player/wizard_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>17, 11, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa97, 0xa2e, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>17, 14, 9, 9,11,11,11, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa97,-1 , -1, -1, 0xa2e,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="670">100</MaxHitPoints>
     <MaxMagicPoints max="385">100</MaxMagicPoints>
     <Attack max="75">12</Attack>
@@ -71535,8 +71535,8 @@
     <DeathSound>player/priest_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>8, 4, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa04, 0xa31, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>8, 14, 9, 9,4,4,4, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa04, -1, -1, -1, 0xa31,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="670">100</MaxHitPoints>
     <MaxMagicPoints max="385">100</MaxMagicPoints>
     <Attack max="55">12</Attack>
@@ -71568,8 +71568,8 @@
     <DeathSound>player/warrior_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>1, 16, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa00, 0x0a66, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>1, 7,9, 9, 16,16,16,0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa00,-1 , -1, -1, 0x0a66,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="770">200</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="65">15</Attack>
@@ -71601,8 +71601,8 @@
     <DeathSound>player/knight_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>1, 5, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa00, 0x0a08, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>1, 7, 9, 9,5,5,5, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa00, -1, -1, -1, 0x0a08,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="770">200</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="50">15</Attack>
@@ -71634,8 +71634,8 @@
     <DeathSound>player/paladin_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>1, 12, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa00, 0xa52, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>1, 7,9, 9,12,12,12, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa00,-1 , -1, -1, 0xa52,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="770">200</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="75">12</Attack>
@@ -71668,8 +71668,8 @@
     <DeathSound>player/rogue_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>2, 18, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa14, 0xaa3, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>2, 6, 9, 9,18,18,18, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa14,-1 , -1, -1,0xaa3,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">150</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="60">12</Attack>
@@ -71702,8 +71702,8 @@
     <DeathSound>player/wizard_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>17, 19, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa97, 0xaaa, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>17, 14, 9, 9,19,19,19, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa97,-1 , -1, -1, 0xaaa,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="670">100</MaxHitPoints>
     <MaxMagicPoints max="385">100</MaxMagicPoints>
     <Attack max="75">12</Attack>
@@ -71736,8 +71736,8 @@
     <DeathSound>player/archer_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>3, 20, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa1a, 0xab1, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>3, 6, 9, 9,20,20,20, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa1a, -1, -1, -1,0xab1,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">130</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="75">12</Attack>
@@ -71770,8 +71770,8 @@
     <DeathSound>player/wizard_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>17, 21, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa97, 0xae4, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>17, 14, 9, 9,21,21,21, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa97,-1 , -1, -1,0xae4,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="670">100</MaxHitPoints>
     <MaxMagicPoints max="385">100</MaxMagicPoints>
     <Attack max="60">10</Attack>
@@ -71804,8 +71804,8 @@
     <DeathSound>player/rogue_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>2, 22, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa14, 0xae3, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>2, 6, 9, 9,22,22,22, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0xa14, -1, -1, -1,0xae3,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">150</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="65">10</Attack>
@@ -71838,8 +71838,8 @@
     <DeathSound>player/priest_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>8, 23, 14, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xa04, 0xae5, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>8, 14, 9, 9, 23, 23, 23, 0, 0, 0, 0, 0,0,0,0</SlotTypes>
+    <Equipment>0xa04, -1, -1, -1,0xae5,-1,-1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="670">100</MaxHitPoints>
     <MaxMagicPoints max="385">100</MaxMagicPoints>
     <Attack max="60">10</Attack>
@@ -71872,8 +71872,8 @@
     <DeathSound>player/rogue_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>24, 25, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0xc44, 0xc53, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>24, 6, 9, 9, 25, 25, 25, 0, 0, 0, 0, 0,0,0,0</SlotTypes>
+    <Equipment>0xc44, -1, -1, -1, 0xc53,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="700">150</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="70">15</Attack>
@@ -71906,8 +71906,8 @@
     <DeathSound>player/rogue_death</DeathSound>
     <Player/>
     <BloodProb>1.0</BloodProb>
-    <SlotTypes>27, 28, 6, 9, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-    <Equipment>0x90be, 0x90cd, -1, -1, 0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
+    <SlotTypes>27, 6, 9, 9,28, 28, 28, 0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
+    <Equipment>0x90be, -1, -1, -1, 0x90cd,-1,-1,0xa22, -1, -1, -1, -1, -1, -1, -1</Equipment>
     <MaxHitPoints max="720">150</MaxHitPoints>
     <MaxMagicPoints max="252">100</MaxMagicPoints>
     <Attack max="75">15</Attack>

@@ -49,7 +49,7 @@ namespace wServer.realm.entities.player
                     {
                         Item = Inventory[i] == null ? -1 : Inventory[i].ObjectType,
                         SlotType = SlotTypes[i],
-                        Tradeable = (Inventory[i] != null && i >= 4) && (!Inventory[i].Soulbound),
+                        Tradeable = (Inventory[i] != null && i >= 7) && (!Inventory[i].Soulbound),
                         Included = false
                     };
                 }
@@ -60,7 +60,7 @@ namespace wServer.realm.entities.player
                     {
                         Item = target.Inventory[i] == null ? -1 : target.Inventory[i].ObjectType,
                         SlotType = SlotTypes[i],
-                        Tradeable = (target.Inventory[i] != null && i >= 4) && (!target.Inventory[i].Soulbound),
+                        Tradeable = (target.Inventory[i] != null && i >= 7) && (!target.Inventory[i].Soulbound),
                         Included = false
                     };
                 }

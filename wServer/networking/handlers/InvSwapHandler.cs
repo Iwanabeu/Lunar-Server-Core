@@ -75,6 +75,7 @@ namespace wServer.networking.handlers
                     return;
                 }
                 //TODO: locker
+                
                 Item item1 = con1.Inventory[packet.SlotObject1.SlotId];
                 Item item2 = con2.Inventory[packet.SlotObject2.SlotId];
                 List<ushort> publicbags = new List<ushort>
@@ -235,14 +236,22 @@ namespace wServer.networking.handlers
 
                 if (!ret)
                 {
-                    log.FatalFormat("Cheat engine detected for player {0},\nInvalid InvSwap. {1} instead of {2}",
-                            client.Player.Name, item1.ObjectId, client.Manager.GameData.Items[packet.SlotObject2.ObjectType].ObjectId);
-                    foreach (Player player in client.Player.Owner.Players.Values)
-                        if (player.Client.Account.Rank >= 2)
-                            player.SendInfo(String.Format("Cheat engine detected for player {0},\nInvalid InvSwap. {1} instead of {2}",
-                                client.Player.Name, item1.ObjectId, client.Manager.GameData.Items[packet.SlotObject2.ObjectType].ObjectId));
+                    try
+                    {
+                        log.ErrorFormat("Cheat engine detected for player {0},\nInvalid InvSwap. {1} instead of {2}",
+                                client.Player.Name, item1.ObjectId, client.Manager.GameData.Items[packet.SlotObject2.ObjectType].ObjectId);
+                        foreach (Player player in client.Player.Owner.Players.Values)
+                            if (player.Client.Account.Rank >= 2)
+                                player.SendInfo(String.Format("Cheat engine detected for player {0},\nInvalid InvSwap. {1} instead of {2}",
+                                    client.Player.Name, item1.ObjectId, client.Manager.GameData.Items[packet.SlotObject2.ObjectType].ObjectId));
+                    }
+                    catch (System.Collections.Generic.KeyNotFoundException e)
+                    {
+                        log.Error(client.Player.Name + ", " + item1.ObjectId + ", " + packet.SlotObject1);
+                        log.Error(client.Player.Name + ", " + item2.ObjectId + ", " + packet.SlotObject2);
+                    }
                 }
-            }
+                }
 
             return ret;
         }

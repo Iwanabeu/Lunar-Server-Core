@@ -2987,8 +2987,10 @@
     <Class>Equipment</Class>
     <Item/>
     <Texture>
-      <File>LunarDoomShield</File>
+      <File>LunarAddedItems32x32</File>
+      <Index>0x00</Index>
     </Texture>
+    <PixelCount>32</PixelCount>
     <SlotType>5</SlotType>
     <Description>Devoted's Doom Shield</Description>
     <Sound>spell/fire_spray</Sound>
@@ -3028,6 +3030,7 @@
     <SlotType>1</SlotType>
     <Description>Devoted's Crimson Sword.</Description>
     <RateOfFire>1</RateOfFire>
+    <PixelCount>32</PixelCount>
     <OldSound>weapon/mithril_sword</OldSound>
     <Projectile>
       <ObjectId>Souls2</ObjectId>
@@ -3044,7 +3047,7 @@
     <FameBonus>6</FameBonus>
     <OldSound>bladeSwing</OldSound>
     <feedPower>0</feedPower>
-    <DisplayId>Guardian Sword</DisplayId>
+    <DisplayId>Crimson Doom Sword</DisplayId>
     <PlayerExclusive>Sottler</PlayerExclusive>
   </Object>
   <Object type="0x9084" id="Predator Bow">
@@ -3055,6 +3058,7 @@
       <Index>0x02</Index>
     </Texture>
     <SlotType>3</SlotType>
+    <PixelCount>32</PixelCount>
     <Description>Hubbler's Predator Bow</Description>
     <RateOfFire>1.25</RateOfFire>
     <OldSound>weapon/blaster</OldSound>

@@ -1,6 +1,9 @@
 ﻿#region
 using System;
+using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Globalization;
+using System.Linq;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
 using wServer.realm;
@@ -59,20 +62,19 @@ namespace wServer.networking.handlers
                             case 0x0d40:
                             case 0x070d:
                             case 0x070e:
-                            case 0xd099:
-                            {
-                                if (client.Player.Manager.LastWorld.ContainsKey(client.Player.AccountId))
                                 {
-                                    World w = client.Player.Manager.LastWorld[client.Player.AccountId];
-                                    if (w != null && client.Player.Manager.Worlds.ContainsKey(w.Id))
-                                        world = w;
+                                    if (client.Player.Manager.LastWorld.ContainsKey(client.Player.AccountId))
+                                    {
+                                        World w = client.Player.Manager.LastWorld[client.Player.AccountId];
+                                        if (w != null && client.Player.Manager.Worlds.ContainsKey(w.Id))
+                                            world = w;
+                                        else
+                                            world = client.Player.Manager.GetWorld(World.NEXUS_ID);
+                                    }
                                     else
                                         world = client.Player.Manager.GetWorld(World.NEXUS_ID);
+                                    setWorldInstance = false;
                                 }
-                                else
-                                    world = client.Player.Manager.GetWorld(World.NEXUS_ID);
-                                setWorldInstance = false;
-                            }
                                 break;
                             case 0x0750:
                                 world = client.Player.Manager.GetWorld(World.MARKET);
@@ -101,7 +103,12 @@ namespace wServer.networking.handlers
                                 }
                                 break;
                             case 0xd096:
-                                world = client.Player.Manager.GetWorld(World.MARKETPLACE);
+                                world = client.Manager.GetWorld(World.MARKETPLACE);
+                                break;
+                            case 0xd099:
+                                
+                                world = client.Manager.Worlds.Where(w => (RealmManager.CurrentRealmNames.Contains(w.Value.Name))).RandomElement(new Random()).Value;
+                                if(!client.Manager.Monitor.portals.ContainsKey(world)||client.Manager.Monitor.portals[world]!=portal)client.Manager.Monitor.portals.Add(world, portal);
                                 break;
                             default:
                                 Type worldType =
@@ -111,7 +118,7 @@ namespace wServer.networking.handlers
                                 {
                                     try
                                     {
-                                        world = client.Manager.AddWorld((World) Activator.CreateInstance(worldType,
+                                        world = client.Manager.AddWorld((World)Activator.CreateInstance(worldType,
                                             System.Reflection.BindingFlags.CreateInstance, null, null,
                                             CultureInfo.InvariantCulture, null));
                                     }

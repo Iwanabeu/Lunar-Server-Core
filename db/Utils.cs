@@ -213,7 +213,7 @@ public static class Utils
     public static short[] PackFromEquips(this Char chr)
     {
         List<short> bpItems = FromCommaSepString16(chr._Equipment).ToList();
-        bpItems.RemoveRange(0, 4);
+        bpItems.RemoveRange(0, 7);
         return bpItems.ToArray();
     }
 

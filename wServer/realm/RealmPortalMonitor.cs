@@ -76,7 +76,7 @@ namespace wServer.realm
                     nexus.LeaveWorld(portal);
                     RealmManager.Realms.Add(portal.PortalName);
                     RealmManager.CurrentRealmNames.Remove(portal.PortalName);
-                    portals.Remove(world);
+                    //portals.Remove(world);
                     log.InfoFormat("World {0}({1}) removed from monitor.", world.Id, world.Name);
                 }
             }

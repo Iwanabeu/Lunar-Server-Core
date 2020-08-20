@@ -122,6 +122,7 @@ namespace wServer.realm.entities.player
 
                 if (HasBackpack)
                 {
+             
                     var inv =
                         psr.Character.Equipment.Select(
                             _ =>
@@ -144,7 +145,7 @@ namespace wServer.realm.entities.player
                         var slotTypes =
                             Utils.FromCommaSepString32(
                                 xElement.Value);
-                        Array.Resize(ref slotTypes, 20);
+                        Array.Resize(ref slotTypes, 23);
                         SlotTypes = slotTypes;
                     }
                 }
@@ -181,7 +182,7 @@ namespace wServer.realm.entities.player
                     if (SlotTypes[i] == 0) SlotTypes[i] = 10;
 
                 if (Client.Account.Rank >= 3) return;
-                for (var i = 0; i < 4; i++)
+                for (var i = 0; i < 7; i++)
                     if (Inventory[i]?.SlotType != SlotTypes[i])
                         Inventory[i] = null;
             }
@@ -295,6 +296,7 @@ namespace wServer.realm.entities.player
                 case 1:
                 case 17:
                 case 8:
+                case 27:
                     return 0;
                 case 13:
                 case 15:
@@ -310,6 +312,7 @@ namespace wServer.realm.entities.player
                 case 22:
                 case 23:
                 case 25:
+                case 28:
                     return 1;
                 case 6:
                 case 7:
@@ -359,11 +362,11 @@ namespace wServer.realm.entities.player
 
         public int Texture2 { get; set; }
 
-        public Item[] Inventory
+        public Item[] Inventory 
         {
             get { return inventory; }
             set { inventory = value; }
-        }
+        } 
 
         public GuildManager Guild { get; set; }
 
@@ -452,6 +455,9 @@ namespace wServer.realm.entities.player
             stats[StatsType.Inventory9] = (int)(Inventory[9]?.ObjectType ?? -1);
             stats[StatsType.Inventory10] = (int)(Inventory[10]?.ObjectType ?? -1);
             stats[StatsType.Inventory11] = (int)(Inventory[11]?.ObjectType ?? -1);
+            stats[StatsType.Inventory12] = (int)(Inventory[12]?.ObjectType ?? -1);
+            stats[StatsType.Inventory13] = (int)(Inventory[13]?.ObjectType ?? -1);
+            stats[StatsType.Inventory14] = (int)(Inventory[14]?.ObjectType ?? -1);
 
             if (Boost == null) CalcBoost();
 
@@ -479,14 +485,14 @@ namespace wServer.realm.entities.player
             stats[StatsType.Size] = setTypeSkin?.Size ?? Size;
             stats[StatsType.Has_Backpack] = HasBackpack;
 
-            stats[StatsType.Backpack0] = (int)(HasBackpack ? (Inventory[12]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack1] = (int)(HasBackpack ? (Inventory[13]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack2] = (int)(HasBackpack ? (Inventory[14]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack3] = (int)(HasBackpack ? (Inventory[15]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack4] = (int)(HasBackpack ? (Inventory[16]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack5] = (int)(HasBackpack ? (Inventory[17]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack6] = (int)(HasBackpack ? (Inventory[18]?.ObjectType ?? -1) : -1);
-            stats[StatsType.Backpack7] = (int)(HasBackpack ? (Inventory[19]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack0] = (int)(HasBackpack ? (Inventory[15]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack1] = (int)(HasBackpack ? (Inventory[16]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack2] = (int)(HasBackpack ? (Inventory[17]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack3] = (int)(HasBackpack ? (Inventory[18]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack4] = (int)(HasBackpack ? (Inventory[19]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack5] = (int)(HasBackpack ? (Inventory[20]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack6] = (int)(HasBackpack ? (Inventory[21]?.ObjectType ?? -1) : -1);
+            stats[StatsType.Backpack7] = (int)(HasBackpack ? (Inventory[22]?.ObjectType ?? -1) : -1);
 
             stats[StatsType.Skin] = setTypeSkin?.SkinType ?? PlayerSkin;
             stats[StatsType.HealStackCount] = HealthPotions;
@@ -746,14 +752,14 @@ namespace wServer.realm.entities.player
             chr.subclass = subclass;
             switch (Inventory.Length)
             {
-                case 12:
+                case 15:
                     chr.Equipment = Inventory.Select(_ => _?.ObjectType ?? -1).ToArray();
                     break;
-                case 20:
+                case 23:
                     var equip = Inventory.Select(_ => _?.ObjectType ?? -1).ToArray();
                     var backpack = new int[8];
-                    Array.Copy(equip, 12, backpack, 0, 8);
-                    Array.Resize(ref equip, 12);
+                    Array.Copy(equip, 15, backpack, 0, 8);
+                    Array.Resize(ref equip, 15);
                     chr.Equipment = equip;
                     chr.Backpack = backpack;
                     break;

@@ -291,7 +291,7 @@ namespace wServer.realm.commands
                 Item item;
                 if (p.Manager.GameData.Items.TryGetValue(objType, out item) && (!p.Manager.GameData.Items[objType].Secret || p.Client.Account.Rank >= 4))
                 {
-                    for (int i = 4; i < p.Inventory.Length; i++)
+                    for (int i = 7; i < p.Inventory.Length; i++)
                         if (p.Inventory[i] == null)
                         {
                             p.Inventory[i] = item;
@@ -1670,7 +1670,13 @@ namespace wServer.realm.commands
         {
             try
             {
-                World realm = player.Client.Manager.Monitor.GetRandomRealm();
+                IEnumerable<World> worlds = player.Manager.Worlds.Where(w => (RealmManager.CurrentRealmNames.Contains(w.Value.Name))).Select(w=>w.Value);
+                if (worlds.Count() == 0 || worlds.All(w => (w is GameWorld) ? (w as GameWorld).Overseer.ClosingStarted : true))
+                {
+                    player.SendInfo("No open realms!");
+                    return false;
+                }
+                World realm = worlds.RandomElement(new Random());
                 player.Client.Reconnect(new ReconnectPacket
                 {
                     GameId = realm.Id,
@@ -2076,13 +2082,15 @@ namespace wServer.realm.commands
         public CloseRealm()
             : base("close", 3)
         { }
-        public string Command { get { return "glands"; } }
+        public string Command { get { return "close"; } }
         public int RequiredRank { get { return 3; } }
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
-            if (player.Owner.Name.Contains("NexusPortal"))
+            if (RealmManager.CurrentRealmNames.Contains(player.Owner.Name))
             {
-                new Oryx(player.Owner as GameWorld).CloseRealm();
+                Oryx o = (player.Owner as GameWorld).Overseer;
+                //o.RealmClosed = true;
+                o.InitCloseRealm();
                 return true;
             }
             else
@@ -3076,6 +3084,29 @@ namespace wServer.realm.commands
             if (player.onHorse) player.exitHorse();
             else player.summonHorse();
             return true;
+        }
+    }
+    class checkInv : Command
+    {
+        public checkInv()
+               : base("inv", 3)
+        {
+        }
+        public string Command { get { return "inv"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (args.Length < 1 || args.Length > 2) { player.SendInfo("/inv <slot>"); return false; }
+            try
+            {
+                Item i = args.Length == 1 ? player.Inventory[int.Parse(args[0])] : player.Manager.FindPlayer(args[0]).Inventory[int.Parse(args[1])];
+                if (i == null)
+                    player.SendInfo("Empty.");
+                else
+                    player.SendInfo(i.ObjectId);
+                return true;
+            }
+            catch (Exception e) { log.Error(e); return false; }
+            
         }
     }
 }

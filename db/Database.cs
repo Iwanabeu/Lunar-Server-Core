@@ -1575,12 +1575,12 @@ bestFame = GREATEST(bestFame, @bestFame);";
                     @char.FameStats.Read(
                         Convert.FromBase64String(@char.PCStats.Replace('-', '+').Replace('_', '/')));
 
-                    if (@char.Equipment.Length > 12)
+                    if (@char.Equipment.Length > 15)
                     {
                         @char.Backpack = new int[8];
-                        Array.Copy(@char.Equipment, 12, @char.Backpack, 0, 8);
+                        Array.Copy(@char.Equipment, 15, @char.Backpack, 0, 8);
                         var eq = @char.Equipment;
-                        Array.Resize(ref eq, 12);
+                        Array.Resize(ref eq, 15);
                         @char.Equipment = eq;
                         @char.HasBackpack = 1;
                     }

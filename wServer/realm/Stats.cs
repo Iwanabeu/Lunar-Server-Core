@@ -31,6 +31,9 @@ namespace wServer.realm
         public readonly static StatsType Inventory9 = 17;
         public readonly static StatsType Inventory10 = 18;
         public readonly static StatsType Inventory11 = 19;
+        public readonly static StatsType Inventory12 =104;
+        public readonly static StatsType Inventory13 = 105;
+        public readonly static StatsType Inventory14 = 106;
         public readonly static StatsType Attack = 20;
         public readonly static StatsType Defense = 21;
         public readonly static StatsType Speed = 22;

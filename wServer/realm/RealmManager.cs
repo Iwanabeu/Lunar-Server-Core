@@ -179,7 +179,7 @@ namespace wServer.realm
 
         public void CloseWorld(World world)
         {
-            Monitor.WorldRemoved(world);
+            //Monitor.WorldRemoved(world);
         }
         public void InitializeMarket()
         {
