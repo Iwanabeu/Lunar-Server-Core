@@ -82,6 +82,7 @@ namespace wServer.realm.entities.player
             {
                 this.feats = pkt.Feats;
                 this.subclass = pkt.subclass;
+                
                 this.SaveToCharacter();
                 this.Client.Save();
 
@@ -100,8 +101,9 @@ namespace wServer.realm.entities.player
         public int getBonusHp()
         {
             int result = 0;
-            result += feats[Feat.High_Roller] ? (int)(-.4 * MaxHp) : 0;
-            result += feats[Feat.Arch_Magus] ? ((int)(Stats[(int)Stat.Wis] * -.07)) : 0;
+            
+            result += feats[Feat.High_Roller] ? (int)(-.4 * Stats[(int)Stat.Hp]) : 0;
+            result += feats[Feat.Arch_Magus] ? ((int)(Stats[(int)Stat.Hp] * -.07)) : 0;
             return result;
         }
         public int getBonusMp()
@@ -109,7 +111,7 @@ namespace wServer.realm.entities.player
             int result = 0;
             result += feats[Feat.Prodigious_Mind] ? 30 : 0;
             result += feats[Feat.Arcane_Adept] ? 15 : 0;
-            result += feats[Feat.Arch_Magus] ? ((int)(MaxMp * .07)) : 0;
+            result += feats[Feat.Arch_Magus] ? ((int)(Stats[(int)Stat.Mp] * .07)) : 0;
             return result;
         }
         public int getBonusAtk()
@@ -350,6 +352,14 @@ namespace wServer.realm.entities.player
                 if (Random.Next(1, 20) == 1)
                 {
                     Client.SendPacket(new EffectTextPacket { Message = "Slippery" });
+                    return 0;
+                }
+            }
+            if (feats[Feat.Superior_Parry])
+            {
+                if (Random.Next(1, 20) == 1)
+                {
+                    Client.SendPacket(new EffectTextPacket { Message = "Superior Parry" });
                     return 0;
                 }
             }

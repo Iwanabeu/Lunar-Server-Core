@@ -23,7 +23,34 @@ namespace wServer.realm
 
         public int GetStats(int id)
         {
-            return player.Stats[id] + player.Boost[id];
+            int bonus=0;
+            switch (id) {
+                case 0:
+                    bonus = player.getBonusHp();
+                    break;
+                case 1:
+                    bonus = player.getBonusMp();
+                    break;
+                case 2:
+                    bonus = player.getBonusAtk();
+                    break;
+                case 3:
+                    bonus = player.getBonusDef();
+                    break;
+                case 4:
+                    bonus = player.getBonusSpd();
+                    break;
+                case 5:
+                    bonus = player.getBonusVit();
+                    break;
+                case 6:
+                    bonus = player.getBonusWis();
+                    break;
+                case 7:
+                    bonus = player.getBonusDex();
+                    break;
+            }
+            return player.Stats[id] + player.Boost[id] + bonus;
         }
 
         public float GetAttackDamage(int min, int max)

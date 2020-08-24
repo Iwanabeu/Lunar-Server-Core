@@ -1670,7 +1670,7 @@ namespace wServer.realm.commands
         {
             try
             {
-                IEnumerable<World> worlds = player.Manager.Worlds.Where(w => (RealmManager.CurrentRealmNames.Contains(w.Value.Name))).Select(w=>w.Value);
+                IEnumerable<World> worlds = player.Manager.Worlds.Where(w => (RealmManager.CurrentRealmNames.Contains(w.Value.Name))).Select(w => w.Value);
                 if (worlds.Count() == 0 || worlds.All(w => (w is GameWorld) ? (w as GameWorld).Overseer.ClosingStarted : true))
                 {
                     player.SendInfo("No open realms!");
@@ -1891,7 +1891,7 @@ namespace wServer.realm.commands
         {
 
 
-            var p = player.Manager.FindPlayer(args[0]);
+            var p = args.Length==0?player:player.Manager.FindPlayer(args[0]);
             if (p == null)
             {
                 player.SendError("Invalid Player Name");
@@ -1980,7 +1980,7 @@ namespace wServer.realm.commands
         {
 
 
-            var p = player.Manager.FindPlayer(args[0]);
+            var p = args.Length==0?player:player.Manager.FindPlayer(args[0]);
             if (p == null)
             {
                 player.SendError("Invalid Player Name");
@@ -3061,8 +3061,14 @@ namespace wServer.realm.commands
             IEnumerable<KeyValuePair<int, Enemy>> enemies = player.Owner.Enemies.Where(e => e.Value.Name.EqualsIgnoreCase(String.Join(" ", args)));
             if (enemies.Count() == 0)
             {
-                player.SendInfo("Couldn't find that enemy!");
-                return false;
+                Player p = player.Manager.FindPlayer(String.Join(" ", args));
+                if (p == null)
+                {
+                    player.SendInfo("Couldn't find that enemy!");
+                    return false;
+                }
+                player.SendInfo("Player: " + p.Name + " has: " + p.HP + " hp out of: " + p.MaxHp);
+                return true;
             }
             foreach (KeyValuePair<int, Enemy> i in enemies)
             {
@@ -3106,7 +3112,79 @@ namespace wServer.realm.commands
                 return true;
             }
             catch (Exception e) { log.Error(e); return false; }
-            
+
+        }
+    }
+    class checkStat : Command
+    {
+        public checkStat()
+               : base("stat", 3)
+        {
+        }
+        public string Command { get { return "stat"; } }
+        protected override bool Process(Player player, RealmTime time, string[] args)
+        {
+            if (args.Length == 0 || args.Length > 2)
+            {
+                player.SendInfo("/stat <name> <stat> or /stat <stat>");
+                return false;
+            }
+            string statName = args.Length == 1 ? args[0] : args[1];
+            Player p = args.Length == 1 ? player : player.Manager.FindPlayer(args[0]);
+            if (p == null)
+            {
+                player.SendInfo("Invalid player name!");
+                return false;
+            }
+            switch (statName.ToLower()) {
+                case "hp":
+                case "health":
+                case "h":
+                case "0":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.HP + " HP out of: " + player.StatsManager.GetStats(0)+ ".");
+                    return true;
+                case "mp":
+                case "mana":
+                case "magic":
+                case "m":
+                case "1":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.Mp + " MP out of: " + player.StatsManager.GetStats(1) + ".");
+                    return true;
+                case "atk":
+                case "att":
+                case "attack":
+                case "2":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(2) + " Attack.");
+                    return true;
+                case "def":
+                case "defense":
+                case "3":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(3) + " Defense.");
+                    return true;
+                case "spd":
+                case "speed":
+                case "4":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(4) + " Speed.");
+                    return true;
+                case "vit":
+                case "vitality":
+                case "5":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(5) + " Vitality.");
+                    return true;
+                case "wis":
+                case "wisdom":
+                case "6":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(6) + " Wisdom.");
+                    return true;
+                case "dex":
+                case "dexterity":
+                case "7":
+                    player.SendInfo("Player: " + p.Name + " has: " + player.StatsManager.GetStats(7) + " Dexterity.");
+                    return true;
+                default:
+                    player.SendInfo("Invalid stat!");
+                    return false;
+            }
         }
     }
 }

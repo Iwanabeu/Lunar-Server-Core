@@ -125,7 +125,7 @@ namespace wServer.realm.entities.player
 
         private static void ActivateHealMp(Player player, int amount, List<Packet> pkts)
         {
-            int maxMp = player.Stats[1] + player.Boost[1];
+            int maxMp = player.Stats[1] + player.Boost[1] + player.getBonusMp();
             int newMp = Math.Min(maxMp, player.Mp + amount);
             if (newMp != player.Mp)
             {

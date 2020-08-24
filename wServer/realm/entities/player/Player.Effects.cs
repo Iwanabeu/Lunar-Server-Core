@@ -31,7 +31,7 @@ namespace wServer.realm.entities.player
             {
                 if (healing > 1)
                 {
-                    HP = Math.Min(Stats[0] + Boost[0], HP + (int) healing);
+                    HP = Math.Min(Stats[0] + Boost[0] + getBonusHp(), HP + (int) healing);
                     healing -= (int) healing;
                     UpdateCount++;
                     healCount++;

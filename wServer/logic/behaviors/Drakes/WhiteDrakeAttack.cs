@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using wServer.networking.svrPackets;
 using wServer.realm;
+using wServer.realm.entities.player;
 
 namespace wServer.logic.behaviors.Drakes
 {
@@ -33,7 +34,7 @@ namespace wServer.logic.behaviors.Drakes
                         if (distance < 10)
                         {
                             var hp = entity.HP;
-                            var maxHp = entity.Stats[0] + entity.Boost[0];
+                            var maxHp = entity.Stats[0] + entity.Boost[0] + ((entity is Player)?(entity as Player).getBonusHp():0);
                             hp = Math.Min(hp + 25, maxHp);
 
                             if (hp != entity.HP)

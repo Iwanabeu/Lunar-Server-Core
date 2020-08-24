@@ -57,7 +57,7 @@ namespace wServer.realm
                     {
                         if (sender.Inventory[i] != null)
                         {
-                            if (sender.Inventory[i].Soulbound || i < 4)
+                            if (sender.Inventory[i].Soulbound || i < 7)
                                 player1Trades[i] = false;
                             else
                                 player1Trades[i] = changes[i];
@@ -78,7 +78,7 @@ namespace wServer.realm
                     {
                         if (sender.Inventory[i] != null)
                         {
-                            if (sender.Inventory[i].Soulbound || i < 4)
+                            if (sender.Inventory[i].Soulbound || i < 7)
                                 player2Trades[i] = false;
                             else
                                 player2Trades[i] = changes[i];

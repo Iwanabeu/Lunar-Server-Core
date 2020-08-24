@@ -41,7 +41,7 @@ namespace wServer.logic.behaviors
 
                 if (entity != null)
                 {
-                    int maxHp = entity.Stats[0] + entity.Boost[0];
+                    int maxHp = entity.Stats[0] + entity.Boost[0] + entity.getBonusHp();
                     int newHp = Math.Min(maxHp, entity.HP + amount);
                     if (newHp != entity.HP)
                     {

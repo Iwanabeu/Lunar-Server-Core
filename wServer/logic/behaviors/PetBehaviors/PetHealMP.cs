@@ -31,7 +31,7 @@ namespace wServer.logic.behaviors.PetBehaviors
 
                 if (player != null)
                 {
-                    int maxMp = player.Stats[1] + player.Boost[1];
+                    int maxMp = player.Stats[1] + player.Boost[1] + player.getBonusMp();
                     int h = GetMP(pet, ref cool);
                     if (h == -1) return;
                     int newMp = Math.Min(player.MaxMp, player.Mp + h);

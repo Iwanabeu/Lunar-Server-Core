@@ -41,7 +41,7 @@ namespace wServer.logic.behaviors
 
                 if (entity != null)
                 {
-                    int maxMp = entity.Stats[1] + entity.Boost[1];
+                    int maxMp = entity.Stats[1] + entity.Boost[1] + entity.getBonusMp();
                     
                     int newMp = Math.Min(maxMp, entity.Mp+ amount);
                     if (newMp != entity.Mp)

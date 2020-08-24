@@ -33,7 +33,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                 Player player = pet.GetEntity(pet.PlayerOwner.Id) as Player;
                 if (player == null) return;
 
-                int maxHp = player.Stats[0] + player.Boost[0];
+                int maxHp = player.Stats[0] + player.Boost[0] + player.getBonusHp();
                 int h = GetHP(pet, ref cool);
                 if (h == -1) return;
                 int newHp = Math.Min(maxHp, player.HP + h);

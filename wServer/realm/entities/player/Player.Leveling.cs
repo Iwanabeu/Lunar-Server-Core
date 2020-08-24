@@ -291,8 +291,8 @@ namespace wServer.realm.entities.player
                         }
                     }
                 }
-                HP = Stats[0] + Boost[0];
-                Mp = Stats[1] + Boost[1];
+                HP = Stats[0] + Boost[0] + getBonusHp();
+                Mp = Stats[1] + Boost[1] + getBonusMp();
 
                 UpdateCount++;
 

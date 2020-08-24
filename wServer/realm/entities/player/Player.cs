@@ -464,7 +464,7 @@ namespace wServer.realm.entities.player
             if (Boost != null)
             {
                 stats[StatsType.MaximumHP] = Stats[0] + Boost[0]+getBonusHp();
-                stats[StatsType.MaximumMP] = Stats[1] + Boost[1]+getBonusMp() ;
+                stats[StatsType.MaximumMP] = Stats[1] + Boost[1]+getBonusMp();
                 stats[StatsType.Attack] = Stats[2] + Boost[2]+getBonusAtk();
                 stats[StatsType.Defense] = Stats[3] + Boost[3]+getBonusDef();
                 stats[StatsType.Speed] = Stats[4] + Boost[4]+getBonusSpd();
@@ -519,7 +519,7 @@ namespace wServer.realm.entities.player
             if (Boost == null) Boost = new int[12];
             else
                 for (var i = 0; i < Boost.Length; i++) Boost[i] = 0;
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < 7; i++)
             {
                 if (Inventory.Length < i || Inventory.Length == 0) return;
                 if (Inventory[i] == null) continue;
@@ -885,8 +885,8 @@ namespace wServer.realm.entities.player
 
             if (Stats != null && Boost != null)
             {
-                MaxHp = Stats[0] + Boost[0];
-                MaxMp = Stats[1] + Boost[1];
+                MaxHp = Stats[0] + Boost[0] + getBonusHp();
+                MaxMp = Stats[1] + Boost[1] + getBonusMp();
             }
 
             if (!KeepAlive(time)) return;
@@ -1060,7 +1060,7 @@ namespace wServer.realm.entities.player
 
         private void HandleRegen(RealmTime time)
         {
-            if (HP == Stats[0] + Boost[0] || !CanHpRegen())
+            if (HP == Stats[0] + Boost[0] + getBonusHp() || !CanHpRegen())
                 hpRegenCounter = 0;
             else
             {
@@ -1068,20 +1068,20 @@ namespace wServer.realm.entities.player
                 var regen = (int)hpRegenCounter;
                 if (regen > 0)
                 {
-                    HP = Math.Min(Stats[0] + Boost[0], HP + regen);
+                    HP = Math.Min(Stats[0] + Boost[0] + getBonusHp(), HP + regen);
                     hpRegenCounter -= regen;
                     UpdateCount++;
                 }
             }
 
-            if (Mp == Stats[1] + Boost[1] || !CanMpRegen())
+            if (Mp == Stats[1] + Boost[1] + getBonusMp()|| !CanMpRegen())
                 mpRegenCounter = 0;
             else
             {
                 mpRegenCounter += StatsManager.GetMPRegen() * time.thisTickTimes / 1000f;
                 var regen = (int)mpRegenCounter;
                 if (regen <= 0) return;
-                Mp = Math.Min(Stats[1] + Boost[1], Mp + regen);
+                Mp = Math.Min(Stats[1] + Boost[1] + getBonusMp(), Mp + regen);
                 mpRegenCounter -= regen;
                 UpdateCount++;
             }
