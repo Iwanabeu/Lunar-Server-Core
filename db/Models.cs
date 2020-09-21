@@ -103,20 +103,21 @@ public class Chars
         {
             return new List<MaxClassLevelItem>
             {
-                new MaxClassLevelItem {ClassType = "768", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "800", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "802", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "803", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "804", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "805", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "806", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "775", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "782", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "797", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "784", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "801", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "798", MaxLevel = "20"},
-                new MaxClassLevelItem {ClassType = "799", MaxLevel = "20"}
+                new MaxClassLevelItem {ClassType = "768", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "800", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "802", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "803", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "804", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "805", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "806", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "775", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "782", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "797", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "784", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "801", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "798", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType = "799", MaxLevel = "50"},
+                new MaxClassLevelItem {ClassType="45169",MaxLevel = "50" }
             };
         }
     }

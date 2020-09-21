@@ -1,5 +1,4 @@
 ﻿#region
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -194,6 +193,7 @@ AND characters.charId=death.chrId;";
 
         public Account Verify(string uuid, string password, XmlData data)
         {
+            
             var cmd = CreateQuery();
             cmd.CommandText = "SELECT * FROM accounts WHERE uuid=@uuid AND password=SHA1(@password);";
             cmd.Parameters.AddWithValue("@uuid", uuid);

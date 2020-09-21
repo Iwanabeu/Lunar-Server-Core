@@ -77,6 +77,7 @@ namespace wServer.networking
 
         private void ReceiveCompleted(object sender, SocketAsyncEventArgs e)
         {
+            
             try
             {
                 if (!skt.Connected)
@@ -87,7 +88,7 @@ namespace wServer.networking
 
                 if (e.SocketError != SocketError.Success)
                     throw new SocketException((int) e.SocketError);
-
+                
                 switch (receiveState)
                 {
                     case ReceiveState.ReceivingHdr:
@@ -128,7 +129,8 @@ namespace wServer.networking
                             log.ErrorFormat("Packet ID not found: {0}", e.Buffer[4]);
                         }
                         (e.UserToken as ReceiveToken).Packet = packet;
-
+                        try { log.Error("Receiving packet: " + (e.UserToken as ReceiveToken).Packet.ID); }
+                        catch (Exception error) { }
                         receiveState = ReceiveState.ReceivingBody;
                         e.SetBuffer(0, len);
                         skt.ReceiveAsync(e);
@@ -170,6 +172,8 @@ namespace wServer.networking
                 if (!skt.Connected) return;
 
                 int len;
+
+                log.Error("Sending packet: " + (e.UserToken as SendToken).Packet.ID);
                 switch (sendState)
                 {
                     case SendState.Ready:
@@ -193,6 +197,7 @@ namespace wServer.networking
 
                             if (!skt.Connected) return;
                             skt.SendAsync(e);
+                            
                         }
                         break;
                 }

@@ -165,7 +165,7 @@ namespace wServer.networking
         //Following must execute, network loop will discard disconnected client, so logic loop
         private void DisconnectFromRealm()
         {
-            Player.removeBuffs();
+            Player?.removeBuffs();
             if (Player.onHorse) Player.exitHorse();
             Manager.Logic.AddPendingAction(t =>
             {

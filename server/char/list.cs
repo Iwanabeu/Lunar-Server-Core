@@ -59,60 +59,62 @@ namespace server.@char
 
         protected override void HandleRequest()
         {
-                using (Database db = new Database())
+
+            using (Database db = new Database())
+            {
+
+                Account a = db.Verify(Query["guid"], Query["password"], Program.GameData);
+                if (!CheckAccount(a, db)) return;
+                db.LockAccount(a);
+                Chars chrs = new Chars
                 {
-                    Account a = db.Verify(Query["guid"], Query["password"], Program.GameData);
-                    if (!CheckAccount(a, db)) return;
-                    db.LockAccount(a);
-                    Chars chrs = new Chars
-                    {
-                        Characters = new List<Char>(),
-                        NextCharId = 2,
-                        MaxNumChars = 1,
-                        Account = a,
-                        Servers = GetServerList()
-                    };
-                    if (chrs.Account != null)
-                    {
-                        db.GetCharData(chrs.Account, chrs);
-                        db.LoadCharacters(chrs.Account, chrs);
-                        chrs.News = db.GetNews(Program.GameData, chrs.Account);
-                        chrs.OwnedSkins = Utils.GetCommaSepString(chrs.Account.OwnedSkins.ToArray());
-                        db.UnlockAccount(chrs.Account);
-                    }
-                    else
-                    {
-                        chrs.Account = Database.CreateGuestAccount(Query["guid"] ?? "");
-                        chrs.News = db.GetNews(Program.GameData, null);
-                    }
-                    MapPoint p = GetLatLong(Context.Request.RemoteEndPoint.Address);
-                    if (p != null)
-                    {
-                        chrs.Lat = p.Latitude.ToString().Replace(',', '.');
-                        chrs.Long = p.Longitude.ToString().Replace(',', '.');
-                    }
-                    chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
-                    chrs.TOSPopup = chrs.Account.NotAcceptedNewTos;
-
-                    chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
-                    XmlSerializer serializer = new XmlSerializer(chrs.GetType(),
-                        new XmlRootAttribute(chrs.GetType().Name) { Namespace = "" });
-
-                    XmlWriterSettings xws = new XmlWriterSettings();
-                    xws.OmitXmlDeclaration = true;
-                    xws.Encoding = Encoding.UTF8;
-                    xws.Indent = true;
-                    XmlWriter xtw = XmlWriter.Create(Context.Response.OutputStream, xws);
-                    serializer.Serialize(xtw, chrs, chrs.Namespaces);
+                    Characters = new List<Char>(),
+                    NextCharId = 2,
+                    MaxNumChars = 1,
+                    Account = a,
+                    Servers = GetServerList()
+                };
+                if (chrs.Account != null)
+                {
+                    db.GetCharData(chrs.Account, chrs);
+                    db.LoadCharacters(chrs.Account, chrs);
+                    chrs.News = db.GetNews(Program.GameData, chrs.Account);
+                    chrs.OwnedSkins = Utils.GetCommaSepString(chrs.Account.OwnedSkins.ToArray());
+                    db.UnlockAccount(chrs.Account);
                 }
-            
+                else
+                {
+                    chrs.Account = Database.CreateGuestAccount("Guest");
+                    chrs.News = db.GetNews(Program.GameData, null);
+                }
+                MapPoint p = GetLatLong(Context.Request.RemoteEndPoint.Address);
+                if (p != null)
+                {
+                    chrs.Lat = p.Latitude.ToString().Replace(',', '.');
+                    chrs.Long = p.Longitude.ToString().Replace(',', '.');
+                }
+                chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
+                chrs.TOSPopup = chrs.Account.NotAcceptedNewTos;
+
+                chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
+                XmlSerializer serializer = new XmlSerializer(chrs.GetType(),
+                    new XmlRootAttribute(chrs.GetType().Name) { Namespace = "" });
+
+                XmlWriterSettings xws = new XmlWriterSettings();
+                xws.OmitXmlDeclaration = true;
+                xws.Encoding = Encoding.UTF8;
+                xws.Indent = true;
+                XmlWriter xtw = XmlWriter.Create(Context.Response.OutputStream, xws);
+                serializer.Serialize(xtw, chrs, chrs.Namespaces);
+            }
+
         }
 
         private string GetAddress(IPAddress ip)
         {
             string ret = String.Empty;
             WebRequest wb = WebRequest.Create("http://api.hostip.info/get_html.php?ip=" + ip.ToString());
-            using(StreamReader rdr = new StreamReader(wb.GetResponse().GetResponseStream()))
+            using (StreamReader rdr = new StreamReader(wb.GetResponse().GetResponseStream()))
             {
                 string tmp = null;
                 while (!String.IsNullOrWhiteSpace(tmp = rdr.ReadLine()))
@@ -120,13 +122,13 @@ namespace server.@char
                     if (tmp.StartsWith("Country:"))
                     {
                         if (tmp.Split(':')[1].Contains("(Unknown Country?)")) continue;
-            
+
                         ret += tmp.Split(':')[1].Remove(tmp.Split(':')[1].IndexOf("("));
                     }
                     else if (tmp.StartsWith("City:"))
                     {
                         if (tmp.Split(':')[1].Contains("(Unknown City?)")) continue;
-            
+
                         ret += tmp.Split(':')[1];
                     }
                 }
@@ -163,11 +165,11 @@ namespace server.@char
                 using (var cli = new TcpClient(host, 2050))
                 {
                     var stream = cli.GetStream();
-                    stream.Write(new byte[5] {0x4d, 0x61, 0x64, 0x65, 0xff}, 0, 5);
+                    stream.Write(new byte[5] { 0x4d, 0x61, 0x64, 0x65, 0xff }, 0, 5);
                     var buffer = new byte[cli.ReceiveBufferSize];
                     Array.Resize<byte>(ref buffer, cli.Client.Receive(buffer));
                     var s = Encoding.ASCII.GetString(buffer).Split(':');
-                    return double.Parse(s[1])/double.Parse(s[0]);
+                    return double.Parse(s[1]) / double.Parse(s[0]);
                 }
             }
             catch
@@ -179,7 +181,7 @@ namespace server.@char
 
         private List<ClassAvailabilityItem> GetClassAvailability(Account acc)
         {
-            var classes = new string[14]
+            var classes = new string[15]
             {
                 "Rogue",
                 "Assassin",
@@ -194,7 +196,8 @@ namespace server.@char
                 "Necromancer",
                 "Warrior",
                 "Knight",
-                "Paladin"
+                "Paladin",
+                "Gladiator"
             };
 
             if (acc == null)
@@ -215,6 +218,7 @@ namespace server.@char
                     new ClassAvailabilityItem {Class = "Warrior", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Knight", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Paladin", Restricted = "unrestricted"},
+                    new ClassAvailabilityItem {Class = "Gladiator", Restricted = "unrestricted"}
                 };
             }
 
@@ -285,6 +289,6 @@ namespace server.@char
                 return chrs;
             }
         }
-        
+
     }
 }
