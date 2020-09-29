@@ -1,4 +1,6 @@
-﻿namespace wServer.networking.svrPackets
+﻿using System.Text;
+
+namespace wServer.networking.svrPackets
 {
     public class FailurePacket : ServerPacket
     {

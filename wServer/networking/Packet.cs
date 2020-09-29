@@ -2,7 +2,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -15,7 +17,7 @@ namespace wServer.networking
     public abstract class Packet
     {
         public static Dictionary<PacketID, Packet> Packets = new Dictionary<PacketID, Packet>();
-
+        private log4net.ILog log = log4net.LogManager.GetLogger("YEP");
         static Packet()
         {
             foreach (Type i in typeof (Packet).Assembly.GetTypes())
@@ -37,17 +39,22 @@ namespace wServer.networking
         {
             Crypt(client, body, offset, len);
             Read(client, new NReader(new MemoryStream(body)));
+
         }
 
         public int Write(Client client, byte[] buff, int offset)
         {
+
+            log.Error(this);
             MemoryStream s = new MemoryStream(buff, offset + 5, buff.Length - offset - 5);
             Write(client, new NWriter(s));
 
-            int len = (int) s.Position;
+            int len = (int)s.Position;
+
             Crypt(client, buff, offset + 5, len);
             Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(len + 5)), 0, buff, offset, 4);
             buff[offset + 4] = (byte) ID;
+            
             return len + 5;
         }
 

@@ -12,6 +12,7 @@ using wServer.realm;
 using wServer.realm.entities.player;
 using System.Threading.Tasks;
 using db.JsonObjects;
+using System.Diagnostics;
 
 #endregion
 
@@ -30,7 +31,7 @@ namespace wServer.networking
 
         
         public Packet Pkt { get; set; }
-        public const string SERVER_VERSION = "27.7.X2";
+        public const string SERVER_VERSION = "1.0.0";
         private bool disposed;
 
         private static readonly ILog log = LogManager.GetLogger(typeof (Client));
@@ -88,9 +89,7 @@ namespace wServer.networking
 
         public bool IsReady()
         {
-            if (Stage == ProtocalStage.Disconnected)
-                return false;
-            return Stage != ProtocalStage.Ready || (Player != null && (Player == null || Player.Owner != null));
+            return Stage !=ProtocalStage.Disconnected && (Stage != ProtocalStage.Ready || (Player != null && (Player == null || Player.Owner != null)));
         }
 
         internal void ProcessPacket(Packet pkt)
@@ -166,7 +165,7 @@ namespace wServer.networking
         private void DisconnectFromRealm()
         {
             Player?.removeBuffs();
-            if (Player.onHorse) Player.exitHorse();
+            Player?.exitHorse();
             Manager.Logic.AddPendingAction(t =>
             {
                 Save();

@@ -41,7 +41,7 @@ namespace wServer.realm.terrain
             }
 
             TerrainTile[,] tiles = new TerrainTile[obj.width, obj.height];
-            using (NReader rdr = new NReader(new MemoryStream(dat)))
+            using (ClientReader rdr = new ClientReader(new MemoryStream(dat)))
                 for (int y = 0; y < obj.height; y++)
                     for (int x = 0; x < obj.width; x++)
                     {

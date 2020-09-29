@@ -40,7 +40,7 @@ namespace terrain
             Dictionary<string, ushort> icdatas = new Dictionary<string, ushort>(
                 data.IdToObjectType,
                 StringComparer.OrdinalIgnoreCase);
-            using (NReader rdr = new NReader(new MemoryStream(dat)))
+            using (ClientReader rdr = new ClientReader(new MemoryStream(dat)))
                 for (int y = 0; y < obj.height; y++)
                 {
                     for (int x = 0; x < obj.width; x++)

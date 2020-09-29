@@ -77,6 +77,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientReader.cs" />
+    <Compile Include="ClientWriter.cs" />
     <Compile Include="DailyQuestConstants.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Database.Guilds.cs" />

@@ -114,7 +114,7 @@ namespace wServer.networking
                             ProcessPolicyFile();
                             return;
                         }
-
+                        
                         int len = (e.UserToken as ReceiveToken).Length =
                             IPAddress.NetworkToHostOrder(BitConverter.ToInt32(e.Buffer, 0)) - 5;
                         if (len < 0 || len > BUFFER_SIZE)
@@ -130,7 +130,7 @@ namespace wServer.networking
                         }
                         (e.UserToken as ReceiveToken).Packet = packet;
                         try { log.Error("Receiving packet: " + (e.UserToken as ReceiveToken).Packet.ID); }
-                        catch (Exception error) { }
+                        catch (Exception error) { log.Error(error); }
                         receiveState = ReceiveState.ReceivingBody;
                         e.SetBuffer(0, len);
                         skt.ReceiveAsync(e);
@@ -251,7 +251,6 @@ namespace wServer.networking
             if (CanSendPacket(send, false))
             {
                 int len = (send.UserToken as SendToken).Packet.Write(parent, sendBuff, 0);
-
                 sendState = SendState.Sending;
                 send.SetBuffer(sendBuff, 0, len);
                 if (!skt.SendAsync(send))
