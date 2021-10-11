@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using log4net;
+using System.Collections.Generic;
+using System.IO;
+using wServer.realm;
 
 namespace wServer.networking.svrPackets
 {
@@ -20,6 +23,7 @@ namespace wServer.networking.svrPackets
 
         protected override void Read(Client psr, NReader rdr)
         {
+            
             Tiles = new TileData[rdr.ReadInt16()];
             for (int i = 0; i < Tiles.Length; i++)
             {
@@ -42,6 +46,9 @@ namespace wServer.networking.svrPackets
 
         protected override void Write(Client psr, NWriter wtr)
         {
+            ILog log = log4net.LogManager.GetLogger("YEP");   
+            log.Error(NewObjects[0].Stats.Id+ " " + NewObjects[0].Stats.Stats.Length  + " " + NewObjects[0].Stats.Stats[0].Key);
+            foreach (KeyValuePair<StatsType, object> obj in NewObjects[0].Stats.Stats) log.Error(obj.Key + " " + obj.Value);
             wtr.Write((short) Tiles.Length);
             foreach (TileData i in Tiles)
             {

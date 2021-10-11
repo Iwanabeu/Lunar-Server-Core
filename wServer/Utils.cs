@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 #endregion
 
@@ -46,12 +48,23 @@ namespace wServer
     {
         public static double Dist(double x1, double y1, double x2, double y2)
         {
-            return Math.Sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+            return Math.Sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
         }
 
         public static double DistSqr(double x1, double y1, double x2, double y2)
         {
-            return (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2);
+            return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+        }
+    }
+    internal static class LogUtils
+    {
+        public static void LogBuffer(this log4net.ILog log, byte[] buffer, int offset,int len)
+        {
+            StringBuilder sb = new StringBuilder();
+            buffer.Skip(offset).Take(len).All(b => { sb.AppendFormat("{0:x2}", b); return true; });
+            log.Error(sb.ToString());
+
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using wServer.networking;
@@ -272,11 +273,14 @@ namespace wServer
         {
             try
             {
+                ILog log = log4net.LogManager.GetLogger("YEP");
+                
                 wtr.Write(Id);
                 Position.Write(psr, wtr);
                 wtr.Write((ushort)Stats.Length);
                 foreach (KeyValuePair<StatsType, object> i in Stats)
                 {
+                    log.Error("Key: " + (byte)i.Key);
                     wtr.Write((byte)i.Key);
                     if (i.Key.IsUTF() && i.Value != null) wtr.WriteUTF(i.Value.ToString());
                     else if (i.Key.IsBool() && i.Value != null) wtr.Write((bool)i.Value);

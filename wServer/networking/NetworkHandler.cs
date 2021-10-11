@@ -129,8 +129,8 @@ namespace wServer.networking
                             log.ErrorFormat("Packet ID not found: {0}", e.Buffer[4]);
                         }
                         (e.UserToken as ReceiveToken).Packet = packet;
-                        try { log.Error("Receiving packet: " + (e.UserToken as ReceiveToken).Packet.ID); }
-                        catch (Exception error) { log.Error(error); }
+                        //try { log.Error("Receiving packet: " + (e.UserToken as ReceiveToken).Packet.ID); }
+                        //catch (Exception error) { log.Error(error); }
                         receiveState = ReceiveState.ReceivingBody;
                         e.SetBuffer(0, len);
                         skt.ReceiveAsync(e);
@@ -173,7 +173,7 @@ namespace wServer.networking
 
                 int len;
 
-                log.Error("Sending packet: " + (e.UserToken as SendToken).Packet.ID);
+                //log.Error("Sending packet: " + (e.UserToken as SendToken).Packet.ID);
                 switch (sendState)
                 {
                     case SendState.Ready:

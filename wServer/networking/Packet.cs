@@ -37,24 +37,26 @@ namespace wServer.networking
 
         public void Read(Client client, byte[] body, int offset, int len)
         {
-            Crypt(client, body, offset, len);
+            //new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1d, 0x09, 0xa1, 0x3a, 0x2a, 0x6e }).Crypt(body, offset, len);
+            //Crypt(client, body, offset, len);
             Read(client, new NReader(new MemoryStream(body)));
-
         }
 
         public int Write(Client client, byte[] buff, int offset)
         {
 
-            log.Error(this);
+            //log.Error(this);
             MemoryStream s = new MemoryStream(buff, offset + 5, buff.Length - offset - 5);
             Write(client, new NWriter(s));
 
             int len = (int)s.Position;
 
-            Crypt(client, buff, offset + 5, len);
+            //new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcd, 0xd7, 0x4b, 0x80 }).Crypt(buff, offset, len);
+            //Crypt(client, buff, offset + 5, len);
             Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(len + 5)), 0, buff, offset, 4);
             buff[offset + 4] = (byte) ID;
-            
+
+            //log.LogBuffer(buff, offset, len+5);
             return len + 5;
         }
 
