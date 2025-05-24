@@ -1,11 +1,6 @@
-#NOTE: I am not gunna update this server to 27.5 because the build (1439425927) is still bugged as hell.
+Our Server for Lunar Dominion, based on an existing source but changed by us.
 
-#Build Status: [![Build status](https://img.shields.io/appveyor/ci/ossimc82/fabiano-swagger-of-doom/master.svg)](https://ci.appveyor.com/project/ossimc82/fabiano-swagger-of-doom)
-
-##Additional License information
-
-You are free to use this source as long as u credit this guys:
-
+Credit to:
 - ossimc82/Fabian Fischer
 - C453
 - Trapped
@@ -16,6 +11,6 @@ You are free to use this source as long as u credit this guys:
 - Nilly
 - sebastianfra12 for some more behaviors
 - Kieron for making 1 behavior
-- everyone else that have contributed to this project on mpgh or any other site
+- mpgh contributors
 
-And you are not "WintersQ" and "I Don't Love You" on MPGH
+for source code.
